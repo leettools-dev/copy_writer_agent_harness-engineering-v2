@@ -1,0 +1,15 @@
+provider,category,gh_stars,funding_notes,hosting_model,notable_customers,source_refs
+LangChain,Agent framework / orchestration,~130000,"Series B announced Oct 20, 2025 (see LangChain blog)",OSS + LangSmith (commercial observability product),, /workspace/references/research_notes.md#source-langchain-github
+LlamaIndex,RAG / document-agent framework,~47800,"Series A $19M announced Mar 4, 2025",OSS + LlamaParse (cloud product),, /workspace/references/research_notes.md#source-llamaindex-github
+Langfuse,Observability / tracing,~23500,"Seed $4M (announced Nov 7, 2023)",OSS + Langfuse Cloud,"example customers listed on site", /workspace/references/research_notes.md#source-langfuse-github
+OpenAI Evals,Evaluation harness,~18000,NA,Platform-integrated (OpenAI dashboard + OSS repo),, /workspace/references/research_notes.md#source-openai-evals-github
+Pinecone,Vector DB / retrieval infra,NA,Multiple funding rounds (public),Managed vector DB (hosted),Various enterprise case studies, /workspace/references/research_notes.md#quick-funding--traction-signals
+Chroma,Vector DB / retrieval infra,NA,"Seed round (public)",OSS + commercial offering,NA, /workspace/references/research_notes.md#quick-funding--traction-signals
+Milvus,Vector DB / retrieval infra,NA,NA,OSS + enterprise integrations,Customers on Milvus site, /workspace/references/research_notes.md#quick-funding--traction-signals
+Weaviate,Vector DB / retrieval infra,NA,NA,OSS + commercial,Enterprise integrations noted on vendor site, /workspace/references/research_notes.md#quick-funding--traction-signals
+Promptfoo,Eval / prompt testing OSS,~several-thousand,NA,OSS,NA, /workspace/references/research_notes.md#quick-funding--traction-signals
+Weights & Biases (W&B),Experiment tracking / observability,NA,"M&A / acquisition (CoreWeave acquisition cited)",Managed + enterprise,Enterprise customers, /workspace/references/research_notes.md#quick-funding--traction-signals
+
+# Notes:
+# - This is a seed matrix populated from existing /workspace/references/research_notes.md entries. Numbers marked NA or left blank need direct sourcing from vendor pages, GH front pages, press releases, and pricing docs.
+# - Next task: expand to ~20 providers, add exact GH star/fork counts, used-by signals, exact funding amounts/dates, pricing model, and 1-sentence limitations per vendor (source each cell).
