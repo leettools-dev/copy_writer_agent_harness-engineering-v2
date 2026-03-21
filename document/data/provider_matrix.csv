@@ -1,0 +1,11 @@
+provider,category,github_stars,github_forks,funding_or_commercial_signal,hosting_model,notable_customers_or_evidence,source_url
+LangChain,Agent framework/Orchestration,130000,21500,Series B / growth funding (Oct 2025),OSS + LangSmith commercial product,LangSmith product; wide ecosystem integrations,https://github.com/langchain-ai/langchain
+LlamaIndex,RAG / Document agent framework,47800,7100,$19M Series A (Mar 4, 2025),OSS + LlamaParse/LlamaCloud,Document-agent use cases; LlamaParse product pages,https://github.com/run-llama/llama_index
+Langfuse,LLM Observability & Tracing,23500,2400,$4M seed (Nov 7, 2023),OSS + Langfuse Cloud,Self-host docs and customer vignettes on site,https://github.com/langfuse/langfuse
+OpenAI Evals,Evaluation harness,18000,2900,N/A (OpenAI product),OSS + OpenAI platform integration,Integrated into OpenAI docs/platform; CI/export examples,https://github.com/openai/evals
+Pinecone,Vector DB / Retrieval store,, ,Multiple funding rounds; investor signals (a16z),Hosted commercial,Adoption stories on Pinecone blog,https://www.pinecone.io
+Promptfoo,Prompt testing / evals (OSS),several_thousand, ,OSS traction (GitHub),OSS,Community adoption for prompt testing,https://github.com/promptfoo/promptfoo
+Chroma,Vector DB / Retrieval store, , ,Seed rounds reported; vendor docs,OSS + hosted,Use-case blog posts,https://www.trychroma.com
+Milvus,Vector DB / Retrieval store, , ,Enterprise adoption signals,OSS + commercial ecosystem,Enterprise case pages on Milvus site,https://milvus.io
+Weights & Biases (W&B),Model experiment tracking / observability, , ,Acquisition / M&A signals (CoreWeave acquisition),Hosted commercial,Enterprise customers and case studies on wandb.ai,https://wandb.ai
+
