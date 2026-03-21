@@ -58,9 +58,46 @@
 - Use Langfuse as a concrete case study for LLM observability and note gaps such as standardized trace schemas and cross-vendor telemetry.
 
 
-## Next research tasks (priority)
-1. Expand candidate list of exemplar market-mapping reports and vendor analyses (e.g., a16z essays, Menlo/VC pieces, State of AI report) using leet_websearch.
-2. Gather traction signals for central providers: OpenAI, Langfuse, Fiddler, LlamaIndex, LangChain, Weights & Biases, Humanloop, etc.
-3. Retrieve GitHub metrics (stars, forks, updated_at) for major OSS projects: openai/evals, langfuse/langfuse, EleutherAI/lm-evaluation-harness, LlamaIndex, LangChain.
-4. Create document manifest and outline based on a normalized selected example.
+## Source: LangChain (OSS agent/framework)
+- URL: https://github.com/langchain-ai/langchain
+- Why this source matters: LangChain is the most widely adopted developer-facing agent and orchestration framework; its ecosystem and integrations shape developer expectations and are a key distribution channel for harness tooling.
+- Reliability tier: primary (OSS + ecosystem)
+- Date accessed: 2026-03-21
 
+### Evidence extracted
+- Claim: LangChain has extremely high OSS adoption and serves as a distribution and integration hub for many harness tools.
+  - Support: GitHub page shows ~130k stars, ~21.5k forks, high release cadence and many dependents (used-by signals).
+  - Intended section(s): Provider landscape (agent frameworks), Market map (developer productivity layer), Appendix (traction table)
+  - Confidence: high
+
+### Open questions
+- Which LangChain integrations are most-used in production vs prototyping? Need ecosystem usage signals (downloads, dependents, integrations usage).
+
+### Draft implications
+- Observability and eval SDKs should prioritize LangChain integration (callback/agent hooks) for rapid adoption.
+
+
+## Source: LlamaIndex (OSS RAG/document agent)
+- URL: https://github.com/run-llama/llama_index
+- Why this source matters: LlamaIndex is a leading RAG/document agent framework; many production document agents rely on its ingestion/indexing and connectors.
+- Reliability tier: primary (OSS + product)
+- Date accessed: 2026-03-21
+
+### Evidence extracted
+- Claim: LlamaIndex shows strong OSS adoption (~47.8k stars) and provides both OSS framework and a commercial cloud product (LlamaParse) for document agents.
+  - Support: GitHub page shows ~47.8k stars, active releases, and cloud product references in README.
+  - Intended section(s): Provider landscape (RAG/document frameworks), Customer JTBD (document agents), Appendix (provider table)
+  - Confidence: high
+
+### Open questions
+- LlamaIndex commercial traction (customers, pricing) beyond OSS adoption needs to be sourced from company pages, blog posts, and press.
+
+### Draft implications
+- Memory and retrieval orchestration wedges should interoperate with LlamaIndex and support its connector patterns.
+
+
+## Next research tasks (priority)
+1. Populate provider comparison matrix with traction signals (GH stars, forks, release cadence), pricing models, and enterprise features.
+2. Gather funding/customer signals for commercial vendors (Langfuse, Weights & Biases, Fiddler, etc.).
+3. Interview 2-3 platform engineers building production LLM apps to validate priority pains (observability vs evals vs memory orchestration).
+4. Collect concrete examples/case studies of production failures and debugging workflows to ground the "debugging & root-cause" pain.

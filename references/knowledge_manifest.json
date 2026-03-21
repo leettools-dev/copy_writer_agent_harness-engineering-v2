@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-21T01:54:11.838661+00:00",
+  "updated_at": "2026-03-21T01:58:04.546886+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -147,12 +147,61 @@
         "Traction metrics (customers, GitHub activity, funding) vs competitors."
       ],
       "draft_implications": [
-        "Use Langfuse as a concrete case study for LLM observability and note gaps such as standardized trace schemas and cross-vendor telemetry.",
+        "Use Langfuse as a concrete case study for LLM observability and note gaps such as standardized trace schemas and cross-vendor telemetry."
+      ]
+    },
+    {
+      "source_id": "langchain-oss-agent-framework",
+      "title": "LangChain (OSS agent/framework)",
+      "url": "https://github.com/langchain-ai/langchain",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/langchain-oss-agent-framework.md",
+      "linked_sections": [
+        "Provider landscape (agent frameworks)",
+        "Market map (developer productivity layer)",
+        "Appendix (traction table)"
+      ],
+      "why_it_matters": "LangChain is the most widely adopted developer-facing agent and orchestration framework; its ecosystem and integrations shape developer expectations and are a key distribution channel for harness tooling.",
+      "reliability_tier": "primary (OSS + ecosystem)",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Claim: LangChain has extremely high OSS adoption and serves as a distribution and integration hub for many harness tools. (Support: GitHub page shows ~130k stars, ~21.5k forks, high release cadence and many dependents (used-by signals).)"
+      ],
+      "open_questions": [
+        "Which LangChain integrations are most-used in production vs prototyping? Need ecosystem usage signals (downloads, dependents, integrations usage)."
+      ],
+      "draft_implications": [
+        "Observability and eval SDKs should prioritize LangChain integration (callback/agent hooks) for rapid adoption."
+      ]
+    },
+    {
+      "source_id": "llamaindex-oss-rag-document-agent",
+      "title": "LlamaIndex (OSS RAG/document agent)",
+      "url": "https://github.com/run-llama/llama_index",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/llamaindex-oss-rag-document-agent.md",
+      "linked_sections": [
+        "Provider landscape (RAG",
+        "document frameworks)",
+        "Customer JTBD (document agents)",
+        "Appendix (provider table)"
+      ],
+      "why_it_matters": "LlamaIndex is a leading RAG/document agent framework; many production document agents rely on its ingestion/indexing and connectors.",
+      "reliability_tier": "primary (OSS + product)",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Claim: LlamaIndex shows strong OSS adoption (~47.8k stars) and provides both OSS framework and a commercial cloud product (LlamaParse) for document agents. (Support: GitHub page shows ~47.8k stars, active releases, and cloud product references in README.)"
+      ],
+      "open_questions": [
+        "LlamaIndex commercial traction (customers, pricing) beyond OSS adoption needs to be sourced from company pages, blog posts, and press."
+      ],
+      "draft_implications": [
+        "Memory and retrieval orchestration wedges should interoperate with LlamaIndex and support its connector patterns.",
         "## Next research tasks (priority)",
-        "1. Expand candidate list of exemplar market-mapping reports and vendor analyses (e.g., a16z essays, Menlo/VC pieces, State of AI report) using leet_websearch.",
-        "2. Gather traction signals for central providers: OpenAI, Langfuse, Fiddler, LlamaIndex, LangChain, Weights & Biases, Humanloop, etc.",
-        "3. Retrieve GitHub metrics (stars, forks, updated_at) for major OSS projects: openai/evals, langfuse/langfuse, EleutherAI/lm-evaluation-harness, LlamaIndex, LangChain.",
-        "4. Create document manifest and outline based on a normalized selected example."
+        "1. Populate provider comparison matrix with traction signals (GH stars, forks, release cadence), pricing models, and enterprise features.",
+        "2. Gather funding/customer signals for commercial vendors (Langfuse, Weights & Biases, Fiddler, etc.).",
+        "3. Interview 2-3 platform engineers building production LLM apps to validate priority pains (observability vs evals vs memory orchestration).",
+        "4. Collect concrete examples/case studies of production failures and debugging workflows to ground the \"debugging & root-cause\" pain."
       ]
     },
     {

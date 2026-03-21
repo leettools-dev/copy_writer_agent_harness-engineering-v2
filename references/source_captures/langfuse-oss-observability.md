@@ -16,8 +16,3 @@
 
 ## Draft implications
 - Use Langfuse as a concrete case study for LLM observability and note gaps such as standardized trace schemas and cross-vendor telemetry.
-- ## Next research tasks (priority)
-- 1. Expand candidate list of exemplar market-mapping reports and vendor analyses (e.g., a16z essays, Menlo/VC pieces, State of AI report) using leet_websearch.
-- 2. Gather traction signals for central providers: OpenAI, Langfuse, Fiddler, LlamaIndex, LangChain, Weights & Biases, Humanloop, etc.
-- 3. Retrieve GitHub metrics (stars, forks, updated_at) for major OSS projects: openai/evals, langfuse/langfuse, EleutherAI/lm-evaluation-harness, LlamaIndex, LangChain.
-- 4. Create document manifest and outline based on a normalized selected example.
