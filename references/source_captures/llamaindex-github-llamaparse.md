@@ -1,7 +1,7 @@
 <!-- generated-by: copy_writer_agent.runtime_sync -->
 # LlamaIndex (GitHub / LlamaParse)
 
-- URL: https://github.com/run-llama/llama_index and https://llamaindex.ai/
+- URL: https://github.com/run-llama/llama_index
 - Source role: supporting_source
 - Linked sections: Not mapped yet
 - Why this source matters: LlamaIndex is a leading RAG/document agent framework with both OSS and a commercial cloud product (LlamaParse). Important for memory/retrieval tooling and document-agent use cases.

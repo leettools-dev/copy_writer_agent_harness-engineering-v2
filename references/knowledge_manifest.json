@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-21T02:43:52.319749+00:00",
+  "updated_at": "2026-03-21T02:46:41.262970+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -102,7 +102,7 @@
     {
       "source_id": "llamaindex-github-llamaparse",
       "title": "LlamaIndex (GitHub / LlamaParse)",
-      "url": "https://github.com/run-llama/llama_index and https://llamaindex.ai/",
+      "url": "https://github.com/run-llama/llama_index",
       "source_role": "supporting_source",
       "capture_path": "references/source_captures/llamaindex-github-llamaparse.md",
       "linked_sections": [],
@@ -151,7 +151,7 @@
       "source_role": "supporting_source",
       "capture_path": "references/source_captures/openai-evals-github-openai-docs.md",
       "linked_sections": [],
-      "why_it_matters": "OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform — signals the importance of structured evals, registries, and private eval capabilities.",
+      "why_it_matters": "OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform \u00151 signals the importance of structured evals, registries, and private eval capabilities.",
       "reliability_tier": "primary",
       "date_accessed": "2026-03-21",
       "evidence": [
@@ -164,6 +164,145 @@
       "draft_implications": [
         "Eval tooling that offers private CI integration, audit logs, and enterprise governance has a clear buyer: platform teams and compliance-oriented enterprises.",
         "---"
+      ]
+    },
+    {
+      "source_id": "chroma-github-chroma-cloud",
+      "title": "Chroma (GitHub + Chroma Cloud)",
+      "url": "https://github.com/chroma-core/chroma and https://trychroma.com/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/chroma-github-chroma-cloud.md",
+      "linked_sections": [],
+      "why_it_matters": "Chroma is a major open-source vector DB/embedding store with a hosted offering (Chroma Cloud). Vector stores are core infra for retrieval, RAG, and memory management.",
+      "reliability_tier": "strong-secondary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Repo metrics: ~26.7k stars, ~2.1k forks; README and docs reference Chroma Cloud (hosted), client SDKs.",
+        "Intended sections: Provider landscape (vector DBs), Technical bottlenecks (persistence, latency), Appendix (traction table)"
+      ],
+      "open_questions": [
+        "Exact funding and enterprise adoption signals for Chroma Cloud (customer lists)."
+      ],
+      "draft_implications": [
+        "Any harness product that manages retrieval or memory must interop with Chroma and support both self-hosted and Chroma Cloud patterns.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "pinecone-company-site",
+      "title": "Pinecone (company site)",
+      "url": "https://www.pinecone.io/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/pinecone-company-site.md",
+      "linked_sections": [],
+      "why_it_matters": "Pinecone is one of the most widely used managed vector DBs and provides strong enterprise features (SaaS, BYOC preview, security/compliance).",
+      "reliability_tier": "strong-secondary (vendor primary source)",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Hosting model: Managed SaaS, serverless scaling, BYOC preview; product pages list customer case studies (Gong, Vanguard) and enterprise features (SLA, SOC 2, HIPAA references).",
+        "Intended sections: Provider landscape (vector DBs), Commercial moat (SaaS + enterprise features), Appendix (vendor citations)"
+      ],
+      "open_questions": [
+        "Latest funding or strategic partnerships to cite precisely (press links)."
+      ],
+      "draft_implications": [
+        "For startups building retrieval layers, offering a BYOC / cloud-agnostic mode or clear cost advantage is important vs Pinecone's managed offering.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "weaviate-weaviate-io",
+      "title": "Weaviate (weaviate.io)",
+      "url": "https://weaviate.io/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/weaviate-weaviate-io.md",
+      "linked_sections": [],
+      "why_it_matters": "Weaviate is an AI-native vector DB with cloud and dedicated enterprise modules; provides agent-oriented features and embeddings service.",
+      "reliability_tier": "strong-secondary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Hosting model: Shared Cloud, Dedicated Cloud, self-host; product pages highlight Weaviate Agents and enterprise modules; strong partner integrations (AWS, GCP, Snowflake, Databricks).",
+        "Intended sections: Provider landscape (vector DBs), Market map (enterprise ops), Appendix (vendor notes)"
+      ],
+      "open_questions": [
+        "Precise customer logos/case studies to cite."
+      ],
+      "draft_implications": [
+        "Vector DB competition varies between OSS-first (Chroma, Milvus) and managed SaaS players (Pinecone, Weaviate Cloud); choice matters for GTM and integrations.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "milvus-github-zilliz-cloud",
+      "title": "Milvus (GitHub + Zilliz Cloud)",
+      "url": "https://github.com/milvus-io/milvus and https://milvus.io/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/milvus-github-zilliz-cloud.md",
+      "linked_sections": [],
+      "why_it_matters": "Milvus is a high-performance, cloud-native vector DB (LF AI & Data project) with strong OSS traction and managed Zilliz Cloud product.",
+      "reliability_tier": "primary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Repo metrics: ~43.4k stars, ~3.9k forks; README and docs highlight Zilliz Cloud managed offering and enterprise deployment modes (serverless, dedicated).",
+        "Intended sections: Provider landscape (vector DBs), Technical bottlenecks (performance / scaling), Appendix (traction table)"
+      ],
+      "open_questions": [
+        "Map of Milvus enterprise customers (Zilliz cloud case studies) to cite."
+      ],
+      "draft_implications": [
+        "Milvus demonstrates that OSS vector DBs retain strong enterprise relevance when paired with managed cloud (Zilliz) and ecosystem tooling.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "promptfoo-github-docs",
+      "title": "Promptfoo (GitHub + docs)",
+      "url": "https://github.com/promptfoo/promptfoo and https://www.promptfoo.dev/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/promptfoo-github-docs.md",
+      "linked_sections": [],
+      "why_it_matters": "Promptfoo is a leading OSS evals and red-teaming tool (CLI + CI) used for prompt testing, model comparisons, and CI/CD integration.",
+      "reliability_tier": "primary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Repo metrics: ~17.8k stars, ~1.5k forks; docs show CLI/CI integrations, red-teaming capabilities, and an announced joining/open collaboration with OpenAI (March 2026 update in README/docs).",
+        "Intended sections: Provider landscape (evals & testing), Customer JTBD (CI/QA), Appendix (feature matrix)"
+      ],
+      "open_questions": [
+        "Track commercialization or enterprise paid tiers post-OpenAI joining (if any)."
+      ],
+      "draft_implications": [
+        "Lightweight eval/CI integrations (CLI + CI workflows) are a realistic early wedge for narrow harness products; integration with private CI and audit logs is the buyer need.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "weights-biases-company-pages-press",
+      "title": "Weights & Biases (company pages / press)",
+      "url": "https://wandb.ai/  (note: page fetch returned limited content in automated pass)",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/weights-biases-company-pages-press.md",
+      "linked_sections": [],
+      "why_it_matters": "W&B is a mature ML experiment tracking and observability product that signals how model ops tooling translates into enterprise sales and integrations.",
+      "reliability_tier": "strong-secondary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Product positioning: experiment tracking, model monitoring, datasets and model registries; enterprise SaaS with M&A/partnership activity historically reported in press. Additional precise press links (CoreWeave acquisition, partnership pages) need to be captured and cited.",
+        "Intended sections: Provider landscape (observability + evals), Commercial moat (enterprise workflows), Appendix (press citations)"
+      ],
+      "open_questions": [
+        "Capture press/press-release links for acquisition or partnerships (CoreWeave, etc.) and exact enterprise signals."
+      ],
+      "draft_implications": [
+        "W&B is an example of a tooling company that expanded from experiment tracking into model/serving integrations; analogous expansion paths are possible in LLM harness tooling but require enterprise sales channels.",
+        "---",
+        "## Next research tasks (priority)",
+        "1. Verify and capture customer-case links and funding press for Pinecone, LangChain, LlamaIndex, and W&B (Priority: high).",
+        "2. Populate the provider comparison matrix CSV with the rows updated here and collect \"used-by\" dependents counts via GitHub network pages for OSS projects (Priority: high).",
+        "3. Map integration hooks and minimal engineering effort to support LangChain, LlamaIndex, Langfuse, Promptfoo, and Chroma for an observability/eval SDK (Priority: medium).",
+        "4. Recruit 2\t6 interviews with platform engineers running production LLM apps to validate appendix claims about priority of observability vs evals vs memory orchestration (Priority: high).",
+        "5. Add missing citations and update the appendix table; mark appendix done once all top-20 provider cells have source links and access dates.",
+        "(Notes: all repo metrics and product claims above are sourced from the respective GitHub repository front pages and vendor pages accessed on 2026-03-21.)"
       ]
     },
     {
