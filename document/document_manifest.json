@@ -41,14 +41,14 @@
       "section_id": "05-technical-bottlenecks",
       "title": "Technical bottlenecks",
       "file": "document/sections/05-technical-bottlenecks.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Analyze solved, partially solved, and unsolved technical problems."
     },
     {
       "section_id": "06-commercial-moat",
       "title": "Commercial landscape and moat analysis",
       "file": "document/sections/06-commercial-moat.md",
-      "status": "pending",
+      "status": "draft",
       "summary": "Where value accrues, defensibility assessment, role of open source."
     },
     {

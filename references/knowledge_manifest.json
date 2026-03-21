@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-03-21T02:36:05.975967+00:00",
+  "updated_at": "2026-03-21T02:39:12.859878+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -163,6 +163,50 @@
       ],
       "draft_implications": [
         "Eval tooling that offers private CI integration, audit logs, and enterprise governance has a clear buyer: platform teams and compliance-oriented enterprises.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "langsmith-langchain-observability-product",
+      "title": "LangSmith (LangChain observability product)",
+      "url": "https://docs.langchain.com/langsmith/observability and https://smith.langchain.com/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/langsmith-langchain-observability-product.md",
+      "linked_sections": [],
+      "why_it_matters": "LangSmith (LangChain's observability offering) is a major vendor-integrated observability platform. It demonstrates vendor-led integration with agent frameworks and provides features like tracing, dashboards, alerts, and automations.",
+      "reliability_tier": "strong-secondary (official docs + product pages)",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Product capabilities: tracing, session replay, dashboards, alerts, automations, integrations with OpenAI/Anthropic/other providers, CI/automation hooks, and feedback/annotation flows. Docs show trace data formats and automation rules.",
+        "Intended sections: Provider landscape (observability), Technical bottlenecks (trace schema, integrations), Appendix (feature matrix)"
+      ],
+      "open_questions": [
+        "Comparative adoption (LangSmith vs Langfuse) in production LangChain apps; differences in enterprise feature depth and pricing."
+      ],
+      "draft_implications": [
+        "Observability solutions tied to LangChain distribution are strategically advantaged for developer adoption; interoperability with OpenTelemetry / Langfuse improves ecosystem compatibility.",
+        "---"
+      ]
+    },
+    {
+      "source_id": "anthropic-engineering-postmortem",
+      "title": "Anthropic engineering postmortem",
+      "url": "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/anthropic-engineering-postmortem.md",
+      "linked_sections": [],
+      "why_it_matters": "A detailed, high-quality engineering postmortem from a major model provider. Shows real-world complexity of non-deterministic failures, cross-platform effects, and why observability/eval coverage must be sensitive to subtle infra changes.",
+      "reliability_tier": "primary",
+      "date_accessed": "2026-03-21",
+      "evidence": [
+        "Published Sep 17, 2025. Describes three infrastructure bugs that intermittently degraded responses (context-window routing error, output corruption due to misconfiguration, and an approximate top-k XLA:TPU miscompilation). Explains detection difficulty, cross-platform variability, and mitigation steps (more sensitive evaluations, continuous quality checks in production, faster debugging tooling).",
+        "Intended sections: Technical bottlenecks (debugging non-determinism, eval sensitivity), Customer JTBD (importance of production-grade monitoring), Appendix (case study)"
+      ],
+      "open_questions": [
+        "How often comparable incidents are reported publicly by other providers; whether standard observability tools would have detected these earlier."
+      ],
+      "draft_implications": [
+        "Real-world production failures are messy and often require specialized instrumentation and evaluation hooks; observability that includes platform/configuration metadata and hardware-aware checks is valuable.",
         "---",
         "## Quick funding & traction signals (initial web findings)",
         "> Note: these are initial, verifiable signals captured from vendor blogs, press releases, and GitHub front pages. They are starting points for the provider comparison matrix and must be expanded/verified for the appendix.",
@@ -172,7 +216,6 @@
         "Customers: example customers listed in handbook/press (Langfuse handbook / customers page). Source: https://langfuse.com/handbook/chapters/customers",
         "LlamaIndex",
         "Series A: $19M Series A announced Mar 4, 2025 (press releases and company blog). Sources: https://www.llamaindex.ai/blog/announcing-our-series-a-and-llamacloud-general-availability and PR Newswire article",
-        "Product: LlamaParse (cloud document agent), customer case pages: https://llamaindex.ai/llamaparse and customer vignettes on the company site",
         "LangChain",
         "Series B / growth funding: major round announced Oct 20, 2025 (LangChain blog). LangSmith product commercialization described on LangChain site. Sources: https://blog.langchain.com/series-b/ and https://www.langchain.com/langsmith",
         "Pinecone",

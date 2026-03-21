@@ -80,6 +80,44 @@
 
 ---
 
+## Source: LangSmith (LangChain observability product)
+- URL: https://docs.langchain.com/langsmith/observability and https://smith.langchain.com/
+- Why this source matters: LangSmith (LangChain's observability offering) is a major vendor-integrated observability platform. It demonstrates vendor-led integration with agent frameworks and provides features like tracing, dashboards, alerts, and automations.
+- Reliability tier: strong-secondary (official docs + product pages)
+- Date accessed: 2026-03-21
+
+### Evidence extracted
+- Product capabilities: tracing, session replay, dashboards, alerts, automations, integrations with OpenAI/Anthropic/other providers, CI/automation hooks, and feedback/annotation flows. Docs show trace data formats and automation rules.
+  - Intended sections: Provider landscape (observability), Technical bottlenecks (trace schema, integrations), Appendix (feature matrix)
+  - Confidence: high
+
+### Open questions
+- Comparative adoption (LangSmith vs Langfuse) in production LangChain apps; differences in enterprise feature depth and pricing.
+
+### Draft implications
+- Observability solutions tied to LangChain distribution are strategically advantaged for developer adoption; interoperability with OpenTelemetry / Langfuse improves ecosystem compatibility.
+
+---
+
+## Source: Anthropic engineering postmortem
+- URL: https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
+- Why this source matters: A detailed, high-quality engineering postmortem from a major model provider. Shows real-world complexity of non-deterministic failures, cross-platform effects, and why observability/eval coverage must be sensitive to subtle infra changes.
+- Reliability tier: primary
+- Date accessed: 2026-03-21
+
+### Evidence extracted
+- Published Sep 17, 2025. Describes three infrastructure bugs that intermittently degraded responses (context-window routing error, output corruption due to misconfiguration, and an approximate top-k XLA:TPU miscompilation). Explains detection difficulty, cross-platform variability, and mitigation steps (more sensitive evaluations, continuous quality checks in production, faster debugging tooling).
+  - Intended sections: Technical bottlenecks (debugging non-determinism, eval sensitivity), Customer JTBD (importance of production-grade monitoring), Appendix (case study)
+  - Confidence: high
+
+### Open questions
+- How often comparable incidents are reported publicly by other providers; whether standard observability tools would have detected these earlier.
+
+### Draft implications
+- Real-world production failures are messy and often require specialized instrumentation and evaluation hooks; observability that includes platform/configuration metadata and hardware-aware checks is valuable.
+
+---
+
 ## Quick funding & traction signals (initial web findings)
 > Note: these are initial, verifiable signals captured from vendor blogs, press releases, and GitHub front pages. They are starting points for the provider comparison matrix and must be expanded/verified for the appendix.
 
@@ -90,7 +128,6 @@
 
 - LlamaIndex
   - Series A: $19M Series A announced Mar 4, 2025 (press releases and company blog). Sources: https://www.llamaindex.ai/blog/announcing-our-series-a-and-llamacloud-general-availability and PR Newswire article
-  - Product: LlamaParse (cloud document agent), customer case pages: https://llamaindex.ai/llamaparse and customer vignettes on the company site
 
 - LangChain
   - Series B / growth funding: major round announced Oct 20, 2025 (LangChain blog). LangSmith product commercialization described on LangChain site. Sources: https://blog.langchain.com/series-b/ and https://www.langchain.com/langsmith
