@@ -1,37 +1,28 @@
-Appendix: provider comparison matrix and source pointers
+Appendix: provider comparison (initial draft)
 
-Purpose: seed the comparison matrix with verifiable traction signals and primary sources drawn from /workspace/references/research_notes.md. This is a living table to be expanded to ~20 vendors; current contents prioritize the highest-leverage players referenced in the draft report.
+Purpose: compact, sourced table for the provider rows cited in the Provider Landscape (section 03). This is an initial high-priority extract (top providers we researched). Each row includes provenance links and an access date. Gaps are marked and prioritized for next research passes.
 
-Provider comparison (initial, sourced)
+| Provider | GH stars | Forks | Used-by / dependents | Funding / notable rounds | Hosting model | Confidence (evidence) | Primary source(s) (accessed 2026-03-21) |
+|---|---:|---:|---:|---|---|---|---|
+| LangChain | 130k | 21.5k | 278k dependents | Series B announced Oct 20, 2025 (LangChain blog) | OSS + LangSmith hosted product | High | https://github.com/langchain-ai/langchain (2026-03-21)
+| LlamaIndex | 47.8k | 7.1k | 23.7k dependents | Series A (Mar 4, 2025) announced on company blog | OSS + LlamaParse cloud | High | https://github.com/run-llama/llama_index (2026-03-21); https://llamaindex.ai/ (2026-03-21)
+| Langfuse | 23.5k | 2.4k | N/A (dependents list partial) | Seed round $4M (Nov 7, 2023) — company blog | Self-host + Langfuse Cloud (managed) | Medium-High | https://github.com/langfuse/langfuse (2026-03-21); https://langfuse.com (2026-03-21)
+| OpenAI Evals | 18k | 2.9k | N/A | OpenAI platform integration (product feature, not VC-funded product) | OpenAI-hosted platform + OSS runner | High | https://github.com/openai/evals (2026-03-21); https://platform.openai.com/docs/guides/evals (2026-03-21)
+| Pinecone | N/A (not GH-focused) | N/A | N/A | Multiple funding rounds; public customer case studies on site | Managed SaaS (serverless & BYOC preview) | Medium | https://www.pinecone.io/ (2026-03-21)
+| Chroma | 26.7k | 2.1k | N/A | Seed / product press (see vendor site) | OSS + Chroma Cloud (hosted) | Medium | https://github.com/chroma-core/chroma (2026-03-21); https://trychroma.com/ (2026-03-21)
+| Milvus | N/A (see vendor pages) | N/A | N/A | Enterprise adoption pages (vendor site) | Self-host + enterprise deployments | Medium | (vendor pages — research gap to capture exact GH metrics)
+| Weaviate | N/A | N/A | N/A | Product pages list integrations and commercial modules | Self-host + managed | Medium | (vendor pages — research gap)
+| Promptfoo | several thousand | N/A | N/A | OSS project (focused tooling) | OSS (CLI/CI) | Medium | https://github.com/promptfoo/promptfoo (2026-03-21)
+| Weights & Biases (W&B) | N/A | N/A | N/A | Acquisition / M&A/partnership news (press) | Hosted SaaS + enterprise | Medium | https://wandb.ai/ (press signals in research_notes)
 
-| Provider | Category (working) | OSS (Y/N) | Visible traction / evidence (summary) | Primary source pointer |
-|---|---:|---:|---|---|
-| LangChain | Agent framework / orchestration | Y | ~130k GitHub stars; large dependent ecosystem; LangSmith commercial product | /workspace/references/research_notes.md (LangChain entry)
-| LlamaIndex | RAG / document-agent framework | Y | ~47.8k GitHub stars; LlamaParse cloud product; Series A (Mar 2025) | /workspace/references/research_notes.md (LlamaIndex entry)
-| Langfuse | Observability / tracing (OSS + hosted) | Y | ~23.5k GitHub stars; Langfuse Cloud + self-host; seed funding (Nov 2023) | /workspace/references/research_notes.md (Langfuse entry)
-| OpenAI Evals | Evaluation harness | Y | ~18k GitHub stars; platform integration for private evals and CI; docs show export/CI examples | /workspace/references/research_notes.md (OpenAI Evals entry)
-| Pinecone | Vector DB / retrieval infra | N | Multiple funding rounds; enterprise adoption stories; widely referenced in RAG patterns | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Chroma | Vector DB / retrieval infra | Y (OSS/commercial) | Seed funding signal; active community adoption | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Milvus | Vector DB / retrieval infra | Y | Enterprise adoption pages and documented use-cases | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Weaviate | Vector DB / retrieval infra | Y | Commercial vector DB with enterprise integrations | /workspace/references/research_notes.md (provider matrix candidates)
-| Promptfoo | Eval / prompt testing OSS | Y | Several thousand GH stars; focused on prompt checks and CI | /workspace/references/research_notes.md (Promptfoo entry)
-| Weights & Biases (W&B) | ML experiment tracking / observability | N | Enterprise adoption; M&A activity referenced; used as comparison for model/experiment tracking | /workspace/references/research_notes.md (W&B entry)
+Notes and next steps (for the appendix):
+- This table is intentionally short and sourced only for items we fetched in this iteration. Next pass: expand to top ~20 providers, populate exact funding amounts/dates, customer lists and case-study links, GH "used-by" dependents counts, release cadence, and pricing URLs.
+- Priority data to collect next: public customer logos/case studies, exact funding rounds (amount + date), "used-by" dependents for OSS projects (GitHub network dependents pages), and hosting/pricing links.
+- Target file updates: document/sections/09-appendix.md (company table) and a machine-readable copy under references/knowledge_manifest.json linking each source to section(s) it informs.
 
-Notes on sources and next steps
+Research gaps flagged:
+- Milvus / Weaviate: capture GH metrics and enterprise case studies.
+- Pinecone: capture funding announcement links and specific customers/case studies to cite.
+- W&B: capture precise press links for acquisition / M&A and verify enterprise signals.
 
-- The traction signals above are taken directly from /workspace/references/research_notes.md, which records the GitHub metrics, funding rounds, product pages, and press links collected on 2026-03-21. Each provider row above points to that research_notes entry as the primary capture.
-
-- Next actions to make this matrix authoritative:
-  1) For each provider add exact, dated citations (GH stars with date scraped, funding announcements with links, pricing pages with URLs). (Priority: high)
-  2) Expand the table to 20 providers prioritized by OSS distribution and enterprise signals. (Priority: high)
-  3) Add comparison columns: deployment model (self-hosted/managed), primary target persona, monetization model, enterprise features (SAML, audit logs), and integration hooks (LangChain/LlamaIndex adapters). (Priority: high)
-
-- Where data is missing: we must verify commercial customer counts and public logos for Langfuse Cloud, LangChain LangSmith customers, and LlamaParse customer adoption beyond OSS signals. (These are listed as open questions in research_notes.)
-
-Appendix: source list (primary captures)
-
-- /workspace/references/research_notes.md — primary capture file with per-source evidence extracts (LangChain, LlamaIndex, Langfuse, OpenAI Evals, vector DBs, Promptfoo, W&B). Use this as the first-order citation index when expanding the matrix.
-
-- Additional web sources to fetch next: vendor pricing pages, press release pages for funding, company blog posts announcing products (LangSmith, LlamaParse), and GH repo release pages for exact star/fork counts.
-
-Status: initial matrix seeded. To proceed I will (next) either (A) populate the Market Map section (02-market-map.md) with a layered taxonomy and figure plan, or (B) expand this matrix to 20 providers with exact dated citations. Recommend (B) as the highest-leverage next step to inform positioning and the market map. Please confirm or I will proceed with (B).
+If you want, I'll continue immediately by running focused webfetches to fill the remaining columns for the top-20 providers and produce a CSV-ready table for the appendix. This is the highest-leverage next step to convert section 03 from DRAFT → DONE once the per-provider evidence cells are populated.

@@ -242,99 +242,95 @@ References (selected)
 
 Provider landscape
 
-Purpose: Catalog the most practically important providers and OSS projects mapped to the harness engineering taxonomy. This section is a focused, evidence-linked snapshot (not exhaustive). It draws directly from /workspace/references/research_notes.md and vendor captures; the table below intentionally restricts factual claims to evidence already collected (dated 2026-03-21). Where evidence is missing, the table marks the gap and the evidence plan.
+Purpose: Catalog the most practically important providers and OSS projects mapped to the harness engineering taxonomy. This section is a focused, evidence-linked snapshot (not exhaustive). It draws from /workspace/references/research_notes.md and public vendor/GitHub captures (accessed 2026-03-21). Where evidence is missing the table marks the gap and the evidence plan.
 
-Top providers (compact comparison)
+Top providers (compact, evidenced comparison)
 
-| Provider | Category (working) | OSS / Commercial | Traction / evidence (source) | Hosting model | Primary buyers / users | Key strength | Key gap / limitation (observed or inferred) |
-|---|---:|---|---|---|---|---|---|
-| LangChain | Agent framework / orchestration | OSS + commercial (LangSmith) | ~130k GitHub stars; high "used-by" signals; LangSmith product announced (research_notes, 2026-03-21) | Self-host OSS; LangSmith hosted product | Developer/AI application engineers, platform teams | De-facto developer integration hub; large ecosystem of integrations (models, vector stores, SDKs) | Focused on developer UX; enterprise-grade observability/governance requires add-on (inference: product gaps cited in community) |
-| LlamaIndex | RAG / document-agent framework | OSS + commercial (LlamaParse / LlamaCloud) | ~47.8k GitHub stars; Series A announced Mar 2025 (research_notes) | OSS + hosted cloud for commercial users | Document-agent engineers, analytics teams | Strong document ingestion and connector patterns for RAG; clear OSS-to-cloud pathway | Commercial traction beyond OSS needs clearer public evidence (research gap) |
-| Langfuse | Observability / tracing for LLMs | OSS + hosted (Langfuse Cloud) | ~23.5k GitHub stars; seed funding announced (research_notes) | Self-host + managed cloud | Platform/infra engineers, SREs for LLM apps | Purpose-built LLM tracing and eval features; broad integrations (LangChain, LlamaIndex, OpenTelemetry) | Public enterprise customer lists and scale-of-production signals limited in public sources |
-| OpenAI Evals | Evaluation harness / framework | OSS (OpenAI repo) + platform integration | ~18k GitHub stars; integrated OpenAI platform docs and private eval support (research_notes) | Hosted via OpenAI platform; OSS for private use | Evaluation teams, applied researchers, platform teams | Canonical eval framework with CI examples and exports; platform integration simplifies usage | Tied to OpenAI ecosystem; cross-provider neutrality and vendor-agnostic private eval workflows remain gaps |
-| Pinecone | Vector DB / retrieval infra | Commercial (proprietary) | Multiple funding rounds and adoption stories (research_notes) | Managed cloud (SaaS) | Infra teams, app engineers using RAG | Mature managed vector service with enterprise features and scale | Competition from OSS and other hosted vectors; pricing and vendor lock-in considerations for buyers |
-| Chroma | Vector DB / retrieval infra | OSS + commercial offerings | Seed funding and product docs reported (research_notes) | Self-host + managed options (vendor page) | Devs building RAG, prototyping to production | OSS-first vector DB with developer ergonomics | Needs public enterprise traction signals to compare vs Pinecone/Milvus |
-| Milvus | Vector DB / retrieval infra | OSS + enterprise | Enterprise adoption pages and use-cases (research_notes) | Self-host + enterprise deployments | Data/infra teams integrating search and vector workloads | Strong in enterprise deployments and integrations | Developer UX and packaging for small teams less emphasized |
-| Weaviate | Vector DB / retrieval infra | OSS + commercial modules | Commercial product pages and integrations (research_notes) | Self-host + managed | Infra and platform teams | Graph-aware vector DB with schema and semantic search features | Competes with several similar vendors; differentiation depends on feature surface and enterprise integrations |
-| Promptfoo | Prompt & eval testing | OSS | Several thousand stars on GitHub (research_notes) | OSS (CI/CLI) | Developers and QA teams testing prompts and regressions | Focused tooling for prompt tests and CI integration | Narrow scope; needs integration with broader observability/eval platforms for enterprise workflows |
-| Weights & Biases (W&B) | ML experiment tracking / observability | Commercial (enterprise) | Enterprise adoption and M&A/partnership news surfaced in research_notes | Hosted SaaS + enterprise options | ML platform teams, applied ML engineers | Mature experiment tracking and observability workflows that teams already trust | Historically ML model-focused; adapting to LLM-specific telemetry and agent traces is incremental work |
+| Provider | Category (working) | OSS / Commercial | Key traction evidence (source, date) | Hosting model | Primary buyers / users | Key strength | Key gap / limitation |
+|---|---|---|---|---|---|---|---|
+| LangChain | Agent framework / orchestration | OSS + commercial (LangSmith) | GitHub: 130k★, 21.5k forks, 278k dependents; LangChain README mentions LangSmith (https://github.com/langchain-ai/langchain — accessed 2026-03-21) | OSS self-host; LangSmith hosted product | Developer/AI app engineers, platform teams | De-facto developer integration hub; very large ecosystem and dependency surface for downstream tools | Enterprise-grade observability/governance is add-on (needs integrations); some orgs avoid LangChain due to risk of third-party dependency
+| LlamaIndex | RAG / document-agent framework | OSS + commercial (LlamaParse / LlamaCloud) | GitHub: 47.8k★, 7.1k forks, 23.7k dependents; product pages describe LlamaParse (https://github.com/run-llama/llama_index, https://llamaindex.ai/ — accessed 2026-03-21) | OSS self-host + hosted cloud for LlamaParse | Document-agent engineers, analytics teams | Strong document ingestion, connector patterns, OSS→cloud pathway | Public commercial customer traction beyond OSS signals is limited in public sources (evidence gap)
+| Langfuse | Observability / tracing & evals | OSS + hosted (Langfuse Cloud) | GitHub: 23.5k★, 2.4k forks; public blog and self-host docs; Langfuse Cloud demo/docs (https://github.com/langfuse/langfuse, https://langfuse.com — accessed 2026-03-21) | Self-host + managed cloud | Platform/infra engineers, SREs, LLMOps teams | Purpose-built LLM tracing, evals, prompt management; many integrations (LangChain, LlamaIndex, OpenTelemetry) | Public enterprise customer-scale signals and large-customer case studies are limited in public sources
+| OpenAI Evals | Evaluation harness / framework | OSS (OpenAI repo) + platform integration | GitHub: 18k★, 2.9k forks; Platform docs: OpenAI Evals integrated into OpenAI dashboard; supports private evals (https://github.com/openai/evals; https://platform.openai.com/docs/guides/evals — accessed 2026-03-21) | Hosted via OpenAI platform (plus OSS runner) | Evaluation teams, applied researchers, platform teams | Canonical eval framework with registry and platform integration; easy private evals on OpenAI platform | Tied to OpenAI ecosystem; vendor-agnostic private eval CI workflows still need standardization
+| Pinecone | Vector DB / retrieval infra | Commercial (proprietary) | Company site and customer case studies, pricing and security pages (https://www.pinecone.io — accessed 2026-03-21) | Managed cloud (SaaS), now with BYOC preview | Infra teams, app engineers using RAG | Mature managed vector service with enterprise features (SLA, compliance) and customer case studies | Competes with OSS vectors and other vendors; pricing and vendor-lock considerations for buyers
+| Chroma | Vector DB / retrieval infra | OSS + commercial cloud (Chroma Cloud) | GitHub: 26.7k★, forks; Chroma Cloud product pages (https://github.com/chroma-core/chroma; https://trychroma.com — accessed 2026-03-21) | Self-host + hosted (Chroma Cloud) | Developers building RAG, prototyping → production | OSS-first vector DB with developer ergonomics and quick prototyping | Enterprise-scale adoption and large-customer evidence not fully public
+| Milvus | Vector DB / retrieval infra | OSS + enterprise | OSS repo and enterprise use-case pages (Milvus site; GitHub signals) | Self-host + enterprise deployments | Data/infra teams integrating search and vector workloads | Strong focus on enterprise deployment and integrations | Developer ergonomics for small teams less emphasized in materials
+| Weaviate | Vector DB / retrieval infra | OSS + commercial modules | Product pages and integrations (weaviate.io) | Self-host + managed | Infra/platform teams | Graph-aware vector DB with schema and semantic search features | Differentiation among many vector vendors relies on feature surface and enterprise integrations
+| Promptfoo | Prompt & eval testing | OSS | GitHub adoption (several thousand stars) — focused prompt testing & CI (https://github.com/promptfoo/promptfoo — accessed 2026-03-21) | OSS (CLI/CI) | Developers, QA teams doing prompt regression testing | Narrow, focused tooling for prompt tests and CI | Narrow scope; needs integration with broader observability/eval platforms for enterprise workflows
+| Weights & Biases (W&B) | Experiment tracking / observability | Commercial (enterprise) | Public enterprise adoption, acquisition/partnership news (wandb.ai; press) | Hosted SaaS + enterprise options | ML platform teams, applied ML engineers | Mature experiment tracking and observability workflows trusted by teams | Historically ML-focused; adapting to LLM-specific telemetry and agent traces is incremental work
 
-Source note: traction numbers and product claims above are taken from /workspace/references/research_notes.md and the source captures linked there (accessed 2026-03-21). Where a provider row uses phrasing like "research gap" or "inference", that signals claims that need direct sourcing (next-actions below).
 
-Synthesis: what this provider set tells us (evidence-linked observations)
+Evidence provenance: key source URLs (accessed 2026-03-21)
+- LangChain GH: https://github.com/langchain-ai/langchain
+- LlamaIndex GH / product: https://github.com/run-llama/llama_index | https://llamaindex.ai/
+- Langfuse GH / site: https://github.com/langfuse/langfuse | https://langfuse.com/
+- OpenAI Evals GH / docs: https://github.com/openai/evals | https://platform.openai.com/docs/guides/evals
+- Pinecone: https://www.pinecone.io/
+- Chroma GH / cloud: https://github.com/chroma-core/chroma | https://trychroma.com/
+- Promptfoo GH: https://github.com/promptfoo/promptfoo
 
-- OSS-led distribution dominates the developer-facing orchestration layer. LangChain and LlamaIndex show outsized GitHub traction (LangChain ~130k stars; LlamaIndex ~47.8k stars) and function as de facto integration hubs for many downstream tools (research_notes entries for LangChain and LlamaIndex). Implication: any SDK, observability, or eval product must prioritize first-class LangChain and LlamaIndex integrations to reach developers and platform teams quickly.
 
-- Observability, evals, and trace capture are nascent but converging into product-category winners. Langfuse (OSS+cloud) and OpenAI Evals (OSS + OpenAI platform) validate demand for structured tracing and private eval pipelines. Evidence: Langfuse repo + cloud offering; OpenAI Evals repo and platform docs (research_notes). Implication: a standards-friendly trace schema and vendor-neutral SDK could reduce integration friction and win early adopters.
+Synthesis and implications (evidence-linked observations)
 
-- Retrieval/vector infra is crowded but still differentiable. Multiple vendors (Pinecone, Chroma, Milvus, Weaviate) compete along axes of managed scale, OSS freedom, schema features, and enterprise integrations. Evidence: vendor pages and funding signals summarized in research_notes. Implication: vector infra is not a greenfield wedge unless the newcomer offers a materially better cost/latency/feature tradeoff or a specialized vertical integration.
+- OSS-led distribution dominates the developer-facing orchestration layer. Evidence: LangChain (130k★, 278k dependents) and LlamaIndex (47.8k★) are the largest developer touchpoints. Implication: SDKs, observability, and eval products must prioritize first-class LangChain and LlamaIndex integrations to reach developers and platform teams quickly.
 
-- Observable gaps across the stack (evidence + inference):
-  - Cross-stack, vendor-neutral trace schema and lightweight SDKs for hooking into LangChain/LlamaIndex agent events (supported by Langfuse and community discussion; research_notes) — many teams still write glue code.
-  - Vendor-neutral private eval tooling with enterprise-grade audit logs and CI integration (OpenAI Evals reduces friction but is OpenAI-tied; community projects like promptfoo exist but are narrower). Evidence: OpenAI Evals features and promptfoo scope in research_notes.
-  - Memory lifecycle and standardized interfaces for long-lived state (community threads and provider docs indicate ad-hoc implementations; research gap noted in research_notes).
+- Observability, evals, and trace capture are nascent but converging into product-category winners. Evidence: Langfuse (OSS+cloud) and OpenAI Evals (OSS + platform integration) show both community and platform validation. Implication: a standards-friendly trace schema and vendor-neutral SDK could reduce integration friction and win early adopters.
+
+- Retrieval/vector infra is crowded but still differentiable. Evidence: Pinecone (managed SaaS), Chroma (OSS+cloud), Milvus, Weaviate each emphasize different tradeoffs (managed scale, OSS freedom, schema/graph features). Implication: vector infra is not a greenfield wedge unless a newcomer offers materially better cost/latency/feature tradeoffs or vertical-specialized integrations.
+
+- Observable gaps across the stack (supported by evidence + documented research gaps):
+  - Cross-stack, vendor-neutral trace schema and lightweight SDKs for hooking into LangChain/LlamaIndex agent events (Langfuse shows one approach; many teams still write glue code). Source: Langfuse docs + LangChain README.
+  - Vendor-neutral private eval tooling with enterprise-grade audit logs and CI integration (OpenAI Evals provides a platform-tied option; community projects like promptfoo are narrower). Source: OpenAI Evals docs; promptfoo repo.
+  - Memory lifecycle and standardized interfaces for long-lived state (community threads and provider docs indicate ad-hoc and fragmented implementations). Evidence gap: requires interviews and code scans.
+
 
 Implications for an observability/eval SDK MVP (evidence-driven)
 
-- Distribution channel: ship as SDKs/CLI with first-class LangChain and LlamaIndex integrations (evidence: their OSS dominance). Provide extension points (callbacks, agent hooks) compatible with LangSmith/LangGraph where possible.
-- Minimum feature set: structured trace capture (per-call inputs/outputs, embeddings use, vector DB calls), private eval runners with CI integration, lightweight UI or export formats for audit logs, and low friction self-host option.
+- Distribution channel: ship SDKs/CLI with first-class LangChain and LlamaIndex integrations (evidence: their OSS dominance). Provide extension points (callbacks, agent hooks) compatible with LangSmith/LangGraph where possible.
+- Minimum feature set: structured trace capture (per-call inputs/outputs, embeddings consumption, vector DB calls), private eval runners with CI integration, exportable audit logs, and a low-friction self-host option.
 - Differentiation: vendor-neutral trace schema, small-footprint SDKs, and pre-built adapters for the top vector DBs and orchestration frameworks. Emphasize enterprise features (audit logs, RBAC, data residency) as roadmap items rather than initial scope.
 
+
 Concrete next actions (to convert this draft into an authoritative comparative appendix)
-
-1) Populate the provider comparison matrix (top ~20) with per-provider evidence: exact GitHub stars/forks/used-by counts, funding rounds (amount and date), public customer lists, pricing model links, and hosting model. Source each entry to vendor pages / GH captures. (Priority: high)
-   - Responsible: research task. Sources to use: vendor docs, GitHub, TechCrunch/PR wires, vendor blog posts. Target file: document/sections/09-appendix.md (company table) and references/source_captures/.
-
+1) Populate the provider comparison matrix (top ~20) with per-provider evidence: exact GitHub stars/forks/used-by counts, funding rounds (amount and date), public customer lists, pricing model links, and hosting model. Source each cell to vendor pages / GH captures. (Priority: high)
 2) For the top-6 providers (LangChain, LlamaIndex, Langfuse, OpenAI Evals, Pinecone, Chroma) capture concrete integration hooks and sample code paths (SDK callbacks, webhook endpoints, CLI commands). This maps directly to engineering effort for an SDK MVP. (Priority: high)
-
 3) Fill research gaps where the table above marks "research gap": specifically, gather public traction metrics for Pinecone, Chroma, Milvus, Weaviate, Promptfoo, and W&B to replace qualitative statements with sourced numbers. (Priority: medium)
-
 4) Interview 2–3 platform engineers running production LLM apps to validate that observability + private evals are the highest operational pains vs memory management or routing. Prepare a 10-question script and recruit via LinkedIn/Twitter/OSS community channels. (Priority: high)
 
+
 Section status and rationale
+- Status: DRAFT (upgraded). This iteration extends the provider landscape into a sourced comparison and explicit implications for product design. It remains DRAFT because the comparison matrix needs the per-provider citation cells and integration-hook captures described above before the section meets the "done" quality bar.
+- To mark DONE: populate the per-provider evidence cells for the top ~20 providers and include concrete SDK integration examples for the top-6 providers.
 
-- Status: DRAFT (upgraded). This iteration moves the provider landscape from a short snapshot to a sourced comparison and explicit implications for product design. It remains DRAFT because the comparison matrix needs the per-provider citation cells described in next-actions #1 and #3 before the section meets the "done" quality bar.
-
-- Remaining evidence tasks are documented above. Once the comparison matrix is populated and the top-6 integration hooks are captured, convert this section to DONE.
 
 References and provenance
+- Primary source captures used to build this section are recorded in /workspace/references/research_notes.md and the capture files linked there. Major evidence items: LangChain repo capture, LlamaIndex capture, Langfuse capture, OpenAI Evals capture, and quick funding/traction signals noted in research_notes (accessed 2026-03-21).
 
-- Primary source captures used to build this section are recorded in /workspace/references/research_notes.md and the capture files linked from references/knowledge_manifest.json (accessed 2026-03-21). Major evidence items: LangChain repo capture, LlamaIndex capture, Langfuse capture, OpenAI Evals capture, and quick funding/traction signals noted in research_notes.
+Appendix: provider comparison (initial draft)
 
-Appendix: provider comparison matrix and source pointers
+Purpose: compact, sourced table for the provider rows cited in the Provider Landscape (section 03). This is an initial high-priority extract (top providers we researched). Each row includes provenance links and an access date. Gaps are marked and prioritized for next research passes.
 
-Purpose: seed the comparison matrix with verifiable traction signals and primary sources drawn from /workspace/references/research_notes.md. This is a living table to be expanded to ~20 vendors; current contents prioritize the highest-leverage players referenced in the draft report.
+| Provider | GH stars | Forks | Used-by / dependents | Funding / notable rounds | Hosting model | Confidence (evidence) | Primary source(s) (accessed 2026-03-21) |
+|---|---:|---:|---:|---|---|---|---|
+| LangChain | 130k | 21.5k | 278k dependents | Series B announced Oct 20, 2025 (LangChain blog) | OSS + LangSmith hosted product | High | https://github.com/langchain-ai/langchain (2026-03-21)
+| LlamaIndex | 47.8k | 7.1k | 23.7k dependents | Series A (Mar 4, 2025) announced on company blog | OSS + LlamaParse cloud | High | https://github.com/run-llama/llama_index (2026-03-21); https://llamaindex.ai/ (2026-03-21)
+| Langfuse | 23.5k | 2.4k | N/A (dependents list partial) | Seed round $4M (Nov 7, 2023) — company blog | Self-host + Langfuse Cloud (managed) | Medium-High | https://github.com/langfuse/langfuse (2026-03-21); https://langfuse.com (2026-03-21)
+| OpenAI Evals | 18k | 2.9k | N/A | OpenAI platform integration (product feature, not VC-funded product) | OpenAI-hosted platform + OSS runner | High | https://github.com/openai/evals (2026-03-21); https://platform.openai.com/docs/guides/evals (2026-03-21)
+| Pinecone | N/A (not GH-focused) | N/A | N/A | Multiple funding rounds; public customer case studies on site | Managed SaaS (serverless & BYOC preview) | Medium | https://www.pinecone.io/ (2026-03-21)
+| Chroma | 26.7k | 2.1k | N/A | Seed / product press (see vendor site) | OSS + Chroma Cloud (hosted) | Medium | https://github.com/chroma-core/chroma (2026-03-21); https://trychroma.com/ (2026-03-21)
+| Milvus | N/A (see vendor pages) | N/A | N/A | Enterprise adoption pages (vendor site) | Self-host + enterprise deployments | Medium | (vendor pages — research gap to capture exact GH metrics)
+| Weaviate | N/A | N/A | N/A | Product pages list integrations and commercial modules | Self-host + managed | Medium | (vendor pages — research gap)
+| Promptfoo | several thousand | N/A | N/A | OSS project (focused tooling) | OSS (CLI/CI) | Medium | https://github.com/promptfoo/promptfoo (2026-03-21)
+| Weights & Biases (W&B) | N/A | N/A | N/A | Acquisition / M&A/partnership news (press) | Hosted SaaS + enterprise | Medium | https://wandb.ai/ (press signals in research_notes)
 
-Provider comparison (initial, sourced)
+Notes and next steps (for the appendix):
+- This table is intentionally short and sourced only for items we fetched in this iteration. Next pass: expand to top ~20 providers, populate exact funding amounts/dates, customer lists and case-study links, GH "used-by" dependents counts, release cadence, and pricing URLs.
+- Priority data to collect next: public customer logos/case studies, exact funding rounds (amount + date), "used-by" dependents for OSS projects (GitHub network dependents pages), and hosting/pricing links.
+- Target file updates: document/sections/09-appendix.md (company table) and a machine-readable copy under references/knowledge_manifest.json linking each source to section(s) it informs.
 
-| Provider | Category (working) | OSS (Y/N) | Visible traction / evidence (summary) | Primary source pointer |
-|---|---:|---:|---|---|
-| LangChain | Agent framework / orchestration | Y | ~130k GitHub stars; large dependent ecosystem; LangSmith commercial product | /workspace/references/research_notes.md (LangChain entry)
-| LlamaIndex | RAG / document-agent framework | Y | ~47.8k GitHub stars; LlamaParse cloud product; Series A (Mar 2025) | /workspace/references/research_notes.md (LlamaIndex entry)
-| Langfuse | Observability / tracing (OSS + hosted) | Y | ~23.5k GitHub stars; Langfuse Cloud + self-host; seed funding (Nov 2023) | /workspace/references/research_notes.md (Langfuse entry)
-| OpenAI Evals | Evaluation harness | Y | ~18k GitHub stars; platform integration for private evals and CI; docs show export/CI examples | /workspace/references/research_notes.md (OpenAI Evals entry)
-| Pinecone | Vector DB / retrieval infra | N | Multiple funding rounds; enterprise adoption stories; widely referenced in RAG patterns | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Chroma | Vector DB / retrieval infra | Y (OSS/commercial) | Seed funding signal; active community adoption | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Milvus | Vector DB / retrieval infra | Y | Enterprise adoption pages and documented use-cases | /workspace/references/research_notes.md (Quick funding & traction signals)
-| Weaviate | Vector DB / retrieval infra | Y | Commercial vector DB with enterprise integrations | /workspace/references/research_notes.md (provider matrix candidates)
-| Promptfoo | Eval / prompt testing OSS | Y | Several thousand GH stars; focused on prompt checks and CI | /workspace/references/research_notes.md (Promptfoo entry)
-| Weights & Biases (W&B) | ML experiment tracking / observability | N | Enterprise adoption; M&A activity referenced; used as comparison for model/experiment tracking | /workspace/references/research_notes.md (W&B entry)
+Research gaps flagged:
+- Milvus / Weaviate: capture GH metrics and enterprise case studies.
+- Pinecone: capture funding announcement links and specific customers/case studies to cite.
+- W&B: capture precise press links for acquisition / M&A and verify enterprise signals.
 
-Notes on sources and next steps
-
-- The traction signals above are taken directly from /workspace/references/research_notes.md, which records the GitHub metrics, funding rounds, product pages, and press links collected on 2026-03-21. Each provider row above points to that research_notes entry as the primary capture.
-
-- Next actions to make this matrix authoritative:
-  1) For each provider add exact, dated citations (GH stars with date scraped, funding announcements with links, pricing pages with URLs). (Priority: high)
-  2) Expand the table to 20 providers prioritized by OSS distribution and enterprise signals. (Priority: high)
-  3) Add comparison columns: deployment model (self-hosted/managed), primary target persona, monetization model, enterprise features (SAML, audit logs), and integration hooks (LangChain/LlamaIndex adapters). (Priority: high)
-
-- Where data is missing: we must verify commercial customer counts and public logos for Langfuse Cloud, LangChain LangSmith customers, and LlamaParse customer adoption beyond OSS signals. (These are listed as open questions in research_notes.)
-
-Appendix: source list (primary captures)
-
-- /workspace/references/research_notes.md — primary capture file with per-source evidence extracts (LangChain, LlamaIndex, Langfuse, OpenAI Evals, vector DBs, Promptfoo, W&B). Use this as the first-order citation index when expanding the matrix.
-
-- Additional web sources to fetch next: vendor pricing pages, press release pages for funding, company blog posts announcing products (LangSmith, LlamaParse), and GH repo release pages for exact star/fork counts.
-
-Status: initial matrix seeded. To proceed I will (next) either (A) populate the Market Map section (02-market-map.md) with a layered taxonomy and figure plan, or (B) expand this matrix to 20 providers with exact dated citations. Recommend (B) as the highest-leverage next step to inform positioning and the market map. Please confirm or I will proceed with (B).
+If you want, I'll continue immediately by running focused webfetches to fill the remaining columns for the top-20 providers and produce a CSV-ready table for the appendix. This is the highest-leverage next step to convert section 03 from DRAFT → DONE once the per-provider evidence cells are populated.
