@@ -41,28 +41,28 @@
       "section_id": "05-technical-bottlenecks",
       "title": "Technical bottlenecks",
       "file": "document/sections/05-technical-bottlenecks.md",
-      "status": "draft",
+      "status": "done",
       "summary": "Analyze solved, partially solved, and unsolved technical problems."
     },
     {
       "section_id": "06-commercial-moat",
       "title": "Commercial landscape and moat analysis",
       "file": "document/sections/06-commercial-moat.md",
-      "status": "draft",
+      "status": "done",
       "summary": "Where value accrues, defensibility assessment, role of open source."
     },
     {
       "section_id": "07-breakpoint-analysis",
       "title": "Breakpoint analysis and ranked wedges",
       "file": "document/sections/07-breakpoint-analysis.md",
-      "status": "pending",
+      "status": "done",
       "summary": "Ranked newcomer wedges with evidence and risk assessment."
     },
     {
       "section_id": "08-strategic-recommendation",
       "title": "Strategic recommendations",
       "file": "document/sections/08-strategic-recommendation.md",
-      "status": "pending",
+      "status": "done",
       "summary": "Product recommendation, GTM, roadmap, metrics for PMF."
     },
     {
