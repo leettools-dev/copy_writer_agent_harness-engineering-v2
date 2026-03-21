@@ -28,11 +28,11 @@
 
 ## Compilation
 
-- Sections written: 1/9
-- Missing files: document/sections/02-market-map.md, document/sections/03-provider-landscape.md, document/sections/04-customer-jtbd.md, document/sections/05-technical-bottlenecks.md, document/sections/06-commercial-moat.md, document/sections/07-breakpoint-analysis.md, document/sections/08-strategic-recommendation.md, document/sections/09-appendix.md
+- Sections written: 2/9
+- Missing files: document/sections/02-market-map.md, document/sections/04-customer-jtbd.md, document/sections/05-technical-bottlenecks.md, document/sections/06-commercial-moat.md, document/sections/07-breakpoint-analysis.md, document/sections/08-strategic-recommendation.md, document/sections/09-appendix.md
 - Empty files: none
 
 ## Issues
 
-- missing or empty section files: document/sections/02-market-map.md, document/sections/03-provider-landscape.md, document/sections/04-customer-jtbd.md, document/sections/05-technical-bottlenecks.md, document/sections/06-commercial-moat.md, document/sections/07-breakpoint-analysis.md, document/sections/08-strategic-recommendation.md, document/sections/09-appendix.md
+- missing or empty section files: document/sections/02-market-map.md, document/sections/04-customer-jtbd.md, document/sections/05-technical-bottlenecks.md, document/sections/06-commercial-moat.md, document/sections/07-breakpoint-analysis.md, document/sections/08-strategic-recommendation.md, document/sections/09-appendix.md
 - incomplete sections: Executive summary, Market map and taxonomy, Provider landscape, Customer and JTBD analysis, Technical bottlenecks, Commercial landscape and moat analysis, Breakpoint analysis and ranked wedges, Strategic recommendations, Appendix: sources and comparison matrices
