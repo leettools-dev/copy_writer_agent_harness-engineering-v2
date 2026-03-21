@@ -1,0 +1,77 @@
+{
+  "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
+  "document_type": "research_report",
+  "reference": {
+    "mode": "discovered",
+    "source": "internet",
+    "source_url": "https://www.b2venture.vc/stories/the-evolution-of-the-llm-toolstack---thoughts-on-capturing-value-in-the-genai-tech-stack-as-a-startup",
+    "path": "references/selected_example.md",
+    "notes": "Selected example is a VC market-framing piece (b2venture) useful for taxonomy and wedge thinking but must be supplemented with primary-source evidence and traction data."
+  },
+  "sections": [
+    {
+      "section_id": "01-executive-summary",
+      "title": "Executive summary",
+      "file": "document/sections/01-executive-summary.md",
+      "status": "pending",
+      "summary": "Concise summary of definition, state, top providers, gaps, top 3 wedges, recommended wedge."
+    },
+    {
+      "section_id": "02-market-map",
+      "title": "Market map and taxonomy",
+      "file": "document/sections/02-market-map.md",
+      "status": "pending",
+      "summary": "Define LLM harness engineering and present a structured taxonomy with evidence and boundaries."
+    },
+    {
+      "section_id": "03-provider-landscape",
+      "title": "Provider landscape",
+      "file": "document/sections/03-provider-landscape.md",
+      "status": "pending",
+      "summary": "Detailed provider-level analysis organized by category (commercial and open-source)."
+    },
+    {
+      "section_id": "04-customer-jtbd",
+      "title": "Customer and JTBD analysis",
+      "file": "document/sections/04-customer-jtbd.md",
+      "status": "pending",
+      "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations."
+    },
+    {
+      "section_id": "05-technical-bottlenecks",
+      "title": "Technical bottlenecks",
+      "file": "document/sections/05-technical-bottlenecks.md",
+      "status": "pending",
+      "summary": "Analyze solved, partially solved, and unsolved technical problems."
+    },
+    {
+      "section_id": "06-commercial-moat",
+      "title": "Commercial landscape and moat analysis",
+      "file": "document/sections/06-commercial-moat.md",
+      "status": "pending",
+      "summary": "Where value accrues, defensibility assessment, role of open source."
+    },
+    {
+      "section_id": "07-breakpoint-analysis",
+      "title": "Breakpoint analysis and ranked wedges",
+      "file": "document/sections/07-breakpoint-analysis.md",
+      "status": "pending",
+      "summary": "Ranked newcomer wedges with evidence and risk assessment."
+    },
+    {
+      "section_id": "08-strategic-recommendation",
+      "title": "Strategic recommendations",
+      "file": "document/sections/08-strategic-recommendation.md",
+      "status": "pending",
+      "summary": "Product recommendation, GTM, roadmap, metrics for PMF."
+    },
+    {
+      "section_id": "09-appendix",
+      "title": "Appendix: sources and comparison matrices",
+      "file": "document/sections/09-appendix.md",
+      "status": "pending",
+      "summary": "Source list, company table, comparison matrix, terminology notes."
+    }
+  ],
+  "special_instructions": []
+}

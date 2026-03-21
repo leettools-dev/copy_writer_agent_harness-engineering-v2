@@ -1,0 +1,38 @@
+[
+  {
+    "id": "candidate-1",
+    "title": "The Evolution of the LLM Toolstack - Thoughts on Capturing Value in the GenAI Tech Stack as a Startup",
+    "source": "b2venture",
+    "url": "https://www.b2venture.vc/stories/the-evolution-of-the-llm-toolstack---thoughts-on-capturing-value-in-the-genai-tech-stack-as-a-startup",
+    "why_strong": "Clear stack-stage taxonomy, VC strategic framing, concise sections that map to market stages and startup playbooks. Good model for market + wedge-oriented narrative.",
+    "weaknesses": "VC perspective (bias toward investment outcomes); not an evidence-dense research report; few primary-source citations.",
+    "score": 8
+  },
+  {
+    "id": "candidate-2",
+    "title": "openai/evals (GitHub)",
+    "source": "OpenAI (GitHub)",
+    "url": "https://github.com/openai/evals",
+    "why_strong": "Authoritative primary-source for evaluation frameworks; concrete repo structure and docs show how to run evals; good model for technical appendix and methodology sections.",
+    "weaknesses": "Not a market report or narrative; focused narrowly on eval tooling rather than whole-market taxonomy.",
+    "score": 7
+  },
+  {
+    "id": "candidate-3",
+    "title": "Langfuse blog and OSS project (LLM observability)",
+    "source": "Langfuse",
+    "url": "https://langfuse.com/",
+    "why_strong": "Product-centric, concrete examples of observability and tracing for LLMs; open-source project with technical details and deployment notes — useful exemplar for provider case studies and product analysis.",
+    "weaknesses": "Vendor blog / product narrative may be promotional; not a neutral market analysis.",
+    "score": 7
+  },
+  {
+    "id": "candidate-4",
+    "title": "LangChain (GitHub)",
+    "source": "LangChain",
+    "url": "https://github.com/langchain-ai/langchain",
+    "why_strong": "De-facto agent engineering framework and integration hub; strong traction and ecosystem; useful exemplar for developer experience and agent orchestration analyses.",
+    "weaknesses": "Highly influential OSS project but also a commercial ecosystem (LangSmith) which must be accounted for when analyzing commercial dynamics.",
+    "score": 9
+  }
+]
