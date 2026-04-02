@@ -1,6 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
+  "last_updated": "2026-04-02",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -36,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Add 6-10 interview notes (platform engineer, app engineer, PM, compliance lead, QA lead), 2-3 case studies or postmortems, and populate appendix table with source links for each persona row."
+      "evidence_plan": "Persona synthesis updated with primary-source links (GH/repos/vendor pages). Outstanding: 6-10 interview notes (platform eng, app eng, PM, compliance, QA), 2-3 independent case studies or engineering blogposts, and appendix population of per-row source links. Recommend next: run scripted webfetch to populate provider CSV (top-20) and then schedule interviews."
     },
     {
       "section_id": "05-technical-bottlenecks",
