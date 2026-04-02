@@ -13,9 +13,6 @@
 - Evaluation & instrumentation: used qualitative user surveys to compare AI vs human drafts; experimented with ROUGE/BLEU-like metrics but found them limited; emphasized hybrid model selection per section (cheaper models for simple sections, GPT-4 for complex sections) and parallelized generation to improve latency at cost of duplication.
 - Intended sections: Customer JTBD (platform teams, PMs, support), Technical bottlenecks (non-determinism, evaluation metrics), Appendix (postmortem case study)
 
-## Open questions
-- Independent corroboration of claimed engineering hours and ROI; whether similar instrumentation patterns generalize to non-Datadog stacks.
-
 ## Draft implications
 - Operationalizing LLM features requires significant engineering investment in input structuring, instruction engineering, secret scrubbing, and evaluation pipelines — validating the JTBD claim that platform teams and support need robust observability and eval hooks.
 - ---

@@ -14,9 +14,6 @@
 - Detection challenges: mixed symptoms across hardware platforms, sticky routing creating disproportionate user impacts, noisy evaluation signals that did not surface the regression early, and privacy controls limiting engineers' ability to inspect problematic user interactions.
 - Intended sections: Technical bottlenecks (non-deterministic failures, detection), Customer JTBD (platform teams, PMs, support), Provider landscape (model/provider reliability), Appendix (postmortem capture)
 
-## Open questions
-- How widely these exact failure modes generalize to other providers and open-source stacks; whether similar detection tooling patterns are already present inside major enterprise LLM platforms.
-
 ## Draft implications
 - Confirms platform teams' need for fine-grained tracing, per-call metadata, and continuous in-production evals to rapidly detect and triage subtle quality regressions.
 - ---

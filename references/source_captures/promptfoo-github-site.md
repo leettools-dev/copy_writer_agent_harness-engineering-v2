@@ -13,9 +13,6 @@
 - Main features: automated evaluations, red-teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.
 - Intended sections: Provider landscape (eval tooling), Customer JTBD (PMs, Evaluation/QA teams), Appendix (provider capture)
 
-## Open questions
-- Commercial traction or hosted offering split (project is OSS; company update indicates acquisition by OpenAI but details of commercial hosting vs OSS usage remain limited in public sources).
-
 ## Draft implications
 - Promptfoo demonstrates that evaluation and red-teaming are mature OSS workflows with strong developer adoption; commercial entrants must either integrate with Promptfoo or offer clear advantages (enterprise features, private registries, CI-first UX) to compete.
 - ---

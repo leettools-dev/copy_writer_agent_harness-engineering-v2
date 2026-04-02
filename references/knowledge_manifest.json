@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-04-02T05:54:04.441922+00:00",
+  "updated_at": "2026-04-02T05:58:16.414544+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -215,6 +215,36 @@
       ]
     },
     {
+      "source_id": "langfuse-docs-langchain-tracing-callbacks-open-source-observability-for-langchain-langgraph-integration-capture",
+      "title": "Langfuse docs — \"LangChain Tracing & Callbacks — Open Source Observability for LangChain & LangGraph\" (integration capture)",
+      "url": "https://langfuse.com/integrations/frameworks/langchain",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/langfuse-docs-langchain-tracing-callbacks-open-source-observability-for-langchain-langgraph-integration-capture.md",
+      "linked_sections": [],
+      "why_it_matters": "Authoritative integration guide showing concrete, copy-paste steps to instrument LangChain applications using Langfuse. Useful to size integration friction and estimate time-to-first-trace.",
+      "reliability_tier": "primary (vendor docs)",
+      "date_accessed": "2026-04-02",
+      "evidence": [
+        "Quickstart steps (actionable):",
+        "1. pip install langfuse langchain langchain_openai langgraph  (or npm install @langfuse/core @langfuse/langchain for JS)",
+        "2. Set environment variables: LANGFUSE_SECRET_KEY, LANGFUSE_PUBLIC_KEY, LANGFUSE_BASE_URL, OPENAI_API_KEY",
+        "3. Initialize client: langfuse = get_client(); handler = CallbackHandler(); then pass handler via chain.invoke(..., config={\"callbacks\":[handler]})",
+        "4. Optional: use context managers / propagate_attributes to set session_id/user_id/tags and group traces.",
+        "5. For serverless, ensure callbacks are not backgrounded or use awaitAllCallbacks or set LANGCHAIN_CALLBACKS_BACKGROUND=\"false\".",
+        "6. Self-host: Langfuse supports self-hosting; docs include Kubernetes deployment guides and OTEL integration notes.",
+        "Examples: code snippets for Python and JS showing how to pass CallbackHandler into agent invocation and how to set trace attributes. Public example trace links exist in the docs for demonstration.",
+        "Observability features: token/cost tracking, span grouping for retrieval/LLM calls, scoring traces, scoring outside context with trace IDs, queuing & flushing APIs, OTEL span processor for JS/Node.",
+        "Intended sections: Customer JTBD (developer DX, platform teams), Technical bottlenecks (trace schema, integration ergonomics), Appendix (integration-spike artifacts)"
+      ],
+      "open_questions": [
+        "Precise friction when adding to a non-trivial LangChain app (multi-retriever/agent graph) — to be validated by an integration spike."
+      ],
+      "draft_implications": [
+        "The documented quickstart implies a low friction path to first-trace (single developer can instrument a simple chain and see traces in <2 hours). This validates the planned integration-spike as a high‑leverage next step and reduces the risk that instrumentation itself is a gating problem for adoption.",
+        "---"
+      ]
+    },
+    {
       "source_id": "langfuse-blog-ai-agent-observability-tracing-evaluation-with-langfuse",
       "title": "Langfuse blog — \"AI Agent Observability, Tracing & Evaluation with Langfuse\"",
       "url": "https://langfuse.com/blog/2024-07-ai-agent-observability-with-langfuse",
@@ -254,9 +284,7 @@
         "Evaluation & instrumentation: used qualitative user surveys to compare AI vs human drafts; experimented with ROUGE/BLEU-like metrics but found them limited; emphasized hybrid model selection per section (cheaper models for simple sections, GPT-4 for complex sections) and parallelized generation to improve latency at cost of duplication.",
         "Intended sections: Customer JTBD (platform teams, PMs, support), Technical bottlenecks (non-determinism, evaluation metrics), Appendix (postmortem case study)"
       ],
-      "open_questions": [
-        "Independent corroboration of claimed engineering hours and ROI; whether similar instrumentation patterns generalize to non-Datadog stacks."
-      ],
+      "open_questions": [],
       "draft_implications": [
         "Operationalizing LLM features requires significant engineering investment in input structuring, instruction engineering, secret scrubbing, and evaluation pipelines — validating the JTBD claim that platform teams and support need robust observability and eval hooks.",
         "---"
@@ -277,9 +305,7 @@
         "Main features: automated evaluations, red-teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.",
         "Intended sections: Provider landscape (eval tooling), Customer JTBD (PMs, Evaluation/QA teams), Appendix (provider capture)"
       ],
-      "open_questions": [
-        "Commercial traction or hosted offering split (project is OSS; company update indicates acquisition by OpenAI but details of commercial hosting vs OSS usage remain limited in public sources)."
-      ],
+      "open_questions": [],
       "draft_implications": [
         "Promptfoo demonstrates that evaluation and red-teaming are mature OSS workflows with strong developer adoption; commercial entrants must either integrate with Promptfoo or offer clear advantages (enterprise features, private registries, CI-first UX) to compete.",
         "---"
@@ -301,9 +327,7 @@
         "Detection challenges: mixed symptoms across hardware platforms, sticky routing creating disproportionate user impacts, noisy evaluation signals that did not surface the regression early, and privacy controls limiting engineers' ability to inspect problematic user interactions.",
         "Intended sections: Technical bottlenecks (non-deterministic failures, detection), Customer JTBD (platform teams, PMs, support), Provider landscape (model/provider reliability), Appendix (postmortem capture)"
       ],
-      "open_questions": [
-        "How widely these exact failure modes generalize to other providers and open-source stacks; whether similar detection tooling patterns are already present inside major enterprise LLM platforms."
-      ],
+      "open_questions": [],
       "draft_implications": [
         "Confirms platform teams' need for fine-grained tracing, per-call metadata, and continuous in-production evals to rapidly detect and triage subtle quality regressions.",
         "---"
@@ -322,16 +346,13 @@
       "evidence": [
         "TL;DR: Zalando processed thousands of postmortems with a staged LLM pipeline (summarization, classification, analysis, pattern detection) and found AI effective at surfacing recurring issues while requiring human curation to reduce hallucination and surface-attribution errors.",
         "Key engineering points: multi-stage map-reduce style pipeline, human curation percentages (initially 100% then reduced to 10–20% sampling), measured per-document processing targets (≈30s per postmortem with modern models), and specific mitigation patterns for hallucination and attribution error.",
-        "Use cases cited: datastore incident pattern detection, automated summaries for leadership, and engineering decision support; examples of pipeline stages and constraints to avoid \"lost in the middle\" effects.",
         "Intended sections: Customer JTBD (platform teams, PMs, support), Technical bottlenecks (evaluation fidelity, hallucination), Appendix (case study)"
       ],
-      "open_questions": [
-        "Exact ROI numbers and adoption extent across Zalando teams; reproducibility outside Zalando's tooling and data cleanliness practices."
-      ],
+      "open_questions": [],
       "draft_implications": [
         "Independent corroboration that postmortem/observability use cases for LLMs are real and operationally valuable; supports JTBD claims for platform teams and PMs and strengthens the case that observability/eval tooling reduces MTTR when coupled with human curation.",
         "---",
-        "Last updated: 2026-04-02T20:30:00+00:00"
+        "Last updated: 2026-04-02T21:40:00+00:00"
       ]
     },
     {
