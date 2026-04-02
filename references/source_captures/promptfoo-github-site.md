@@ -19,4 +19,3 @@
 ## Draft implications
 - Promptfoo demonstrates that evaluation and red‑teaming are mature OSS workflows with strong developer adoption; commercial entrants must either integrate with Promptfoo or offer clear advantages (enterprise features, private registries, CI-first UX) to compete.
 - ---
-- Last updated: 2026-04-02T17:30:00+00:00
