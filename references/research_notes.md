@@ -42,7 +42,7 @@
 
 ---
 
-## Source: Langfuse (GitHub + website)
+## Source: Langfuse (GitHub + site)
 - URL: https://github.com/langfuse/langfuse and https://langfuse.com
 - Why this source matters: Langfuse is an open-source LLM observability platform that also offers a hosted cloud product. It directly demonstrates the observability/eval/trace market and integration demands.
 - Reliability tier: strong-secondary (company + OSS + cloud)
@@ -69,7 +69,7 @@
 
 ### Evidence extracted
 - Product claims: native tracing for popular agent frameworks and OpenTelemetry; SDKs for Python/TypeScript/Go/Java; message threading for multi-turn chat; session tracing and replay; monitoring dashboards that track token usage, latency (P50/P99), error rates, cost tracking, and online evals.
-- Enterprise features: self-host/BYOC and Kubernetes deployment options for Enterprise plans; data residency controls; integrations with PagerDuty/webhooks; explicit enterprise customer logos shown on site (Cloudflare, Lyft, LinkedIn, Klarna, Coinbase, Vanguard-related customers listed elsewhere).
+- Enterprise features: self-host/BYOC and Kubernetes deployment options for Enterprise plans; data residency controls; integrations with PagerDuty/webhooks; explicit enterprise customer logos shown on site.
 - Pricing/packaging: free tier for dev and paid plans scaling with trace volume; enterprise pricing via contact-sales and documented enterprise options.
 - Integration claims: framework-agnostic tracing (works with LangChain, LlamaIndex, OpenAI SDKs), OpenTelemetry support, and instructions for sending data to/from LangSmith.
 - Docs evidence: Observability and OTel docs, self-hosting docs (kubernetes), FAQs stating no added latency and data ownership guarantees.
@@ -101,7 +101,7 @@
 ## Source: Pinecone (Vendor case study)
 - URL: https://www.pinecone.io/customers/vanguard/
 - Why this source matters: Pinecone is a leading managed vector database that demonstrates enterprise deployment patterns, security controls (AWS PrivateLink / dedicated clusters), and measurable retrieval improvements in production RAG use cases.
-- Reliability tier: primary (vendor case study)
+- Reliability tier: primary (vendor-published case study)
 - Date accessed: 2026-04-02
 
 ### Evidence extracted
@@ -116,12 +116,10 @@
 
 ### Open questions
 - Independent verification of the 12% accuracy uplift; broader adoption metrics for Pinecone enterprise customers beyond case studies.
-- Exact scale (QPS, index size) for Vanguard deployment and costs.
 
 ### Draft implications
 - The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.
 - Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.
-- Any entrant focused on retrieval, RAG orchestration, or observability should design integrations that support hybrid retrieval patterns and metadata-driven filtering for compliance-sensitive domains.
 
 ### Next steps
 - Triangulate Pinecone case study claims with any independent engineering blogposts or public talks by Vanguard engineers (search for "Vanguard Pinecone" conference talks or engineering posts).
@@ -129,4 +127,53 @@
 
 ---
 
+## Source: Langfuse blog — "AI Agent Observability, Tracing & Evaluation with Langfuse"
+- URL: https://langfuse.com/blog/2024-07-ai-agent-observability-with-langfuse
+- Why this source matters: Product-facing explanation of agent observability use cases, integrations, and evaluation strategies from the Langfuse team (authoritative for product capabilities and integration patterns).
+- Reliability tier: primary (vendor product blog)
+- Date accessed: 2026-04-02
+
+### Evidence extracted
+- Use cases cited: Customer support, market research, software development; examples of tracing multi-step agent flows and multi-agent setups.
+- Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, Semantic Kernel, and no-code builders (Flowise, Langflow, Dify).
+- Observability patterns: recommends OpenTelemetry convergence, structured tracing (typed observation data for tool calls, retriever steps, guardrail checks), and trajectory/step-level evaluation strategies (black-box, trajectory, single-step).
+- Features: tracing, token & cost tracking, prompt management/versioning, evaluation strategies (model-based, human-in-the-loop, implicit signals), datasets for offline evals, CI integration guidance.
+- Developer distribution signals: links to integration cookbooks, SDKs (Python/JS), and interactive demos; site encourages self-hosting and cloud deployment options.
+- Intended sections: Provider landscape (observability), Technical bottlenecks (tracing schema), Customer JTBD (platform teams, support, PMs), Appendix (integration examples)
+- Confidence: high (detailed product-level documentation and integrations)
+
+### Open questions
+- Public customer list for Langfuse Cloud vs self-host adoption split.
+- Any independent third-party writeups or postmortems referencing Langfuse deployment impact (search planned in appendix next steps).
+
+### Draft implications
+- Strong evidence that observability vendors target the same persona set (platform teams, PMs, support) and that integration breadth (LangChain, LlamaIndex, OpenTelemetry) is a competitive requirement.
+- Langfuse's emphasis on structured traces and evaluation pipelines supports the earlier persona claims about the need for a standards-first trace schema.
+
+---
+
+## Source: AWS APN Blog — "Transform Large Language Model Observability with Langfuse"
+- URL: https://aws.amazon.com/blogs/apn/transform-large-language-model-observability-with-langfuse/
+- Why this source matters: AWS partner writeup provides corroborating evidence of enterprise deployments, self-hosting options on AWS (Fargate/ECS), and customer examples; includes infrastructure notes and scale claims.
+- Reliability tier: strong-secondary (partner blog with vendor input)
+- Date accessed: 2026-04-02
+
+### Evidence extracted
+- Enterprise deployment notes: Langfuse available as Langfuse Cloud and self-host with AWS Fargate/ECS; AWS deployment repo and marketplace listings provided.
+- Scale & traction signals (vendor-reported via AWS blog): "over 6 million SDK installs per month, 10,000 GitHub stars, and 4.7 million Docker pulls"; architecture notes include use of ClickHouse for traces, Aurora for transactional data, ElastiCache for caching.
+- Customer mentions: Samsara, Merck Group, Twilio cited as organizations using Langfuse; AWS blog frames Langfuse as AWS Advanced Technology Partner.
+- Integration notes: Amazon Bedrock integration, links to deployment samples and marketplace listings.
+- Intended sections: Provider landscape (observability), Customer JTBD (platform teams), Appendix (deployment patterns)
+- Confidence: medium (partner blog corroborates vendor claims but is promotional)
+
+### Open questions
+- Independent verification of "SDK installs" and Docker pull numbers; breadth of enterprise adoption beyond named customers.
+
+### Draft implications
+- AWS partnership and marketplace listings provide a reliable enterprise GTM path for observability vendors; self-host deployment patterns on AWS are a common enterprise expectation and should be supported by newcomers targeting platform teams.
+
+---
+
 (Notes: remaining source captures unchanged; see earlier sections for Chroma, Promptfoo, Weaviate, Milvus, W&B captures.)
+
+Last updated: 2026-04-02T16:30:00+00:00

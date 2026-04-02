@@ -5,7 +5,7 @@
 - Source role: supporting_source
 - Linked sections: Not mapped yet
 - Why this source matters: Pinecone is a leading managed vector database that demonstrates enterprise deployment patterns, security controls (AWS PrivateLink / dedicated clusters), and measurable retrieval improvements in production RAG use cases.
-- Reliability tier: primary (vendor case study)
+- Reliability tier: primary (vendor-published case study)
 - Date accessed: 2026-04-02
 
 ## Evidence extracted
@@ -18,9 +18,7 @@
 
 ## Open questions
 - Independent verification of the 12% accuracy uplift; broader adoption metrics for Pinecone enterprise customers beyond case studies.
-- Exact scale (QPS, index size) for Vanguard deployment and costs.
 
 ## Draft implications
 - The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.
 - Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.
-- Any entrant focused on retrieval, RAG orchestration, or observability should design integrations that support hybrid retrieval patterns and metadata-driven filtering for compliance-sensitive domains.

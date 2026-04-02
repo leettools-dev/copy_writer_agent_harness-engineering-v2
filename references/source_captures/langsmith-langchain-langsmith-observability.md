@@ -10,7 +10,7 @@
 
 ## Evidence extracted
 - Product claims: native tracing for popular agent frameworks and OpenTelemetry; SDKs for Python/TypeScript/Go/Java; message threading for multi-turn chat; session tracing and replay; monitoring dashboards that track token usage, latency (P50/P99), error rates, cost tracking, and online evals.
-- Enterprise features: self-host/BYOC and Kubernetes deployment options for Enterprise plans; data residency controls; integrations with PagerDuty/webhooks; explicit enterprise customer logos shown on site (Cloudflare, Lyft, LinkedIn, Klarna, Coinbase, Vanguard-related customers listed elsewhere).
+- Enterprise features: self-host/BYOC and Kubernetes deployment options for Enterprise plans; data residency controls; integrations with PagerDuty/webhooks; explicit enterprise customer logos shown on site.
 - Pricing/packaging: free tier for dev and paid plans scaling with trace volume; enterprise pricing via contact-sales and documented enterprise options.
 - Integration claims: framework-agnostic tracing (works with LangChain, LlamaIndex, OpenAI SDKs), OpenTelemetry support, and instructions for sending data to/from LangSmith.
 - Docs evidence: Observability and OTel docs, self-hosting docs (kubernetes), FAQs stating no added latency and data ownership guarantees.
