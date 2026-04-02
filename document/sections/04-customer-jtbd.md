@@ -96,6 +96,13 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Switch triggers: frequent customer escalations tied to LLM outputs or SLA penalties.
 - Implication for entrant: embeddable session‑replay and annotation tools that integrate with ticketing systems can speed day‑to‑day ops but usually have lower direct WTP.
 
+Evidence snapshots (concrete facts from primary sources)
+- LangChain (GitHub): ~130k stars, ~21.5k forks, ~278k dependents — indicates dominant OSS distribution and large developer reach. Source: /workspace/references/research_notes.md (LangChain capture).
+- LlamaIndex (GitHub): ~47.8k stars, ~7.1k forks — strong OSS footprint in RAG/document agents. Source: /workspace/references/research_notes.md (LlamaIndex capture).
+- Langfuse (OSS + cloud): ~23.5k stars; demonstrates observable demand for tracing/observability (Langfuse product + cloud). Source: /workspace/references/research_notes.md (Langfuse capture).
+- OpenAI Evals (GitHub): ~18k stars; indicates widespread adoption of structured eval tooling. Source: /workspace/references/research_notes.md (OpenAI Evals capture).
+- Pinecone Vanguard case study: vendor‑reported ~12% improvement in retrieval accuracy; demonstrates enterprise BYOC/dedicated infra procurement patterns. Source: https://www.pinecone.io/customers/vanguard/ (research_notes capture).
+
 Compact persona table (evidence + inference columns)
 
 | Persona | Primary JTBD | Typical tools | Key evidence (examples & links) | Buying criteria | Likely WTP | Confidence |
@@ -126,4 +133,4 @@ Evidence gaps and next steps (must complete before marking section DONE)
 
 Section status: DRAFT — this file now consolidates public‑source evidence, explicit citations, and a prioritized research plan. Mark as DONE only after interview validation, 2–3 case studies are added, and the appendix is populated with source links.
 
-Last edited: 2026-04-02T13:45:00+00:00
+Last edited: 2026-04-02T14:30:00+00:00
