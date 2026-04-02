@@ -1,5 +1,8 @@
 Executive summary
 
+![LLM Harness Stack](../figures/01-llm-harness-stack.svg)
+
+
 Working definition (observed fact)
 
 - LLM harness engineering: the tooling, infrastructure, abstractions, and operating practices that let teams build, run, evaluate, debug, and improve LLM-based applications and agents in production. Concretely this includes: agent frameworks and orchestration runtimes; prompt, config and version management; eval and benchmarking tooling; observability/tracing for LLM calls and agent flows; guardrails and policy enforcement; tool-calling/function-calling infrastructure; memory and context management and lifecycle; retrieval and RAG orchestration; simulation and testing harnesses; multi-agent coordination; deployment/runtime sandboxes; human-in-the-loop review systems; cost/latency routing and model selection layers; and enterprise governance, audit and compliance capabilities. (Observed fact — definition derived from the task prompt and corroborated by vendor positioning in research notes.)

@@ -1,5 +1,8 @@
 Market map and taxonomy
 
+![LLM Harness Stack](../figures/01-llm-harness-stack.svg)
+
+
 Purpose
 
 Define a working definition of “LLM harness engineering”, draw boundaries with adjacent categories, and present a practical taxonomy that maps categories to representative providers (OSS and commercial), deployment models, and evidence links. This section also explains where the market is fragmented and recommends the most useful supporting artifacts (table + conceptual figure).

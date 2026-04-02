@@ -4,6 +4,11 @@ LlamaIndex,RAG/document,47800,7100,23700,"Series A Mar 4, 2025","OSS + LlamaPars
 Langfuse,Observability,23500,2400,,"Seed $4M Nov 7, 2023","OSS + Langfuse Cloud","https://github.com/langfuse/langfuse; https://langfuse.com"
 OpenAI Evals,Eval framework,18000,2900,,"Platform-integrated (OpenAI)","OSS + OpenAI platform","https://github.com/openai/evals; https://platform.openai.com/docs/guides/evals"
 Chroma,Vector DB,26700,2100,,"OSS-first (Chroma Cloud)","OSS + Chroma Cloud","https://github.com/chroma-core/chroma; https://trychroma.com"
-Pinecone,Vector DB,,,"","$100M Series B (Apr 26, 2023) - led by a16z","Managed SaaS","https://www.pinecone.io/blog/series-b/"
-Milvus,Vector DB,43400,3900,,"OSS (LF AI & Data) + Zilliz Cloud","OSS + Zilliz Cloud","https://github.com/milvus-io/milvus; https://milvus.io/"
+Pinecone,Vector DB,,, ,"$100M Series B (Apr 26, 2023) - led by a16z","Managed SaaS","https://www.pinecone.io/blog/series-b/; https://www.pinecone.io/"
+Milvus,Vector DB,43400,3900,,"LF AI & Data (OSS) + Zilliz Cloud","OSS + Zilliz Cloud","https://github.com/milvus-io/milvus; https://milvus.io/"
 Promptfoo,Eval & prompt testing,17800,1500,317,,"OSS CLI/CI","https://github.com/promptfoo/promptfoo; https://www.promptfoo.dev/"
+Weaviate,Vector DB / AI DB,, , ,"Managed cloud + Dedicated + OSS","Weaviate Cloud (shared/dedicated) + self-host","https://weaviate.io/"
+Weights & Biases,Experiment tracking / observability,, , ,"Acquired by CoreWeave (announced May 5, 2025)","Hosted SaaS + enterprise","https://coreweave.com/blog/coreweave-completes-acquisition-of-weights-biases; https://wandb.ai/"
+LangSmith,Observability / LangChain product,, , ,"Product of LangChain / LangSmith commercialization","Hosted (LangSmith)","https://www.langchain.com/langsmith; https://docs.langchain.com/langsmith/"
+
+# Notes: Rows populated from vendor sites and GitHub captures (accessed 2026-03-21 to 2026-04-02). Empty numeric cells indicate evidence gaps to fill in the next pass.
