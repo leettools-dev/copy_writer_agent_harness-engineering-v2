@@ -699,7 +699,7 @@ How this appendix supports section completion:
 
 Suggested immediate next action (executed now):
 - Created /workspace/data/public/provider_table.csv with initial rows and primary-source links for Pinecone funding and W&B acquisition (2026-04-01 programmatic fetches).
-- Added a conceptual harness-stack SVG at /workspace/document/figures/01-harness-stack.svg to satisfy the validation requirement for illustrations in main sections.
+- Added a conceptual harness-stack SVG at /workspace/document/figures/01-llm-harness-stack.svg to satisfy the validation requirement for illustrations in main sections.
 
 Suggested follow-up actions (I can execute next):
 1) Populate the provider CSV to top-20 by running focused webfetches for each candidate vendor and appending rows. (Estimated: 30–45 minutes for scripted fetches and verification.)
