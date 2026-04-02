@@ -5,7 +5,7 @@
 - Reference ready: yes
 - Outline ready: yes
 - Compiled ready: yes
-- Sections complete: 6/9
+- Sections complete: 7/9
 - Special instructions resolved: 0/0
 - Overall complete: no
 
@@ -18,7 +18,7 @@
 
 - [x] Executive summary (document/sections/01-executive-summary.md)
 - [x] Market map and taxonomy (document/sections/02-market-map.md)
-- [ ] Provider landscape (document/sections/03-provider-landscape.md)
+- [x] Provider landscape (document/sections/03-provider-landscape.md)
 - [ ] Customer and JTBD analysis (document/sections/04-customer-jtbd.md)
 - [x] Technical bottlenecks (document/sections/05-technical-bottlenecks.md)
 - [x] Commercial landscape and moat analysis (document/sections/06-commercial-moat.md)
@@ -34,4 +34,4 @@
 
 ## Issues
 
-- incomplete sections: Provider landscape, Customer and JTBD analysis, Appendix: sources and comparison matrices
+- incomplete sections: Customer and JTBD analysis, Appendix: sources and comparison matrices

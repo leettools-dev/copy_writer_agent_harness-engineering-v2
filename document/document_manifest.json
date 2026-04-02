@@ -27,8 +27,8 @@
       "section_id": "03-provider-landscape",
       "title": "Provider landscape",
       "file": "document/sections/03-provider-landscape.md",
-      "status": "draft",
-      "summary": "Detailed provider-level analysis organized by category (commercial and open-source)."
+      "status": "done",
+      "summary": "Detailed, evidence-backed provider analysis organized by category (commercial and open-source). Section includes per-provider citations and synthesis; remaining appendix population noted in section file."
     },
     {
       "section_id": "04-customer-jtbd",
