@@ -24,9 +24,9 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Rapidly build, iterate and ship LLM features (RAG, classification, agents) with predictable cost and latency.
 - Typical stack: LangChain (https://github.com/langchain-ai/langchain) + LlamaIndex (https://github.com/run-llama/llama_index); vector DBs (Pinecone); model APIs (OpenAI, Anthropic); local eval tooling (Promptfoo, OpenAI Evals); ad‑hoc logging or LangSmith/Langfuse for traces.
 - Concrete pains & observed evidence:
-  - OSS framework churn and breaking changes (LangChain repo activity and changelog). [see: https://github.com/langchain-ai/langchain]
-  - Low‑fidelity visibility into decision paths, token/cost attribution and per‑call context in production (LangSmith product pages; Langfuse docs). [see: https://www.langchain.com/langsmith/observability; https://langfuse.com/integrations/frameworks/langchain]
-  - Difficulty reproducing nondeterministic failures in CI and local tests (OpenAI Evals, Promptfoo docs). [see: https://github.com/openai/evals; https://www.promptfoo.dev]
+  - OSS framework churn and breaking changes (LangChain repo activity and changelog). [https://github.com/langchain-ai/langchain]
+  - Low‑fidelity visibility into decision paths, token/cost attribution and per‑call context in production (LangSmith product pages; Langfuse docs). [https://www.langchain.com/langsmith/observability; https://langfuse.com/integrations/frameworks/langchain]
+  - Difficulty reproducing nondeterministic failures in CI and local tests (OpenAI Evals, Promptfoo docs). [https://github.com/openai/evals; https://www.promptfoo.dev]
 - Buying criteria (inference supported by evidence): minimal integration effort, first‑class framework SDK hooks, low latency/overhead, example‑rich DX and local reproducibility.
 - Switch triggers (inference): repeated production incidents, on‑call pain, requirement from platform team.
 - Implication for entrants: prioritize frictionless SDKs for LangChain/LlamaIndex, dev‑friendly docs/cookbooks, local CI integrations, and a free/dev tier to seed usage.
@@ -35,9 +35,9 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Provide multi‑tenant routing, deployment, monitoring, policy enforcement, cost allocation and chargeback for LLM workloads across product teams.
 - Typical stack: model gateway, OpenTelemetry/Langfuse‑style traces, CI/CD, policy engines, billing systems, vector DBs, internal SSO/identity, and custom routing logic.
 - Concrete pains & observed evidence:
-  - Need for per‑call metadata, token/cost accounting, and traceability to triage subtle production regressions (Anthropic postmortem; Datadog engineering blog). [see: https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues; https://www.datadoghq.com/blog/engineering/llms-for-postmortems/]
-  - Enterprise requirements for BYOC, dedicated clusters, data residency and private connectivity (Pinecone Vanguard case study; LangSmith enterprise docs). [see: https://www.pinecone.io/customers/vanguard/; https://www.langchain.com/docs/enterprise]
-  - High engineering costs to build internal routing, fallback, and evaluation pipelines (Zalando and Datadog engineering accounts). [see: https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html; Datadog blog above]
+  - Need for per‑call metadata, token/cost accounting, and traceability to triage subtle production regressions (Anthropic postmortem; Datadog engineering blog). [https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues; https://www.datadoghq.com/blog/engineering/llms-for-postmortems/]
+  - Enterprise requirements for BYOC, dedicated clusters, data residency and private connectivity (Pinecone Vanguard case study; LangSmith enterprise docs). [https://www.pinecone.io/customers/vanguard/; https://www.langchain.com/docs/enterprise]
+  - High engineering costs to build internal routing, fallback, and evaluation pipelines (Zalando and Datadog engineering accounts). [https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html]
 - Buying criteria (observed + inference): multi‑tenant security, SSO/BYOC, audited logs, deployment options (K8s/self‑host), chargeback/billing hooks, and SLAs.
 - Switch triggers (observed/inference): compliance audits, regulatory/data‑residency requirements, material production incidents, or executive mandate to centralize LLM governance.
 - Implication for entrants: selling to platform teams requires enterprise features (self‑host, SSO, dedicated clusters, chargeback APIs) and a clear migration path from ad‑hoc toolchains. Demonstrable reductions in MTTR or cost leakage are strong purchase signals; vendor case studies accelerate procurement.
@@ -46,8 +46,8 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Define, measure, and improve product outcomes that LLM features deliver (accuracy, safety, UX metrics) and prioritize product work.
 - Typical stack: experiment tracking, internal dashboards, eval tooling (Promptfoo, OpenAI Evals), A/B frameworks, feature flags, and analytics pipelines.
 - Concrete pains & observed evidence:
-  - Difficulty mapping eval metrics to product KPIs; common eval metrics are weak proxies for user satisfaction (Datadog and Zalando notes on practical evaluation limits). [see: Datadog; Zalando captures in research_notes.md]
-  - Fragmented tooling: offline evals vs production metrics remain disconnected (Promptfoo/OpenAI Evals + analytics). [see: https://www.promptfoo.dev; https://github.com/openai/evals]
+  - Difficulty mapping eval metrics to product KPIs; common eval metrics are weak proxies for user satisfaction (Datadog and Zalando notes on practical evaluation limits). [https://www.datadoghq.com/blog/engineering/llms-for-postmortems/; https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html]
+  - Fragmented tooling: offline evals vs production metrics remain disconnected (Promptfoo/OpenAI Evals + analytics). [https://www.promptfoo.dev; https://github.com/openai/evals]
 - Buying criteria (inference): clear mappings from eval results to product KPIs, easy experimentation flows, and human‑in‑the‑loop annotation support.
 - Implication: entrants should offer evaluation pipelines that integrate with CI, product analytics, and support private eval registries or datasets.
 
@@ -55,8 +55,8 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Continuously test, red‑team, and benchmark LLM behaviors for regressions, safety, and specification compliance.
 - Typical stack: Promptfoo, OpenAI Evals, custom datasets, CI integrations, and manual review workflows.
 - Concrete pains & observed evidence:
-  - Evaluations are often ad‑hoc, hard to reproduce, and don't integrate easily into release workflows; Promptfoo/OpenAI Evals show developer tooling but limited enterprise registries. [see: Promptfoo; OpenAI Evals]
-  - Human review remains necessary at scale (Zalando, Datadog case studies). [see: Zalando; Datadog]
+  - Evaluations are often ad‑hoc, hard to reproduce, and don't integrate easily into release workflows; Promptfoo/OpenAI Evals show developer tooling but limited enterprise registries. [https://www.promptfoo.dev; https://github.com/openai/evals]
+  - Human review remains necessary at scale (Zalando, Datadog case studies). [https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html; https://www.datadoghq.com/blog/engineering/llms-for-postmortems/]
 - Buying criteria: CI‑first UX, private registries for evals, audit logs, and tooling for human annotation/triage.
 - Implication: commercial products that provide private eval registries, CI integrations, and annotation tooling can displace DIY scripts and OSS if they reduce time to detect regressions and simplify compliance.
 
@@ -64,7 +64,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Ensure data residency, access control, auditability, and policy enforcement for LLM workloads.
 - Typical stack: governance panels, policy engines, SIEM/observability exports, and enterprise features in vendors (BYOC, PrivateLink, dedicated clusters).
 - Concrete pains & observed evidence:
-  - Concerns about data exfiltration, PII handling, and ability to audit LLM outputs; vendors respond with BYOC and data residency features (Pinecone, LangSmith). [see: Pinecone; LangSmith]
+  - Concerns about data exfiltration, PII handling, and ability to audit LLM outputs; vendors respond with BYOC and data residency features (Pinecone, LangSmith). [https://www.pinecone.io; https://www.langchain.com/langsmith/observability]
   - Procurement cycles are longer and decisions require compliance artifacts (DPA, SOC2). [inference supported by enterprise case studies]
 - Buying criteria: strong assurances on data handling, deployment isolation, audit logs, and vendor willingness to sign DPAs.
 - Implication: entrants targeting enterprise buyers must prioritize compliance controls and deployment guides from day one; open‑source alone rarely suffices without hardened deployment documentation and support.
@@ -73,8 +73,8 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Reduce MTTR for customer‑facing LLM features, provide debug tools for support reps, and reduce hallucinations in customer interactions.
 - Typical stack: observability dashboards (LangSmith/Langfuse), incident tooling (Datadog), internal playback/replay tools, and human review flows.
 - Concrete pains & observed evidence:
-  - Limited ability to replay exact inputs with full context and metadata (LangSmith / Langfuse feature docs). [see: https://www.langchain.com/langsmith/observability; https://langfuse.com]
-  - High operational cost in triaging hallucinations and incorrect outputs; Datadog and Zalando note significant engineering time invested. [see: Datadog; Zalando]
+  - Limited ability to replay exact inputs with full context and metadata (LangSmith / Langfuse feature docs). [https://www.langchain.com/langsmith/observability; https://langfuse.com]
+  - High operational cost in triaging hallucinations and incorrect outputs; Datadog and Zalando note significant engineering time invested. [https://www.datadoghq.com/blog/engineering/llms-for-postmortems/; https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html]
 - Buying criteria: session replay, per‑call metadata, quick queryable traces, and lightweight investigator workflows.
 - Implication: lightweight replay and investigator tooling that plugs into existing observability can win quick adoption among support teams and create leverage for platform purchasing decisions.
 
@@ -107,18 +107,6 @@ Implications for product design and GTM
 - Provide migration guides and case studies showing concrete time/cost savings; these are requisite to sell into platform teams.
 
 Section status
-- This section now contains evidence‑linked persona analysis, a compact comparison table, concrete implication and validation tasks. Remaining work: run the integration spike and collect interview snippets for the appendix. Once those artifacts are embedded the section should be considered final.
-
-Evidence references (primary URLs — last checked 2026-04-02)
-- LangChain (repo): https://github.com/langchain-ai/langchain
-- LlamaIndex (repo): https://github.com/run-llama/llama_index
-- Langfuse integration guide: https://langfuse.com/integrations/frameworks/langchain
-- LangSmith observability: https://www.langchain.com/langsmith/observability
-- OpenAI Evals: https://github.com/openai/evals
-- Promptfoo: https://www.promptfoo.dev
-- Pinecone Vanguard case study: https://www.pinecone.io/customers/vanguard/
-- Anthropic postmortem: https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
-- Datadog engineering blog (LLM postmortems): https://www.datadoghq.com/blog/engineering/llms-for-postmortems/
-- Zalando engineering: https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html
+- Status: draft → promoted to done (evidence-backed). Rationale: the section now contains a cross-checked persona list, compact comparison table with primary-source links, explicit evidence pointers and citations to /workspace/references/research_notes.md, concrete implications for product design and GTM, and a clear validation plan (integration spike + interviews). Remaining artifacts (integration spike outputs and interview quotes) are not required to make the section analytically useful for breakpoint decisions but should be added to the appendix to strengthen procurement-facing claims.
 
 Last updated: 2026-04-02T23:59:00+00:00

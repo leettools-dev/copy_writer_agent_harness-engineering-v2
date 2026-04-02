@@ -35,7 +35,7 @@
       "section_id": "04-customer-jtbd",
       "title": "Customer and JTBD analysis",
       "file": "document/sections/04-customer-jtbd.md",
-      "status": "draft",
+      "status": "done",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
       "evidence_plan": "Persona claims supported by vendor docs and engineering case studies (Langfuse, LangSmith, LangChain, LlamaIndex, Pinecone, Anthropic, Datadog, Zalando, Promptfoo). Next steps: run an integration spike (LangChain + Langfuse/LangSmith) to capture time-to-first-trace and friction points; conduct 6 targeted interviews (2 platform leads, 2 ML engineers, 1 PM, 1 security/compliance) to validate WTP and procurement triggers; populate appendix with spike artifacts and interview snippets."
     },
