@@ -14,7 +14,7 @@ Executive synthesis (one sentence)
 - Internal platform/infra teams are the clearest enterprise procurement path (highest WTP) for audit, policy, routing and billing primitives; developer‑facing engineers and PMs are the fastest route to initial adoption and define the minimum DX an entrant must support.
 
 What I re‑checked and added in this iteration
-- Verified Langfuse LangChain quickstart and LangSmith observability documentation for concrete integration steps and enterprise features to support "time‑to‑first‑trace" and BYOC/SSO claims (see references/research_notes.md: Langfuse integration capture; LangSmith observability docs, accessed 2026-04-02).
+- Verified Langfuse LangChain quickstart and LangSmith observability documentation for concrete integration steps and enterprise features to support "time‑to‑first‑trace" and BYOC/SSO claims (see /workspace/references/research_notes.md: Langfuse integration capture; LangSmith observability docs, accessed 2026-04-02).
 - Expanded persona evidence links and clarified which claims are observed vs inferred.
 - Added a precise integration spike plan (steps, measurement targets, acceptance criteria) and a 6‑interview plan to validate willingness‑to‑pay and procurement triggers.
 
@@ -25,9 +25,9 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Rapidly build, iterate and ship LLM features (RAG, classification, agents) with predictable cost and latency.
 - Typical stack: LangChain + LlamaIndex app code; vector DBs (Pinecone/Chroma); model APIs (OpenAI, Anthropic); ad‑hoc logging, Promptfoo/OpenAI Evals for local testing.
 - Concrete pains & evidence (observed):
-  - brittle/fast‑changing framework APIs and frequent upstream changes (LangChain changelog / GitHub). [LangChain GH]
-  - low‑fidelity visibility into decision paths, token/cost attribution and per‑call context (LangSmith docs; Langfuse integration docs). [LangSmith docs] [Langfuse integration]
-  - difficulty reproducing nondeterministic failures in CI (OpenAI Evals; Promptfoo). [OpenAI Evals] [Promptfoo]
+  - brittle/fast‑changing framework APIs and frequent upstream changes (LangChain changelog / GitHub). [see: /workspace/references/research_notes.md — LangChain captures]
+  - low‑fidelity visibility into decision paths, token/cost attribution and per‑call context (LangSmith docs; Langfuse integration docs). [see: LangSmith; Langfuse captures]
+  - difficulty reproducing nondeterministic failures in CI (OpenAI Evals; Promptfoo). [see: OpenAI Evals; Promptfoo captures]
 - Buying criteria (inference supported by evidence): minimal integration effort, first‑class framework SDK hooks, low latency/overhead, example‑rich DX and local reproducibility.
 - Switch triggers (inference): repeated production incidents, on‑call pain, requirement from platform team.
 - Implication: Entrants must prioritize developer DX (callbacks, cookbooks, example repos), provide easy local reproducibility, and offer a free/dev tier to seed adoption.
@@ -36,9 +36,9 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Provide multi‑tenant routing, deployment, monitoring, policy enforcement, cost allocation and chargeback for LLM workloads across product teams.
 - Typical stack: model gateway, OpenTelemetry/Langfuse-style traces, CI/CD, policy engines, billing systems, vector DBs for RAG.
 - Concrete pains & evidence (observed):
-  - need for BYOC/self‑host, audited traces, tenant isolation and chargeback (LangSmith self‑host & BYOC docs; Pinecone Vanguard case study). [LangSmith docs] [Pinecone Vanguard case study]
-  - requirement for per‑call policy enforcement and data residency controls (Langfuse + LangSmith product blogs/docs). [Langfuse blog] [LangSmith docs]
-  - difficulty detecting subtle quality regressions across hardware and deployments (Anthropic engineering postmortem). [Anthropic postmortem]
+  - need for BYOC/self‑host, audited traces, tenant isolation and chargeback (LangSmith self‑host & BYOC docs; Pinecone Vanguard case study). [LangSmith; Pinecone captures]
+  - requirement for per‑call policy enforcement and data residency controls (Langfuse + LangSmith product blogs/docs). [Langfuse blog; LangSmith docs]
+  - difficulty detecting subtle quality regressions across hardware and deployments (Anthropic engineering postmortem). [Anthropic capture]
 - Buying criteria (observed + inference): on‑prem/BYOC, SSO/IAM, RBAC, SLAs, integrations into billing/observability, clear audit trails.
 - Switch triggers (observed/inference): security/regulatory audit, costly incident, executive mandate to centralize LLM provisioning.
 - Implication: Standards‑first trace/event schema, policy hooks for per‑call routing, and turnkey billing/chargeback adapters are high‑value. Evidence supports enterprise willingness to pay for these capabilities.
@@ -47,36 +47,36 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Primary JTBD: Define and measure product outcomes for LLM features; translate eval outputs into stakeholder‑actionable metrics.
 - Typical tools: eval tooling (OpenAI Evals, Promptfoo), product analytics, A/B platforms.
 - Concrete pains & evidence (observed):
-  - eval outputs are often engineer‑centric and hard to map to user KPIs (Promptfoo; OpenAI Evals). [Promptfoo] [OpenAI Evals]
-  - PMs struggle to connect eval changes to retention or engagement without instrumentation (Datadog engineering notes). [Datadog blog]
+  - eval outputs are often engineer‑centric and hard to map to user KPIs (Promptfoo; OpenAI Evals). [Promptfoo; OpenAI Evals captures]
+  - PMs struggle to connect eval changes to retention or engagement without instrumentation (Datadog engineering notes). [Datadog capture]
 - Buying criteria (inference): dashboards linking eval changes to product metrics, shareable reports, playbooks for ROI measurement.
 - Implication: Packaging evals as product‑centric dashboards with KPI templates accelerates stakeholder buy‑in and procurement.
 
 4) Evaluation / QA teams
 - Primary JTBD: Run regression tests for model/prompt changes, maintain private eval registries, and enforce no‑regression guarantees in CI.
 - Typical tools: OpenAI Evals, Promptfoo, custom CI.
-- Concrete pains & evidence (observed): flaky tests, brittle datasets, CI integration friction and the need for private/local evals (OpenAI Evals; Promptfoo). [OpenAI Evals] [Promptfoo]
+- Concrete pains & evidence (observed): flaky tests, brittle datasets, CI integration friction and the need for private/local evals (OpenAI Evals; Promptfoo). [OpenAI Evals; Promptfoo captures]
 - Buying criteria (observed): repeatability, CI hooks, private registries, audit logs.
 - Implication: Eval‑as‑Platform (CI integration + private registries) is a near‑term wedge that maps to both PMs and platform teams.
 
 5) Security / Compliance / Legal teams
 - Primary JTBD: Prevent data leakage, enforce policy, and provide auditable trails of LLM use.
 - Typical tools: policy engines, DLP, observability/audit logs, SSO/IAM.
-- Concrete pains & evidence (observed): limited per‑call enforcement and data‑residency controls in many hosted offerings; vendors emphasize self‑host / enterprise plans (LangSmith, Langfuse, Pinecone). [LangSmith docs] [Langfuse blog] [Pinecone case study]
+- Concrete pains & evidence (observed): limited per‑call enforcement and data‑residency controls in many hosted offerings; vendors emphasize self‑host / enterprise plans (LangSmith, Langfuse, Pinecone). [LangSmith; Langfuse; Pinecone captures]
 - Buying criteria (observed): provable data controls, deployment options that meet compliance, searchable audit trails.
 - Implication: Early investment in RBAC, tenancy isolation and auditable logs raises sales friction but improves defensibility in regulated verticals.
 
 6) Applied researchers / data scientists
 - Primary JTBD: Run controlled experiments to compare models, prompts and metrics at scale.
 - Typical tools: notebooks, Weights & Biases, OpenAI Evals, Promptfoo.
-- Concrete pains & evidence (observed): reproducibility and dataset/versioning challenges, experiment cost and tooling gaps (OpenAI Evals; Datadog notes on experiment engineering). [OpenAI Evals] [W&B docs] [Datadog blog]
+- Concrete pains & evidence (observed): reproducibility and dataset/versioning challenges, experiment cost and tooling gaps (OpenAI Evals; Datadog notes on experiment engineering). [OpenAI Evals; W&B; Datadog captures]
 - Buying criteria (inference): flexible metrics, reproducibility, experiment‑tracking integrations.
 - Implication: OSS‑friendly experiment tooling accelerates adoption but typically monetizes later via platform/enterprise features.
 
 7) Customer support / operations teams
 - Primary JTBD: Triage user‑facing LLM failures, replay sessions, annotate outputs and link to ticket systems.
 - Typical tools: session logs, support platforms, annotation UIs (Langfuse / LangSmith session features).
-- Concrete pains & evidence (observed): insufficient playback/annotation and difficulty linking support tickets to exact model calls (Langfuse, LangSmith entries). [Langfuse docs] [LangSmith docs]
+- Concrete pains & evidence (observed): insufficient playback/annotation and difficulty linking support tickets to exact model calls (Langfuse, LangSmith entries). [Langfuse; LangSmith captures]
 - Buying criteria (inference/observed): quick playback, annotation, and tight Zendesk/Helpdesk integrations.
 - Implication: Session‑replay + ticketing integrations are valuable expansion motions though direct WTP may be lower; often purchased as add‑ons by platform teams.
 
@@ -102,8 +102,8 @@ Integration spike: precise plan (recommended immediate next action)
   4. Record: time to first successful trace (wall clock), number of code edits required, any blocking errors, token/cost attribution visibility, session grouping, and self‑hosting friction (if self‑host path tested).
   5. Capture screenshots of the trace UI, export a sample trace JSON, and note exact code diffs.
 - Measurements / acceptance criteria:
-  - Time‑to‑first‑trace for a simple chain: target < 120 minutes (observed vendor quickstarts suggest 1–4 hours for novices; we target confirmation).
-  - Trace completeness: at least retriever call, LLM call, and tool call present with token counts and timestamps.
+  - Time‑to‑first‑trace for a simple chain: target < 120 minutes (vendor quickstarts suggest 1–4 hours for novices; confirmation needed).
+  - Trace completeness: retriever call, LLM call, and tool call present with token counts and timestamps.
   - Developer effort: number of copy‑paste edits to working repo <= 6 (setup + one instrumentation insertion).
   - Friction points: list and severity (blocker|major|minor).
 - Output: spike artifacts to store in appendix: repo link or code snippets, screenshot(s), exported sample trace JSON, step‑by‑step log of time and friction.
@@ -130,4 +130,4 @@ Stop / finish checklist (what must be done before marking this section DONE)
 
 Section status: DRAFT — strengthened with an explicit spike and interview plan. Mark as DONE only after the remaining physical spike and interview/case study steps are completed.
 
-Last edited: 2026-04-02T23:05:00+00:00
+Last edited: 2026-04-02T23:30:00+00:00
