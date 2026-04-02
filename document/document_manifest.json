@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02",
+  "last_updated": "2026-04-02T05:00:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Persona synthesis updated with primary-source links (GH/repos/vendor pages). Outstanding: 6-10 interview notes (platform eng, app eng, PM, compliance, QA), 2-3 independent case studies or engineering blogposts, and appendix population of per-row source links. Recommend next: run scripted webfetch to populate provider CSV (top-20) and then schedule interviews."
+      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: 6–10 interview notes across personas, 2-3 independent engineering case studies/postmortems, and appendix population with per-row source links for persona table. Next technical task: populate appendix provider comparison matrix for top-20 providers (GH stars, forks, used-by, funding, customers) via scripted webfetch; then run 2-3 integration effort spikes for LangChain + LlamaIndex."
     },
     {
       "section_id": "05-technical-bottlenecks",

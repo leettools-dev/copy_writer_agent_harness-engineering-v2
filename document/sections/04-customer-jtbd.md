@@ -4,13 +4,13 @@ Purpose
 - Identify the key personas that operate, build, and buy LLM harness tooling; surface their concrete jobs‑to‑be‑done (JTBD), the tools they currently stitch together, their main frustrations, and the buying criteria that determine whether a new product will be adopted.
 
 Why this matters
-- Breakpoint analysis depends on matching a focused wedge to a persona with urgent pain and willingness to pay. This section turns vendor‑centric categories into human jobs that a founder can target and tests those jobs against primary-source evidence.
+- Breakpoint analysis depends on matching a focused wedge to a persona with urgent pain and willingness to pay. This section turns vendor‑centric categories into human jobs that a founder can target and tests those jobs against primary‑source evidence.
 
 Approach and evidence
 - Primary evidence used below is drawn from vendor/product docs, OSS repos, case studies, and product pages (LangChain, LlamaIndex, Langfuse, OpenAI Evals, Promptfoo, Pinecone, Chroma, Weaviate, Milvus, W&B). See /workspace/references/research_notes.md for per‑source captures and metrics.
 - Where claims are inference (WTP, procurement cadence), they are explicitly labeled as "inference" and flagged for interview validation.
 
-Synthesis: top personas, JTBD, tools, pains, evidence, confidence, and WTP
+Synthesis: personas, JTBD, tools, pains, evidence, confidence, and WTP
 
 For each persona we list: Primary JTBD; Typical tools they stitch together; Concrete pains; Representative primary evidence (URL + access date); Confidence in the claim (high/medium/low); Likely WTP (high/medium/low — labeled inference when not directly evidenced).
 
@@ -25,7 +25,7 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
   - LangChain repo + LangSmith product (adoption + observability): https://github.com/langchain-ai/langchain (accessed 2026-03-21)
   - LlamaIndex repo (RAG/document agent): https://github.com/run-llama/llama_index (accessed 2026-03-21)
 - Confidence: high
-- Likely WTP: medium (inference: teams will pay for clear productivity and SLA-ready integrations)
+- Likely WTP: medium (inference: teams will pay for clear productivity and SLA‑ready integrations)
 
 2) Platform / infra engineers (internal LLM platform teams)
 - Primary JTBD: Provide multi‑tenant routing, deployment, monitoring, policy enforcement, and chargeback for LLM workloads consumed by product teams.
@@ -45,10 +45,12 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 - Typical stack: eval tooling (OpenAI Evals, Promptfoo), product analytics, A/B experimentation platforms.
 - Concrete pains:
   - translating model/eval outputs into product KPIs and stakeholder-facing reports; lack of non‑engineer UX for eval artifacts.
+  - difficulty correlating changes in model/prompt with downstream product metrics (engagement, retention, task completion).
 - Representative evidence:
   - OpenAI Evals + Promptfoo docs: https://github.com/openai/evals (accessed 2026-03-21); https://github.com/promptfoo/promptfoo (accessed 2026-03-21)
+  - Product-oriented writeups describing the gap between model metrics and product KPIs (see Research Notes captures).
 - Confidence: medium-high
-- Likely WTP: medium (inference: PMs influence purchases when ROI is demonstrable)
+- Likely WTP: medium (inference: PMs influence purchases when ROI and stakeholder reporting are demonstrable)
 
 4) Evaluation / QA teams
 - Primary JTBD: Run regression tests for model/prompt changes, maintain private eval registries, ensure no regressions in critical behavior.
@@ -93,7 +95,7 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 Compact persona -> JTBD -> tools -> key evidence table (sources + access dates)
 
 | Persona | JTBD | Typical tools (examples) | Key evidence (URL; access date) | Confidence | Likely WTP |
-|---|---|---|---:|---:|---:|
+|---|---|---|---|---|---|
 | AI application engineers | Ship reliable LLM features | LangChain, LlamaIndex, Pinecone/Chroma/Milvus | https://github.com/langchain-ai/langchain (2026-03-21); https://github.com/run-llama/llama_index (2026-03-21) | high | medium |
 | Platform / infra engineers | Operate multi-team LLM platforms | Langfuse/OpenTelemetry, CI/CD, internal gateways | https://langfuse.com (2026-03-21); https://github.com/openai/evals (2026-03-21) | high | high |
 | Product Managers | Measure product impact | OpenAI Evals, Promptfoo, analytics | https://github.com/openai/evals (2026-03-21); https://github.com/promptfoo/promptfoo (2026-03-21) | med-high | medium |
@@ -118,4 +120,4 @@ Evidence gaps and recommended next steps (actionable)
 3. Effort sizing (medium): run a small integration spike that measures engineer‑days to add trace+eval hooks into a representative LangChain + LlamaIndex project and publish the result in appendix.
 4. Appendix population (high): populate /workspace/document/sections/09-appendix.md with per‑row source links and access dates for the persona table and provider comparison matrix.
 
-Section status: DRAFT — this draft consolidates public-source evidence and concrete implications; mark as DONE only after interview validation and 2–3 external case studies are added to the appendix.
+Section status: DRAFT — this draft consolidates public‑source evidence and concrete implications; mark as DONE only after interview validation and 2–3 external case studies are added to the appendix.
