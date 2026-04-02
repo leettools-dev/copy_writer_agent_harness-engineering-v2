@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T19:35:00+00:00",
+  "last_updated": "2026-04-02T19:55:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: conduct 6–10 interviews across personas; add 2–3 independent engineering case studies/postmortems (Anthropic, Datadog, ClickHouse captured) to appendix; run an integration spike (LangChain+LlamaIndex) and publish effort-sizing; populate appendix with per-row source links for persona table and provider comparison matrix. Webfetch captures for Anthropic, Langfuse, LangSmith, Datadog, Promptfoo added. Section content updated 2026-04-02T19:35:00+00:00."
+      "evidence_plan": "Added primary-source links for LangSmith, Langfuse, Promptfoo, OpenAI Evals, Anthropic, Datadog. Outstanding: conduct 6-10 interviews OR add 2-3 independent engineering case studies/postmortems; complete LangChain+LangSmith/Langfuse 2-4 hour integration spike and publish notes to appendix; populate appendix with per-row source links and access dates."
     },
     {
       "section_id": "05-technical-bottlenecks",
@@ -72,7 +72,8 @@
       "title": "Appendix: sources and comparison matrices",
       "file": "document/sections/09-appendix.md",
       "status": "draft",
-      "summary": "Source list, company table, comparison matrix, terminology notes."
+      "summary": "Source list, company table, comparison matrix, terminology notes.",
+      "evidence_plan": "Populate rows for LangChain, LlamaIndex, Langfuse, LangSmith, OpenAI Evals, Promptfoo, Pinecone, Anthropic, Datadog with source URLs and access dates; include integration-spike notes and screenshots."
     }
   ],
   "special_instructions": []
