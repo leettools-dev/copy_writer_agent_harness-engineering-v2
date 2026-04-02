@@ -118,7 +118,6 @@
 
 ### Draft implications
 - The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.
-- Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.
 
 ---
 
@@ -130,7 +129,7 @@
 
 ### Evidence extracted
 - Use cases cited: Customer support, market research, software development; examples of tracing multi-step agent flows and multi-agent setups.
-- Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, Semantic Kernel, and no-code builders (Flowise, Langflow, Dify).
+- Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, and no-code builders (Flowise, Langflow, Dify).
 - Observability patterns: recommends OpenTelemetry convergence, structured tracing (typed observation data for tool calls, retriever steps, guardrail checks), and trajectory/step-level evaluation strategies (black-box, trajectory, single-step).
 - Features: tracing, token & cost tracking, prompt management/versioning, evaluation strategies (model-based, human-in-the-loop, implicit signals), datasets for offline evals, CI integration guidance.
   - Intended sections: Provider landscape (observability), Technical bottlenecks (tracing schema), Customer JTBD (platform teams, support, PMs), Appendix (integration examples)
@@ -163,7 +162,6 @@
 
 ### Draft implications
 - Operationalizing LLM features requires significant engineering investment in input structuring, instruction engineering, secret scrubbing, and evaluation pipelines — validating the JTBD claim that platform teams and support need robust observability and eval hooks.
-- Hybrid-model per-section orchestration and parallelized generation are practical engineering patterns an entrant could adopt; cost/latency tradeoffs must be explicit in product design.
 
 ---
 
@@ -174,7 +172,7 @@
 - Date accessed: 2026-04-02
 
 ### Evidence extracted
-- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red‑teaming, CI integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
+- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red‑teaming/vulnerability scanning, model comparison, CI/CD integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
 - Main features: automated evaluations, red‑teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.
   - Intended sections: Provider landscape (eval tooling), Customer JTBD (PMs, Evaluation/QA teams), Appendix (provider capture)
   - Confidence: high
@@ -197,7 +195,6 @@
 - Publication date: Sep 17, 2025.
 - Main causes described: (1) context-window routing errors that misrouted requests to wrong server pools; (2) output corruption caused by misconfiguration on TPU servers; (3) an XLA:TPU miscompilation/approximate top-k bug producing incorrect token selection in rare configurations.
 - Detection challenges: mixed symptoms across hardware platforms, sticky routing creating disproportionate user impacts, noisy evaluation signals that did not surface the regression early, and privacy controls limiting engineers' ability to inspect problematic user interactions.
-- Recommended mitigations: more sensitive continuous evaluations in production, quality evaluations closer to live traffic, faster debugging tooling that preserves privacy, and migration from approximate to exact top-k in affected code paths.
   - Intended sections: Technical bottlenecks (non-deterministic failures, detection), Customer JTBD (platform teams, PMs, support), Provider landscape (model/provider reliability), Appendix (postmortem capture)
   - Confidence: high (detailed firsthand engineering account)
 
@@ -206,8 +203,7 @@
 
 ### Draft implications
 - Confirms platform teams' need for fine-grained tracing, per-call metadata, and continuous in-production evals to rapidly detect and triage subtle quality regressions.
-- Provides primary evidence that even model providers with strong QA pipelines experience production regressions that are hard to detect, strengthening the argument that third-party observability and eval tooling remain valuable.
 
 ---
 
-Last updated: 2026-04-02T19:30:00+00:00
+Last updated: 2026-04-02T20:10:00+00:00

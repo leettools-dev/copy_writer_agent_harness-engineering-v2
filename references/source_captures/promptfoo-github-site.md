@@ -9,7 +9,7 @@
 - Date accessed: 2026-04-02
 
 ## Evidence extracted
-- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red‑teaming, CI integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
+- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red‑teaming/vulnerability scanning, model comparison, CI/CD integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
 - Main features: automated evaluations, red‑teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.
 - Intended sections: Provider landscape (eval tooling), Customer JTBD (PMs, Evaluation/QA teams), Appendix (provider capture)
 

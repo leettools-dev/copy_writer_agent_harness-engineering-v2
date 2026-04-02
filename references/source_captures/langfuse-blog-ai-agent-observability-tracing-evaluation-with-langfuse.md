@@ -10,7 +10,7 @@
 
 ## Evidence extracted
 - Use cases cited: Customer support, market research, software development; examples of tracing multi-step agent flows and multi-agent setups.
-- Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, Semantic Kernel, and no-code builders (Flowise, Langflow, Dify).
+- Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, and no-code builders (Flowise, Langflow, Dify).
 - Observability patterns: recommends OpenTelemetry convergence, structured tracing (typed observation data for tool calls, retriever steps, guardrail checks), and trajectory/step-level evaluation strategies (black-box, trajectory, single-step).
 - Features: tracing, token & cost tracking, prompt management/versioning, evaluation strategies (model-based, human-in-the-loop, implicit signals), datasets for offline evals, CI integration guidance.
 - Intended sections: Provider landscape (observability), Technical bottlenecks (tracing schema), Customer JTBD (platform teams, support, PMs), Appendix (integration examples)

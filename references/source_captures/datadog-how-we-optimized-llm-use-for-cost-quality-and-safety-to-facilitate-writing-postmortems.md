@@ -18,5 +18,4 @@
 
 ## Draft implications
 - Operationalizing LLM features requires significant engineering investment in input structuring, instruction engineering, secret scrubbing, and evaluation pipelines — validating the JTBD claim that platform teams and support need robust observability and eval hooks.
-- Hybrid-model per-section orchestration and parallelized generation are practical engineering patterns an entrant could adopt; cost/latency tradeoffs must be explicit in product design.
 - ---
