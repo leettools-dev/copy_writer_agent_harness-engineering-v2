@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T23:30:00+00:00",
+  "last_updated": "2026-04-02T23:55:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Core persona claims supported by vendor docs and independent engineering case studies (Zalando, Anthropic, Datadog). Desk research quickstarts for Langfuse and LangSmith added; next step: execute a 2-hour integration spike (LangChain + Langfuse or LangSmith) to capture time-to-first-trace, exact steps, screenshots and friction points. Appendix must be populated with spike artifacts and access dates."
+      "evidence_plan": "Persona claims supported by vendor docs and engineering case studies (Langfuse, LangSmith, LangChain, LlamaIndex, Pinecone, Anthropic, Datadog, Zalando, Promptfoo). Next steps: run an integration spike (LangChain + Langfuse/LangSmith) to capture time-to-first-trace and friction points; conduct 6 targeted interviews (2 platform leads, 2 ML engineers, 1 PM, 1 security/compliance) to validate WTP and procurement triggers; populate appendix with spike artifacts and interview snippets."
     },
     {
       "section_id": "05-technical-bottlenecks",
@@ -73,7 +73,7 @@
       "file": "document/sections/09-appendix.md",
       "status": "draft",
       "summary": "Source list, company table, comparison matrix, terminology notes.",
-      "evidence_plan": "Core provider rows populated for LangChain, LlamaIndex, Langfuse, LangSmith, OpenAI Evals, Promptfoo, Pinecone, Anthropic, Datadog. Remaining tasks: add GH/funding/traction metrics per row, integration-spike artifacts, and verified access dates/quotes."
+      "evidence_plan": "Populate core provider rows (LangChain, LlamaIndex, Langfuse, LangSmith, OpenAI Evals, Promptfoo, Pinecone, Anthropic, Datadog) with GH metrics, funding/traction, integration-spike artifacts and verified access dates/quotes."
     }
   ],
   "special_instructions": []
