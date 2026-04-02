@@ -98,4 +98,35 @@
 
 ---
 
-(Notes: remaining source captures unchanged; see earlier sections for Chroma, Pinecone, Promptfoo, Weaviate, Milvus, W&B captures.)
+## Source: Pinecone (Vendor case study)
+- URL: https://www.pinecone.io/customers/vanguard/
+- Why this source matters: Pinecone is a leading managed vector database that demonstrates enterprise deployment patterns, security controls (AWS PrivateLink / dedicated clusters), and measurable retrieval improvements in production RAG use cases.
+- Reliability tier: primary (vendor case study)
+- Date accessed: 2026-04-02
+
+### Evidence extracted
+- Use case: Vanguard built an internal RAG-powered Agent Assist for customer support to reduce call times and improve retrieval accuracy.
+  - Support: Pinecone Vanguard case study (vendor-published).
+- Metrics claimed: ~12% improvement in retrieval accuracy (hybrid dense+sparse) vs dense-only retrieval; faster call times and reduced operational overhead reported by Vanguard.
+  - Quote: "One of the reasons we chose Pinecone beyond functionality is because Pinecone was willing to work with Vanguard, specifically to meet our security control and performance requirements by creating a dedicated AWS account and cluster for us." — Hung Pham, ML Engineer at Vanguard
+- Enterprise features cited: hybrid search (dense + BM25 sparse), real-time updates, AWS PrivateLink support, dedicated clusters / BYOC capabilities, metadata filtering for compliance, flexible distance metrics, and advanced metadata filtering to differentiate live vs stale documents.
+- Deployment details: dedicated AWS account and cluster for Vanguard; metadata strategy to mark documents as "live" or "stale" and offload stale documents to long-term storage (DynamoDB) for regulatory compliance.
+- Intended sections: Provider landscape (vector DB), Customer JTBD (platform teams, compliance), Appendix (case studies)
+- Confidence: medium (vendor-published case study; reliable for describing deployment choices, but metrics are vendor-reported)
+
+### Open questions
+- Independent verification of the 12% accuracy uplift; broader adoption metrics for Pinecone enterprise customers beyond case studies.
+- Exact scale (QPS, index size) for Vanguard deployment and costs.
+
+### Draft implications
+- The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.
+- Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.
+- Any entrant focused on retrieval, RAG orchestration, or observability should design integrations that support hybrid retrieval patterns and metadata-driven filtering for compliance-sensitive domains.
+
+### Next steps
+- Triangulate Pinecone case study claims with any independent engineering blogposts or public talks by Vanguard engineers (search for "Vanguard Pinecone" conference talks or engineering posts).
+- If available, capture deployment scale metrics (index size, QPS) for better cost/effort sizing in the appendix.
+
+---
+
+(Notes: remaining source captures unchanged; see earlier sections for Chroma, Promptfoo, Weaviate, Milvus, W&B captures.)

@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T12:30:00+00:00",
+  "last_updated": "2026-04-02T13:05:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: 6–10 interview notes across personas, 2–3 independent engineering case studies/postmortems, and appendix population with per-row source links for the persona table. Next technical task: populate appendix provider comparison matrix for top-20 providers (GH stars, forks, used-by, funding, customers) via scripted webfetch; then run 2-3 integration effort spikes for LangChain + LlamaIndex. Added LangSmith capture for observability evidence."
+      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: 6–10 interview notes across personas, 2–3 independent engineering case studies/postmortems (e.g., Anthropic postmortem captured), and appendix population with per-row source links for the persona table. Next technical task: populate appendix provider comparison matrix for top-20 providers (GH stars, forks, used-by, funding, customers) via scripted webfetch; then run 2-3 integration effort spikes for LangChain + LlamaIndex. Added LangSmith and Pinecone captures for observability and vector DB case study evidence."
     },
     {
       "section_id": "05-technical-bottlenecks",
