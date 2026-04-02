@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T17:00:00+00:00",
+  "last_updated": "2026-04-02T18:00:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: conduct 6–10 interviews across personas; add 2–3 independent engineering case studies/postmortems; run an integration spike (LangChain+LlamaIndex) and publish effort-sizing; populate appendix with per-row source links for persona table and provider comparison matrix. Webfetch added Langfuse blog capture for observability evidence. Section content updated 2026-04-02T17:00:00+00:00."
+      "evidence_plan": "Consolidated public-source evidence added to section; outstanding: conduct 6–10 interviews across personas; add 2–3 independent engineering case studies/postmortems; run an integration spike (LangChain+LlamaIndex) and publish effort-sizing; populate appendix with per-row source links for persona table and provider comparison matrix. Webfetch added Promptfoo and Langfuse captures for observability and eval evidence. Section content updated 2026-04-02T18:00:00+00:00."
     },
     {
       "section_id": "05-technical-bottlenecks",
