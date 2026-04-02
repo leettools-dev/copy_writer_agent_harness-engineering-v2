@@ -63,7 +63,7 @@
 
 ## Source: OpenAI Evals (GitHub + OpenAI docs)
 - URL: https://github.com/openai/evals and https://platform.openai.com/docs/guides/evals
-- Why this source matters: OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform 1 signals the importance of structured evals, registries, and private eval capabilities.
+- Why this source matters: OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform — signals the importance of structured evals, registries, and private eval capabilities.
 - Reliability tier: primary
 - Date accessed: 2026-03-21
 
@@ -99,22 +99,27 @@
 
 ---
 
-## Source: Pinecone (company site)
-- URL: https://www.pinecone.io/
-- Why this source matters: Pinecone is one of the most widely used managed vector DBs and provides strong enterprise features (SaaS, BYOC preview, security/compliance).
-- Reliability tier: strong-secondary (vendor primary source)
-- Date accessed: 2026-03-21
+## Source: Pinecone (company site & Vanguard case study)
+- URL: https://www.pinecone.io/ and https://www.pinecone.io/customers/vanguard/
+- Why this source matters: Pinecone is a widely used managed vector DB with enterprise customers and explicit compliance/enterprise features; the Vanguard case study provides a concrete example of enterprise adoption with measurable outcomes.
+- Reliability tier: strong-secondary (vendor primary source + case study)
+- Date accessed: 2026-04-02
 
 ### Evidence extracted
-- Hosting model: Managed SaaS, serverless scaling, BYOC preview; product pages list customer case studies (Gong, Vanguard) and enterprise features (SLA, SOC 2, HIPAA references).
-  - Intended sections: Provider landscape (vector DBs), Commercial moat (SaaS + enterprise features), Appendix (vendor citations)
-  - Confidence: medium-high
+- Customer case: "How Vanguard worked with Pinecone to boost customer support with faster calls and 12% more accurate responses" (Pinecone customer case study page).
+  - Metrics reported: ~12% improvement in retrieval accuracy after switching to hybrid retrieval using Pinecone; reduced call times and operational overhead for Vanguard's customer support during peak periods.
+  - Deployment & enterprise features: Vanguard used Pinecone serverless in a dedicated AWS account/cluster; Pinecone provided support for AWS PrivateLink and enterprise security controls; metadata filtering used for compliance and marking documents "live" vs "stale".
+  - Technical approach: hybrid retrieval (dense embeddings + sparse BM25), real-time updates, metadata filtering for compliance, separation of stale docs into long-term storage (DynamoDB).
+  - Quote: Pinecone worked with Vanguard to create a dedicated AWS account and cluster to meet security/performance requirements.
+  - Intended sections: Provider landscape (vector DBs), Customer JTBD (platform/infra engineers, compliance), Appendix (case study citations)
+  - Confidence: high for the case study claims (vendor-reported)
 
 ### Open questions
-- Latest funding or strategic partnerships to cite precisely (press links).
+- Independent verification of Vanguard's internal metrics (vendor case studies are inherently vendor-curated).
+- Additional enterprise case studies for Pinecone (other verticals) to triangulate the generality of the claim.
 
 ### Draft implications
-- For startups building retrieval layers, offering a BYOC / cloud-agnostic mode or clear cost advantage is important vs Pinecone's managed offering.
+- Vendor case study supports the assertion that enterprise buyers prioritize security controls, hybrid retrieval accuracy, and metadata filtering for compliance — reinforcing the Enterprise-first wedge for harness tooling that bundles audit/trace and governance primitives.
 
 ---
 
@@ -176,7 +181,7 @@
 ---
 
 ## Source: Weights & Biases (company pages / press)
-- URL: https://wandb.ai/  (note: page fetch returned limited content in automated pass)
+- URL: https://wandb.ai/
 - Why this source matters: W&B is a mature ML experiment tracking and observability product that signals how model ops tooling translates into enterprise sales and integrations.
 - Reliability tier: strong-secondary
 - Date accessed: 2026-03-21
@@ -198,7 +203,7 @@
 1. Verify and capture customer-case links and funding press for Pinecone, LangChain, LlamaIndex, and W&B (Priority: high).
 2. Populate the provider comparison matrix CSV with the rows updated here and collect "used-by" dependents counts via GitHub network pages for OSS projects (Priority: high).
 3. Map integration hooks and minimal engineering effort to support LangChain, LlamaIndex, Langfuse, Promptfoo, and Chroma for an observability/eval SDK (Priority: medium).
-4. Recruit 2	6 interviews with platform engineers running production LLM apps to validate appendix claims about priority of observability vs evals vs memory orchestration (Priority: high).
+4. Recruit 2–6 interviews with platform engineers running production LLM apps to validate appendix claims about priority of observability vs evals vs memory orchestration (Priority: high).
 5. Add missing citations and update the appendix table; mark appendix done once all top-20 provider cells have source links and access dates.
 
-(Notes: all repo metrics and product claims above are sourced from the respective GitHub repository front pages and vendor pages accessed on 2026-03-21.)
+(Notes: all repo metrics and product claims above are sourced from the respective GitHub repository front pages and vendor pages accessed on 2026-03-21/2026-04-02.)

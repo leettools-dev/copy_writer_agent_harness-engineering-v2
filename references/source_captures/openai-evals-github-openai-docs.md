@@ -4,7 +4,7 @@
 - URL: https://github.com/openai/evals and https://platform.openai.com/docs/guides/evals
 - Source role: supporting_source
 - Linked sections: Not mapped yet
-- Why this source matters: OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform 1 signals the importance of structured evals, registries, and private eval capabilities.
+- Why this source matters: OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform — signals the importance of structured evals, registries, and private eval capabilities.
 - Reliability tier: primary
 - Date accessed: 2026-03-21
 
