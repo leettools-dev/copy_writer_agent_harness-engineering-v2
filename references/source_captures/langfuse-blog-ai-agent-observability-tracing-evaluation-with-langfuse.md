@@ -20,5 +20,4 @@
 
 ## Draft implications
 - Strong evidence that observability vendors target the same persona set (platform teams, PMs, support) and that integration breadth (LangChain, LlamaIndex, OpenTelemetry) is a competitive requirement.
-- Langfuse's emphasis on structured traces and evaluation pipelines supports the earlier persona claims about the need for a standards-first trace schema.
 - ---

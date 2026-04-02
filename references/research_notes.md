@@ -140,7 +140,6 @@
 
 ### Draft implications
 - Strong evidence that observability vendors target the same persona set (platform teams, PMs, support) and that integration breadth (LangChain, LlamaIndex, OpenTelemetry) is a competitive requirement.
-- Langfuse's emphasis on structured traces and evaluation pipelines supports the earlier persona claims about the need for a standards-first trace schema.
 
 ---
 
@@ -167,13 +166,13 @@
 
 ## Source: Promptfoo (GitHub + site)
 - URL: https://github.com/promptfoo/promptfoo and https://www.promptfoo.dev
-- Why this source matters: Promptfoo is a widely-used open-source eval and red‑teaming tool providing CI/CD integration, red‑teaming workflows, and model comparison features; signals practical eval, red-team, and security needs for PMs and QA teams.
+- Why this source matters: Promptfoo is a widely-used open-source eval and red-teaming tool providing CI/CD integration, red-teaming workflows, and model comparison features; signals practical eval, red-team, and security needs for PMs and QA teams.
 - Reliability tier: primary
 - Date accessed: 2026-04-02
 
 ### Evidence extracted
-- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red‑teaming/vulnerability scanning, model comparison, CI/CD integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
-- Main features: automated evaluations, red‑teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.
+- Repo/site signals: ~19.1k stars on GitHub; README and site describe CLI + library for running evals, red-teaming/vulnerability scanning, model comparison, CI/CD integration, web viewer, and documentation. The project advertises private/local evals and a web UI for results. The README/site note: "Promptfoo is now part of OpenAI" and that the project remains open source (MIT).
+- Main features: automated evaluations, red-teaming/vulnerability scanning, model comparison, CI/CD integration (GitHub Actions), local/private evals, web viewer for results, code scanning for PRs.
   - Intended sections: Provider landscape (eval tooling), Customer JTBD (PMs, Evaluation/QA teams), Appendix (provider capture)
   - Confidence: high
 
@@ -181,7 +180,7 @@
 - Commercial traction or hosted offering split (project is OSS; company update indicates acquisition by OpenAI but details of commercial hosting vs OSS usage remain limited in public sources).
 
 ### Draft implications
-- Promptfoo demonstrates that evaluation and red‑teaming are mature OSS workflows with strong developer adoption; commercial entrants must either integrate with Promptfoo or offer clear advantages (enterprise features, private registries, CI-first UX) to compete.
+- Promptfoo demonstrates that evaluation and red-teaming are mature OSS workflows with strong developer adoption; commercial entrants must either integrate with Promptfoo or offer clear advantages (enterprise features, private registries, CI-first UX) to compete.
 
 ---
 
@@ -206,4 +205,25 @@
 
 ---
 
-Last updated: 2026-04-02T20:10:00+00:00
+## Source: Zalando — "Dead Ends or Data Goldmines? Investment Insights from Two Years of AI-Powered Postmortem Analysis"
+- URL: https://engineering.zalando.com/posts/2025/09/dead-ends-or-data-goldmines-ai-powered-postmortem-analysis.html
+- Why this source matters: Independent engineering blog describing using LLMs to analyze thousands of postmortems; provides concrete pipeline architecture, human-in-the-loop curation practices, hallucination/attribution failure modes, and examples of operational gains.
+- Reliability tier: strong-secondary (company engineering blog)
+- Date accessed: 2026-04-02
+
+### Evidence extracted
+- TL;DR: Zalando processed thousands of postmortems with a staged LLM pipeline (summarization, classification, analysis, pattern detection) and found AI effective at surfacing recurring issues while requiring human curation to reduce hallucination and surface-attribution errors.
+- Key engineering points: multi-stage map-reduce style pipeline, human curation percentages (initially 100% then reduced to 10–20% sampling), measured per-document processing targets (≈30s per postmortem with modern models), and specific mitigation patterns for hallucination and attribution error.
+- Use cases cited: datastore incident pattern detection, automated summaries for leadership, and engineering decision support; examples of pipeline stages and constraints to avoid "lost in the middle" effects.
+  - Intended sections: Customer JTBD (platform teams, PMs, support), Technical bottlenecks (evaluation fidelity, hallucination), Appendix (case study)
+  - Confidence: medium-high
+
+### Open questions
+- Exact ROI numbers and adoption extent across Zalando teams; reproducibility outside Zalando's tooling and data cleanliness practices.
+
+### Draft implications
+- Independent corroboration that postmortem/observability use cases for LLMs are real and operationally valuable; supports JTBD claims for platform teams and PMs and strengthens the case that observability/eval tooling reduces MTTR when coupled with human curation.
+
+---
+
+Last updated: 2026-04-02T20:30:00+00:00

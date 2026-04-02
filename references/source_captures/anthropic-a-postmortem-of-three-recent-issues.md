@@ -20,4 +20,3 @@
 ## Draft implications
 - Confirms platform teams' need for fine-grained tracing, per-call metadata, and continuous in-production evals to rapidly detect and triage subtle quality regressions.
 - ---
-- Last updated: 2026-04-02T20:10:00+00:00
