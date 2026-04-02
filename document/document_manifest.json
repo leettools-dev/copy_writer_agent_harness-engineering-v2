@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T22:10:00+00:00",
+  "last_updated": "2026-04-02T22:30:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -37,7 +37,7 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "draft",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Core persona claims supported by vendor docs and independent engineering case studies (Zalando, Anthropic, Datadog). Desk research quickstarts for Langfuse and LangSmith added; recommended next step: execute a 2-hour integration spike (LangChain + Langfuse or LangSmith) to capture time-to-first-trace, exact steps, and screenshots. Appendix must be populated with spike artifacts and access dates."
+      "evidence_plan": "Core persona claims supported by vendor docs and independent engineering case studies (Zalando, Anthropic, Datadog). Desk research quickstarts for Langfuse and LangSmith added; next step: execute a 2-hour integration spike (LangChain + Langfuse or LangSmith) to capture time-to-first-trace, exact steps, screenshots and friction points. Appendix must be populated with spike artifacts and access dates."
     },
     {
       "section_id": "05-technical-bottlenecks",
