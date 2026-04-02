@@ -1,6 +1,6 @@
 {
   "generated_by": "copy_writer_agent.runtime_sync",
-  "updated_at": "2026-04-02T05:27:34.342765+00:00",
+  "updated_at": "2026-04-02T05:32:03.960957+00:00",
   "sources": [
     {
       "source_id": "selected-example",
@@ -202,7 +202,6 @@
       "evidence": [
         "Use case: Vanguard built an internal RAG-powered Agent Assist for customer support to reduce call times and improve retrieval accuracy. (Support: Pinecone Vanguard case study (vendor-published).)",
         "Metrics claimed: ~12% improvement in retrieval accuracy (hybrid dense+sparse) vs dense-only retrieval; faster call times and reduced operational overhead reported by Vanguard.",
-        "Quote: \"One of the reasons we chose Pinecone beyond functionality is because Pinecone was willing to work with Vanguard, specifically to meet our security control and performance requirements by creating a dedicated AWS account and cluster for us.\" — Hung Pham, ML Engineer at Vanguard",
         "Enterprise features cited: hybrid search (dense + BM25 sparse), real-time updates, AWS PrivateLink support, dedicated clusters / BYOC capabilities, metadata filtering for compliance, flexible distance metrics, and advanced metadata filtering to differentiate live vs stale documents.",
         "Deployment details: dedicated AWS account and cluster for Vanguard; metadata strategy to mark documents as \"live\" or \"stale\" and offload stale documents to long-term storage (DynamoDB) for regulatory compliance.",
         "Intended sections: Provider landscape (vector DB), Customer JTBD (platform teams, compliance), Appendix (case studies)"
@@ -212,7 +211,8 @@
       ],
       "draft_implications": [
         "The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.",
-        "Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams."
+        "Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.",
+        "---"
       ]
     },
     {
@@ -230,17 +230,40 @@
         "Integration claims: native integrations / cookbooks for LangGraph, LlamaIndex, OpenAI Agents SDK, Hugging Face smolagents, Pydantic AI, CrewAI, AutoGen, Strands Agents, Semantic Kernel, and no-code builders (Flowise, Langflow, Dify).",
         "Observability patterns: recommends OpenTelemetry convergence, structured tracing (typed observation data for tool calls, retriever steps, guardrail checks), and trajectory/step-level evaluation strategies (black-box, trajectory, single-step).",
         "Features: tracing, token & cost tracking, prompt management/versioning, evaluation strategies (model-based, human-in-the-loop, implicit signals), datasets for offline evals, CI integration guidance.",
-        "Developer distribution signals: links to integration cookbooks, SDKs (Python/JS), and interactive demos; site encourages self-hosting and cloud deployment options.",
         "Intended sections: Provider landscape (observability), Technical bottlenecks (tracing schema), Customer JTBD (platform teams, support, PMs), Appendix (integration examples)"
       ],
       "open_questions": [
-        "Public customer list for Langfuse Cloud vs self-host adoption split.",
-        "Any independent third-party writeups or postmortems referencing Langfuse deployment impact (search planned in appendix next steps)."
+        "Public customer list for Langfuse Cloud vs self-host adoption split."
       ],
       "draft_implications": [
         "Strong evidence that observability vendors target the same persona set (platform teams, PMs, support) and that integration breadth (LangChain, LlamaIndex, OpenTelemetry) is a competitive requirement.",
         "Langfuse's emphasis on structured traces and evaluation pipelines supports the earlier persona claims about the need for a standards-first trace schema.",
         "---"
+      ]
+    },
+    {
+      "source_id": "datadog-how-we-optimized-llm-use-for-cost-quality-and-safety-to-facilitate-writing-postmortems",
+      "title": "Datadog — \"How we optimized LLM use for cost, quality, and safety to facilitate writing postmortems\"",
+      "url": "https://www.datadoghq.com/blog/engineering/llms-for-postmortems/",
+      "source_role": "supporting_source",
+      "capture_path": "references/source_captures/datadog-how-we-optimized-llm-use-for-cost-quality-and-safety-to-facilitate-writing-postmortems.md",
+      "linked_sections": [],
+      "why_it_matters": "An engineering blog describing a production project that used LLMs for incident postmortem drafting and incident summaries; provides concrete engineering lessons on instrumentation, hybrid model strategies, evaluation methods, and trust/privacy controls that inform observability and eval JTBD.",
+      "reliability_tier": "strong-secondary (vendor engineering blog from a major observability vendor)",
+      "date_accessed": "2026-04-02",
+      "evidence": [
+        "Implementation notes: Datadog combined structured incident metadata (Incident Management app) with unstructured Slack discussion, scrubbed secrets, and fed data to an ensemble of LLMs to produce draft postmortems and incident summaries. They invested >100 engineering hours iterating on instruction structure and templates. (Support: Datadog engineering blog (detailed implementation and experimentation notes).)",
+        "Evaluation & instrumentation: used qualitative user surveys to compare AI vs human drafts; experimented with ROUGE/BLEU-like metrics but found them limited; emphasized hybrid model selection per section (cheaper models for simple sections, GPT-4 for complex sections) and parallelized generation to improve latency at cost of duplication.",
+        "Intended sections: Customer JTBD (platform teams, PMs, support), Technical bottlenecks (non-determinism, evaluation metrics), Appendix (postmortem case study)"
+      ],
+      "open_questions": [
+        "Independent corroboration of claimed engineering hours and ROI; whether similar instrumentation patterns generalize to non-Datadog stacks."
+      ],
+      "draft_implications": [
+        "Operationalizing LLM features requires significant engineering investment in input structuring, instruction engineering, secret scrubbing, and evaluation pipelines — validating the JTBD claim that platform teams and support need robust observability and eval hooks.",
+        "Hybrid-model per-section orchestration and parallelized generation are practical engineering patterns an entrant could adopt; cost/latency tradeoffs must be explicit in product design.",
+        "---",
+        "Last updated: 2026-04-02T17:10:00+00:00"
       ]
     },
     {

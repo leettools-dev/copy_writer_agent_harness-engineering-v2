@@ -11,7 +11,6 @@
 ## Evidence extracted
 - Use case: Vanguard built an internal RAG-powered Agent Assist for customer support to reduce call times and improve retrieval accuracy. (Support: Pinecone Vanguard case study (vendor-published).)
 - Metrics claimed: ~12% improvement in retrieval accuracy (hybrid dense+sparse) vs dense-only retrieval; faster call times and reduced operational overhead reported by Vanguard.
-- Quote: "One of the reasons we chose Pinecone beyond functionality is because Pinecone was willing to work with Vanguard, specifically to meet our security control and performance requirements by creating a dedicated AWS account and cluster for us." — Hung Pham, ML Engineer at Vanguard
 - Enterprise features cited: hybrid search (dense + BM25 sparse), real-time updates, AWS PrivateLink support, dedicated clusters / BYOC capabilities, metadata filtering for compliance, flexible distance metrics, and advanced metadata filtering to differentiate live vs stale documents.
 - Deployment details: dedicated AWS account and cluster for Vanguard; metadata strategy to mark documents as "live" or "stale" and offload stale documents to long-term storage (DynamoDB) for regulatory compliance.
 - Intended sections: Provider landscape (vector DB), Customer JTBD (platform teams, compliance), Appendix (case studies)
@@ -22,3 +21,4 @@
 ## Draft implications
 - The Vanguard case study validates that enterprise customers require BYOC/dedicated deployments and advanced metadata filtering to meet compliance needs — this supports the earlier persona claim that platform/compliance teams have high WTP for enterprise-grade features.
 - Vector DB vendors' willingness to provide dedicated infrastructure and security controls suggests a path for newcomers to partner or integrate rather than reimplement vector storage when targeting platform teams.
+- ---
