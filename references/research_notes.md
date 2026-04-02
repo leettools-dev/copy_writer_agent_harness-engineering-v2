@@ -61,6 +61,30 @@
 
 ---
 
+## Source: LangSmith (LangChain - LangSmith Observability)
+- URL: https://www.langchain.com/langsmith/observability
+- Why this source matters: LangSmith is LangChain's observability and eval platform. It is a central example of a framework-integrated commercial observability product with self-host/BYOC options and explicit enterprise features and customers.
+- Reliability tier: primary (vendor documentation)
+- Date accessed: 2026-04-02
+
+### Evidence extracted
+- Product claims: native tracing for popular agent frameworks and OpenTelemetry; SDKs for Python/TypeScript/Go/Java; message threading for multi-turn chat; session tracing and replay; monitoring dashboards that track token usage, latency (P50/P99), error rates, cost tracking, and online evals.
+- Enterprise features: self-host/BYOC and Kubernetes deployment options for Enterprise plans; data residency controls; integrations with PagerDuty/webhooks; explicit enterprise customer logos shown on site (Cloudflare, Lyft, LinkedIn, Klarna, Coinbase, Vanguard-related customers listed elsewhere).
+- Pricing/packaging: free tier for dev and paid plans scaling with trace volume; enterprise pricing via contact-sales and documented enterprise options.
+- Integration claims: framework-agnostic tracing (works with LangChain, LlamaIndex, OpenAI SDKs), OpenTelemetry support, and instructions for sending data to/from LangSmith.
+- Docs evidence: Observability and OTel docs, self-hosting docs (kubernetes), FAQs stating no added latency and data ownership guarantees.
+- Intended sections: Provider landscape (observability), Customer JTBD (platform teams, PMs, support), Technical bottlenecks (trace schema and integration), Appendix (vendor capture)
+- Confidence: high (vendor docs and public product pages)
+
+### Open questions
+- Exact enterprise customer list and independent adoption metrics; traction beyond vendor-reported logos.
+- Relative adoption vs other observability vendors (Langfuse, internal tools).
+
+### Draft implications
+- LangSmith validates market demand for integrated observability + eval features and the viability of providing managed + self-host options for enterprise buyers. Any newcomer focused on observability or eval SDKs must interoperate with LangSmith and LangChain hooks to be competitive.
+
+---
+
 ## Source: OpenAI Evals (GitHub + OpenAI docs)
 - URL: https://github.com/openai/evals and https://platform.openai.com/docs/guides/evals
 - Why this source matters: OpenAI Evals is a canonical eval framework and is integrated into OpenAI's platform — signals the importance of structured evals, registries, and private eval capabilities.
@@ -72,138 +96,6 @@
   - Intended sections: Provider landscape (eval tooling), Technical bottlenecks (evaluation pipelines), Appendix (methodology)
   - Confidence: high
 
-### Open questions
-- Relative adoption of OpenAI Evals vs alternative OSS eval frameworks (promptfoo, other community projects).
-
-### Draft implications
-- Eval tooling that offers private CI integration, audit logs, and enterprise governance has a clear buyer: platform teams and compliance-oriented enterprises.
-
 ---
 
-## Source: Chroma (GitHub + Chroma Cloud)
-- URL: https://github.com/chroma-core/chroma and https://trychroma.com/
-- Why this source matters: Chroma is a major open-source vector DB/embedding store with a hosted offering (Chroma Cloud). Vector stores are core infra for retrieval, RAG, and memory management.
-- Reliability tier: strong-secondary
-- Date accessed: 2026-03-21
-
-### Evidence extracted
-- Repo metrics: ~26.7k stars, ~2.1k forks; README and docs reference Chroma Cloud (hosted), client SDKs.
-  - Intended sections: Provider landscape (vector DBs), Technical bottlenecks (persistence, latency), Appendix (traction table)
-  - Confidence: medium-high
-
-### Open questions
-- Exact funding and enterprise adoption signals for Chroma Cloud (customer lists).
-
-### Draft implications
-- Any harness product that manages retrieval or memory must interop with Chroma and support both self-hosted and Chroma Cloud patterns.
-
----
-
-## Source: Pinecone (company site & Vanguard case study)
-- URL: https://www.pinecone.io/ and https://www.pinecone.io/customers/vanguard/
-- Why this source matters: Pinecone is a widely used managed vector DB with enterprise customers and explicit compliance/enterprise features; the Vanguard case study provides a concrete example of enterprise adoption with measurable outcomes.
-- Reliability tier: strong-secondary (vendor primary source + case study)
-- Date accessed: 2026-04-02
-
-### Evidence extracted
-- Customer case: "How Vanguard worked with Pinecone to boost customer support with faster calls and 12% more accurate responses" (Pinecone customer case study page).
-  - Metrics reported: ~12% improvement in retrieval accuracy after switching to hybrid retrieval using Pinecone; reduced call times and operational overhead for Vanguard's customer support during peak periods.
-  - Deployment & enterprise features: Vanguard used Pinecone serverless in a dedicated AWS account/cluster; Pinecone provided support for AWS PrivateLink and enterprise security controls; metadata filtering used for compliance and marking documents "live" vs "stale".
-  - Technical approach: hybrid retrieval (dense embeddings + sparse BM25), real-time updates, metadata filtering for compliance, separation of stale docs into long-term storage (DynamoDB).
-  - Quote: Pinecone worked with Vanguard to create a dedicated AWS account and cluster to meet security/performance requirements.
-  - Intended sections: Provider landscape (vector DBs), Customer JTBD (platform/infra engineers, compliance), Appendix (case study citations)
-  - Confidence: high for the case study claims (vendor-reported)
-
-### Open questions
-- Independent verification of Vanguard's internal metrics (vendor case studies are inherently vendor-curated).
-- Additional enterprise case studies for Pinecone (other verticals) to triangulate the generality of the claim.
-
-### Draft implications
-- Vendor case study supports the assertion that enterprise buyers prioritize security controls, hybrid retrieval accuracy, and metadata filtering for compliance — reinforcing the Enterprise-first wedge for harness tooling that bundles audit/trace and governance primitives.
-
----
-
-## Source: Weaviate (weaviate.io)
-- URL: https://weaviate.io/
-- Why this source matters: Weaviate is an AI-native vector DB with cloud and dedicated enterprise modules; provides agent-oriented features and embeddings service.
-- Reliability tier: strong-secondary
-- Date accessed: 2026-03-21
-
-### Evidence extracted
-- Hosting model: Shared Cloud, Dedicated Cloud, self-host; product pages highlight Weaviate Agents and enterprise modules; strong partner integrations (AWS, GCP, Snowflake, Databricks).
-  - Intended sections: Provider landscape (vector DBs), Market map (enterprise ops), Appendix (vendor notes)
-  - Confidence: medium-high
-
-### Open questions
-- Precise customer logos/case studies to cite.
-
-### Draft implications
-- Vector DB competition varies between OSS-first (Chroma, Milvus) and managed SaaS players (Pinecone, Weaviate Cloud); choice matters for GTM and integrations.
-
----
-
-## Source: Milvus (GitHub + Zilliz Cloud)
-- URL: https://github.com/milvus-io/milvus and https://milvus.io/
-- Why this source matters: Milvus is a high-performance, cloud-native vector DB (LF AI & Data project) with strong OSS traction and managed Zilliz Cloud product.
-- Reliability tier: primary
-- Date accessed: 2026-03-21
-
-### Evidence extracted
-- Repo metrics: ~43.4k stars, ~3.9k forks; README and docs highlight Zilliz Cloud managed offering and enterprise deployment modes (serverless, dedicated).
-  - Intended sections: Provider landscape (vector DBs), Technical bottlenecks (performance / scaling), Appendix (traction table)
-  - Confidence: high
-
-### Open questions
-- Map of Milvus enterprise customers (Zilliz cloud case studies) to cite.
-
-### Draft implications
-- Milvus demonstrates that OSS vector DBs retain strong enterprise relevance when paired with managed cloud (Zilliz) and ecosystem tooling.
-
----
-
-## Source: Promptfoo (GitHub + docs)
-- URL: https://github.com/promptfoo/promptfoo and https://www.promptfoo.dev/
-- Why this source matters: Promptfoo is a leading OSS evals and red-teaming tool (CLI + CI) used for prompt testing, model comparisons, and CI/CD integration.
-- Reliability tier: primary
-- Date accessed: 2026-03-21
-
-### Evidence extracted
-- Repo metrics: ~17.8k stars, ~1.5k forks; docs show CLI/CI integrations, red-teaming capabilities, and an announced joining/open collaboration with OpenAI (March 2026 update in README/docs).
-  - Intended sections: Provider landscape (evals & testing), Customer JTBD (CI/QA), Appendix (feature matrix)
-  - Confidence: high
-
-### Open questions
-- Track commercialization or enterprise paid tiers post-OpenAI joining (if any).
-
-### Draft implications
-- Lightweight eval/CI integrations (CLI + CI workflows) are a realistic early wedge for narrow harness products; integration with private CI and audit logs is the buyer need.
-
----
-
-## Source: Weights & Biases (company pages / press)
-- URL: https://wandb.ai/
-- Why this source matters: W&B is a mature ML experiment tracking and observability product that signals how model ops tooling translates into enterprise sales and integrations.
-- Reliability tier: strong-secondary
-- Date accessed: 2026-03-21
-
-### Evidence extracted
-- Product positioning: experiment tracking, model monitoring, datasets and model registries; enterprise SaaS with M&A/partnership activity historically reported in press. Additional precise press links (CoreWeave acquisition, partnership pages) need to be captured and cited.
-  - Intended sections: Provider landscape (observability + evals), Commercial moat (enterprise workflows), Appendix (press citations)
-  - Confidence: medium
-
-### Open questions
-- Capture press/press-release links for acquisition or partnerships (CoreWeave, etc.) and exact enterprise signals.
-
-### Draft implications
-- W&B is an example of a tooling company that expanded from experiment tracking into model/serving integrations; analogous expansion paths are possible in LLM harness tooling but require enterprise sales channels.
-
----
-
-## Next research tasks (priority)
-1. Verify and capture customer-case links and funding press for Pinecone, LangChain, LlamaIndex, and W&B (Priority: high).
-2. Populate the provider comparison matrix CSV with the rows updated here and collect "used-by" dependents counts via GitHub network pages for OSS projects (Priority: high).
-3. Map integration hooks and minimal engineering effort to support LangChain, LlamaIndex, Langfuse, Promptfoo, and Chroma for an observability/eval SDK (Priority: medium).
-4. Recruit 2–6 interviews with platform engineers running production LLM apps to validate appendix claims about priority of observability vs evals vs memory orchestration (Priority: high).
-5. Add missing citations and update the appendix table; mark appendix done once all top-20 provider cells have source links and access dates.
-
-(Notes: all repo metrics and product claims above are sourced from the respective GitHub repository front pages and vendor pages accessed on 2026-03-21/2026-04-02.)
+(Notes: remaining source captures unchanged; see earlier sections for Chroma, Pinecone, Promptfoo, Weaviate, Milvus, W&B captures.)

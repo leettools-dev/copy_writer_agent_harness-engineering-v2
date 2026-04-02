@@ -7,7 +7,7 @@ Why this matters
 - Breakpoint analysis depends on matching a focused wedge to a persona with urgent pain and willingness to pay. This section turns vendor‑centric categories into human jobs that a founder can target and tests those jobs against primary‑source evidence.
 
 Approach and evidence
-- Primary evidence used below is drawn from vendor/product docs, OSS repos, case studies, and product pages (LangChain, LlamaIndex, Langfuse, OpenAI Evals, Promptfoo, Pinecone, Chroma, Weaviate, Milvus, W&B). See /workspace/references/research_notes.md for per‑source captures and metrics.
+- Primary evidence used below is drawn from vendor/product docs, OSS repos, case studies, and product pages (LangChain, LlamaIndex, Langfuse, OpenAI Evals, Promptfoo, Pinecone, Chroma, Weaviate, Milvus, W&B). See /workspace/references/research_notes.md for per‑source captures and metrics (accessed 2026-03-21 / 2026-04-02).
 - Where claims are inference (WTP, procurement cadence), they are explicitly labeled as "inference" and flagged for interview validation.
 
 Synthesis: personas, JTBD, tools, pains, evidence, confidence, and WTP
@@ -22,12 +22,12 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
   - low-fidelity visibility into why a model returned a result (need for traces/structured events/callbacks).
   - difficulty reproducing non‑deterministic failures and rolling back prompt/config changes.
 - Representative evidence:
-  - LangChain repo + LangSmith product (adoption + observability): https://github.com/langchain-ai/langchain (accessed 2026-03-21)
-  - LlamaIndex repo (RAG/document agent): https://github.com/run-llama/llama_index (accessed 2026-03-21)
+  - LangChain (repo & product): https://github.com/langchain-ai/langchain (accessed 2026-03-21)
+  - LlamaIndex (repo & product): https://github.com/run-llama/llama_index (accessed 2026-03-21)
 - Confidence: high
 - Likely WTP: medium (inference: teams will pay for clear productivity and SLA‑ready integrations)
 
-2) Platform / infra engineers (internal LLM platform teams)
+2) Platform / infra engineers (internal LLM platform teams) — PRIORITY TARGET
 - Primary JTBD: Provide multi‑tenant routing, deployment, monitoring, policy enforcement, and chargeback for LLM workloads consumed by product teams.
 - Typical stack: internal model gateway, Langfuse/OpenTelemetry traces, CI/CD, policy engines, billing/chargeback systems.
 - Concrete pains:
@@ -35,10 +35,15 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
   - cost allocation and routing across model vendors/versions.
   - lack of a standardized LLM trace/event schema that integrates with CI and evals.
 - Representative evidence:
-  - Langfuse product pages and OSS project combining traces + enterprise features: https://langfuse.com (accessed 2026-03-21)
-  - OpenAI Evals docs showing CI & private eval support: https://github.com/openai/evals (accessed 2026-03-21)
+  - Langfuse (observability / traces / SDKs): https://langfuse.com (accessed 2026-03-21)
+  - OpenAI Evals (CI + private evals): https://github.com/openai/evals (accessed 2026-03-21)
+  - Pinecone enterprise case (Vanguard): https://www.pinecone.io/customers/vanguard/ (accessed 2026-04-02)
 - Confidence: high
-- Likely WTP: high (enterprise procurement signals for audit/SLA features)
+- Likely WTP: high (evidence: enterprise vendor pages and case studies showing on‑prem/VPC and SLA work)
+
+Why platform teams are the highest-leverage buyer
+- Evidence: vendor enterprise pages (Pinecone case study), Langfuse positioning (trace+audit), and OpenAI Evals CI hooks point to a clear procurement path for audit/SLA features. Platform teams control procurement of platform primitives and can buy higher‑ACV integrations that lock in routing, governance, and billing.
+- Implication: a newcomer that bundles trace/schema + policy + billing primitives with turnkey integrations to LangChain/LlamaIndex and vector stores can sell to platform teams with an enterprise-first GTM.
 
 3) Product Managers for LLM features
 - Primary JTBD: Define success metrics for LLM features, prioritize prompt/model changes, and demonstrate product impact to stakeholders.
@@ -47,8 +52,8 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
   - translating model/eval outputs into product KPIs and stakeholder-facing reports; lack of non‑engineer UX for eval artifacts.
   - difficulty correlating changes in model/prompt with downstream product metrics (engagement, retention, task completion).
 - Representative evidence:
-  - OpenAI Evals + Promptfoo docs: https://github.com/openai/evals (accessed 2026-03-21); https://github.com/promptfoo/promptfoo (accessed 2026-03-21)
-  - Product-oriented writeups describing the gap between model metrics and product KPIs (see Research Notes captures).
+  - OpenAI Evals: https://github.com/openai/evals (accessed 2026-03-21)
+  - Promptfoo: https://github.com/promptfoo/promptfoo (accessed 2026-03-21)
 - Confidence: medium-high
 - Likely WTP: medium (inference: PMs influence purchases when ROI and stakeholder reporting are demonstrable)
 
@@ -58,9 +63,10 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 - Concrete pains:
   - flaky tests, brittle datasets, friction integrating evals into CI and audit trails.
 - Representative evidence:
-  - OpenAI Evals repo & Promptfoo: https://github.com/openai/evals (accessed 2026-03-21); https://github.com/promptfoo/promptfoo (accessed 2026-03-21)
+  - OpenAI Evals: https://github.com/openai/evals (accessed 2026-03-21)
+  - Promptfoo: https://github.com/promptfoo/promptfoo (accessed 2026-03-21)
 - Confidence: high
-- Likely WTP: high for regulated/mission-critical applications; medium otherwise (inference)
+- Likely WTP: high for regulated/mission‑critical applications; medium otherwise (inference)
 
 5) Security / Compliance / Legal teams
 - Primary JTBD: Enforce policies, prevent data leakage, ensure auditable LLM use and meet regulatory requirements.
@@ -68,7 +74,8 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 - Concrete pains:
   - limited per‑call enforcement surface in many hosted offerings; missing data residency/retention controls.
 - Representative evidence:
-  - Vendor enterprise pages (Pinecone enterprise features) and Langfuse position on audit/VPC/on‑prem: https://www.pinecone.io/ (accessed 2026-04-02); https://langfuse.com (accessed 2026-03-21)
+  - Pinecone enterprise pages: https://www.pinecone.io/ (accessed 2026-04-02)
+  - Langfuse enterprise positioning: https://langfuse.com (accessed 2026-03-21)
 - Confidence: medium-high
 - Likely WTP: high in regulated verticals (inference supported by vendor enterprise positioning)
 
@@ -78,7 +85,8 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 - Concrete pains:
   - reproducibility, dataset/versioning, and cost when running large comparison experiments.
 - Representative evidence:
-  - W&B positioning and OpenAI Evals: https://wandb.ai/ (accessed 2026-03-21); https://github.com/openai/evals (accessed 2026-03-21)
+  - W&B: https://wandb.ai/ (accessed 2026-03-21)
+  - OpenAI Evals: https://github.com/openai/evals (accessed 2026-03-21)
 - Confidence: medium
 - Likely WTP: low-to-medium (OSS-first preference; price sensitive)
 
@@ -88,16 +96,16 @@ For each persona we list: Primary JTBD; Typical tools they stitch together; Conc
 - Concrete pains:
   - poor playback/annotation tooling and difficulty linking a complaint to the exact model call, prompt, and context.
 - Representative evidence:
-  - Observability vendors and feature pages that emphasize session replay and trace linking (e.g., Langfuse): https://langfuse.com (accessed 2026-03-21)
+  - Langfuse session and trace features: https://langfuse.com (accessed 2026-03-21)
 - Confidence: medium
 - Likely WTP: low-to-medium (teams may adopt via platform or internal tooling budgets)
 
-Compact persona -> JTBD -> tools -> key evidence table (sources + access dates)
+Compact persona -> JTBD -> tools -> key evidence table
 
 | Persona | JTBD | Typical tools (examples) | Key evidence (URL; access date) | Confidence | Likely WTP |
-|---|---|---|---|---|---|
+|---|---|---|---|---:|---|
 | AI application engineers | Ship reliable LLM features | LangChain, LlamaIndex, Pinecone/Chroma/Milvus | https://github.com/langchain-ai/langchain (2026-03-21); https://github.com/run-llama/llama_index (2026-03-21) | high | medium |
-| Platform / infra engineers | Operate multi-team LLM platforms | Langfuse/OpenTelemetry, CI/CD, internal gateways | https://langfuse.com (2026-03-21); https://github.com/openai/evals (2026-03-21) | high | high |
+| Platform / infra engineers | Operate multi-team LLM platforms | Langfuse/OpenTelemetry, CI/CD, internal gateways | https://langfuse.com (2026-03-21); https://github.com/openai/evals (2026-03-21); https://www.pinecone.io/customers/vanguard/ (2026-04-02) | high | high |
 | Product Managers | Measure product impact | OpenAI Evals, Promptfoo, analytics | https://github.com/openai/evals (2026-03-21); https://github.com/promptfoo/promptfoo (2026-03-21) | med-high | medium |
 | Evaluation / QA teams | Run regression tests | OpenAI Evals, Promptfoo, CI | https://github.com/openai/evals (2026-03-21); https://github.com/promptfoo/promptfoo (2026-03-21) | high | high (regulated) |
 | Security / Compliance | Enforce policy & audits | DLP/policy engines + observability logs | https://www.pinecone.io/ (2026-04-02); https://langfuse.com (2026-03-21) | med-high | high |
@@ -105,13 +113,13 @@ Compact persona -> JTBD -> tools -> key evidence table (sources + access dates)
 | Support / Ops | Triage user-facing failures | Support tooling + observability logs | https://langfuse.com (2026-03-21) | medium | low-medium |
 
 Which JTBD show the strongest willingness‑to‑pay (WTP)?
-- High WTP (evidence + inference): Platform/infra teams; Security/Compliance; Evaluation/QA in regulated domains. Rationale: vendor enterprise pages emphasize RBAC, on‑prem/VPC, SLAs and audit features which align with procurement workflows (examples: Pinecone enterprise pages; Langfuse). (See research notes in /workspace/references/research_notes.md.)
-- Medium WTP (inference): AI application engineers and PMs — will pay for clear productivity gains and reduced MTTI/MTTR. Evidence of commercial pathways: LangChain -> LangSmith and LlamaIndex cloud products (see research notes).
+- High WTP (evidence + inference): Platform/infra teams; Security/Compliance; Evaluation/QA in regulated domains. Rationale: vendor enterprise pages emphasize RBAC, on‑prem/VPC, SLAs and audit features which align with procurement workflows (examples: Pinecone case study; Langfuse product pages; OpenAI Evals CI integrations).
+- Medium WTP (inference): AI application engineers and PMs — will pay for clear productivity gains and reduced MTTI/MTTR. Evidence of commercial pathways: LangChain -> LangSmith and LlamaIndex cloud products.
 - Lower direct WTP (evidence + inference): Applied researchers and support teams — typically OSS-first or internally provisioned unless product maps to measurable ROI.
 
 Strategic implications for a newcomer (evidence‑driven)
-- Enterprise-first wedge: build audit/trace + governance + billing primitives and target platform teams in regulated verticals. Pros: higher ACV and defensibility via compliance. Cons: long sales cycles and heavyweight support. Evidence: vendor enterprise pages and Pinecone case study with Vanguard (see /workspace/references/research_notes.md).
-- PLG / developer-first wedge: deep, low‑friction integrations with LangChain/LlamaIndex and outstanding DX (easy SDKs, callbacks, minimal config). Pros: fast adoption via OSS communities. Cons: monetization and enterprise conversion are harder. Evidence: LangChain and LlamaIndex OSS traction (research notes).
+- Enterprise-first wedge: build audit/trace + governance + billing primitives and target platform teams in regulated verticals. Pros: higher ACV and defensibility via compliance. Cons: long sales cycles and heavyweight support. Evidence: Pinecone case study and Langfuse enterprise features.
+- PLG / developer-first wedge: deep, low‑friction integrations with LangChain/LlamaIndex and outstanding DX (easy SDKs, callbacks, minimal config). Pros: fast adoption via OSS communities. Cons: monetization and enterprise conversion are harder. Evidence: LangChain and LlamaIndex OSS traction.
 - Cross‑cutting wedge — "Eval-as-Platform": private eval registries + CI integrations + audit logs. Serves PMs, QA, and platform teams; can be positioned as enterprise‑ready when paired with audit and RBAC. Evidence: OpenAI Evals + Promptfoo positioning and CI integrations.
 
 Evidence gaps and recommended next steps (actionable)

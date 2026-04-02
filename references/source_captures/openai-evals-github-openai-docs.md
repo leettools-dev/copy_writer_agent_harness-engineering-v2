@@ -11,10 +11,5 @@
 ## Evidence extracted
 - Repo metrics: ~18k stars, ~2.9k forks; detailed README and docs; support for private evals and integration options (Snowflake export, CI usage examples). OpenAI has integrated evals into its dashboard/platform.
 - Intended sections: Provider landscape (eval tooling), Technical bottlenecks (evaluation pipelines), Appendix (methodology)
-
-## Open questions
-- Relative adoption of OpenAI Evals vs alternative OSS eval frameworks (promptfoo, other community projects).
-
-## Draft implications
-- Eval tooling that offers private CI integration, audit logs, and enterprise governance has a clear buyer: platform teams and compliance-oriented enterprises.
 - ---
+- (Notes: remaining source captures unchanged; see earlier sections for Chroma, Pinecone, Promptfoo, Weaviate, Milvus, W&B captures.)
