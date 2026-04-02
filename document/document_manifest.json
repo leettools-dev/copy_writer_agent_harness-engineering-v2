@@ -71,7 +71,7 @@
       "section_id": "09-appendix",
       "title": "Appendix: sources and comparison matrices",
       "file": "document/sections/09-appendix.md",
-      "status": "draft",
+      "status": "done",
       "summary": "Source list, company table, comparison matrix, terminology notes.",
       "evidence_plan": "Populate core provider rows (LangChain, LlamaIndex, Langfuse, LangSmith, OpenAI Evals, Promptfoo, Pinecone, Anthropic, Datadog) with GH metrics, funding/traction, integration-spike artifacts and verified access dates/quotes."
     }
