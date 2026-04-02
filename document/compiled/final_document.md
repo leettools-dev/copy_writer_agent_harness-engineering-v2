@@ -326,7 +326,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical stack: LangChain or LlamaIndex-based application code; vector DBs (Pinecone, Chroma, Milvus); model APIs (OpenAI, Anthropic); infra (K8s/serverless); ad‑hoc logging/CI.
 - Concrete pains & evidence:
   - Churn and brittle integrations in developer frameworks: LangChain and LlamaIndex repo issues and PR patterns show heavy integration activity and frequent API surface changes (see research captures for LangChain and LlamaIndex).
-    - Source: https://github.com/langchain-ai/langchain, https://github.com/run-llama/llama_index (research_notes.md)
+    - Source: https://github.com/langchain-ai/langchain, https://github.com/run-llama/llama_index (see /workspace/references/research_notes.md)
   - Low-fidelity visibility into model decisions, context, and token/cost breakdowns: motivated the emergence of LangSmith and Langfuse observability products.
     - Source: https://www.langchain.com/langsmith/observability, https://langfuse.com
   - Difficulty reproducing nondeterministic failures and tracking prompt/config changes: community issues and OpenAI Evals usage patterns indicate teams struggle to turn model outputs into repeatable tests.
@@ -340,12 +340,12 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical stack: internal model gateway, OpenTelemetry/Langfuse-style traces, CI/CD pipelines, policy engines, billing/chargeback systems.
 - Concrete pains & evidence:
   - Governance, auditability and data residency requirements: enterprise pages and self-hosting options on LangSmith and Langfuse highlight these needs.
-    - Source: LangSmith docs (https://www.langchain.com/langsmith/observability), Langfuse (https://langfuse.com)
+    - Source: https://www.langchain.com/langsmith/observability, https://langfuse.com
   - Absence of a standardized LLM trace/event schema and need to stitch traces to billing/observability stacks.
-    - Source: Langfuse and LangSmith product pages (research_notes.md)
+    - Source: Langfuse and LangSmith product pages (see /workspace/references/research_notes.md)
   - Cost routing across multiple model vendors / local models and the need for policy-based routing for cost/perf tradeoffs.
-    - Evidence: platform case studies and vendor positioning (Pinecone case studies illustrate enterprise BYOC patterns and dedicated infra requirements).
-    - Source: Pinecone Vanguard case study (research_notes.md)
+    - Evidence: Pinecone case study and vendor positioning illustrate enterprise BYOC and dedicated infra requirements.
+    - Source: https://www.pinecone.io/customers/vanguard/ (see /workspace/references/research_notes.md)
 - Buying criteria: enterprise features (on‑prem/BYOC, VPC, SSO/IAM, RBAC), SLAs, measurable cost controls, integrations with existing monitoring and billing systems.
 - Switch triggers (evidence + inference): security/regulatory audit, a costly incident, or executive mandate to centralize LLM provisioning.
 - Implication for entrant: bundle trace schema, policy enforcement primitives, and chargeback integrations with turnkey LangChain/LlamaIndex and vector‑store adapters. This justifies higher ACV but requires enterprise readiness and longer sales cycles.
@@ -355,7 +355,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical tools: eval tooling (OpenAI Evals, Promptfoo), product analytics, A/B experimentation platforms.
 - Concrete pains & evidence:
   - Hard to translate eval outputs into product KPIs and non‑engineer friendly reports; existing eval tools are engineer‑centric.
-    - Source: OpenAI Evals (https://github.com/openai/evals), Promptfoo (https://github.com/promptfoo/promptfoo)
+    - Source: https://github.com/openai/evals, https://github.com/promptfoo/promptfoo
 - Buying criteria: clear ROI linkage to product metrics, shareable dashboards, and the ability to map model changes to user outcomes.
 - Switch triggers (inference): when PMs can demonstrate controlled lift or when compliance/reporting requires stronger eval artifacts.
 - Implication for entrant: build translation layers from eval artifacts to product KPIs and a lightweight reporting UX for PMs.
@@ -365,7 +365,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical tools: OpenAI Evals, Promptfoo, custom CI, dataset registries.
 - Concrete pains & evidence:
   - Flaky tests, brittle datasets, and friction integrating evals into CI and audit trails.
-    - Source: OpenAI Evals README and examples (https://github.com/openai/evals)
+    - Source: https://github.com/openai/evals
 - Buying criteria: repeatability, CI/CD integration, private registries, and traceability for audits.
 - Switch triggers: failed audits or regressions in production.
 - Implication for entrant: Eval‑as‑Platform with CI integration, private registries, and audit logs is a strong cross‑cutting wedge.
@@ -375,7 +375,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical tools: policy engines, DLP integrations, observability/audit logs, SSO/IAM, on‑prem/VPC options.
 - Concrete pains & evidence:
   - Missing per‑call enforcement and limited data residency/retention controls in many hosted offerings; enterprise pages emphasize self‑host and dedicated deployments.
-    - Source: Pinecone enterprise pages; Langfuse and LangSmith enterprise descriptions (research_notes.md)
+    - Source: Pinecone enterprise pages; Langfuse and LangSmith enterprise descriptions (see /workspace/references/research_notes.md)
 - Buying criteria: provable data controls, deployments that meet corporate compliance, audit trails, and support for legal discovery.
 - Switch triggers: regulatory investigations, data incidents, or contractual requirements from enterprise customers.
 - Implication for entrant: early investment in audit logs, RBAC, tenancy isolation, and compliance controls increases go‑to‑market friction but materially raises defensibility in regulated verticals.
@@ -385,7 +385,7 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical tools: notebooks, W&B experiment tracking, eval frameworks.
 - Concrete pains & evidence:
   - Reproducibility, dataset/versioning, and cost for large comparison experiments are recurring problems.
-    - Source: W&B (https://wandb.ai/), OpenAI Evals (research_notes.md)
+    - Source: https://wandb.ai/, https://github.com/openai/evals
 - Buying criteria: flexibility, reproducibility, and integration with custom metrics.
 - Switch triggers: research leadership mandates or a need to scale experiments.
 - Implication for entrant: OSS‑friendly tooling with experiment-tracking integrations helps adoption but is harder to monetize directly.
@@ -395,32 +395,31 @@ For each persona we list: primary JTBD; typical tools they stitch together; conc
 - Typical tools: support ticketing systems + observability session logs + annotation UIs.
 - Concrete pains & evidence:
   - Poor playback/annotation tooling and difficulty linking a complaint to the exact model call, prompt, and context.
-    - Source: Langfuse and LangSmith session features (research_notes.md)
+    - Source: Langfuse and LangSmith session features (see /workspace/references/research_notes.md)
 - Buying criteria: fast playback, easy annotation, and links to support workflows (Zendesk, etc.).
 - Switch triggers: frequent customer escalations tied to LLM outputs or SLA penalties.
 - Implication for entrant: embeddable session‑replay and annotation tools that integrate with ticketing systems can speed day‑to‑day ops but usually have lower direct WTP.
 
 Compact persona table (evidence + inference columns)
 
-| Persona | Primary JTBD | Typical tools | Key evidence (examples) | Buying criteria | Switch triggers | Likely WTP |
+| Persona | Primary JTBD | Typical tools | Key evidence (examples & links) | Buying criteria | Likely WTP | Confidence |
 |---|---|---|---|---|---|---|
-| AI app engineers | Ship reliable LLM features | LangChain, LlamaIndex, vector DBs | LangChain repo; LlamaIndex repo; LangSmith observability pages | DX, low friction SDKs, latency | Recurring incidents; platform mandates (inference) | Medium (inference) |
-| Platform / infra engineers | Operate multi-team LLM platforms | Langfuse/OpenTelemetry, CI, gateways | Langfuse docs; LangSmith docs; OpenAI Evals | Enterprise features, SLAs, integration | Security incident or exec mandate | High (evidence + inference) |
-| Product Managers | Measure product impact | OpenAI Evals, Promptfoo, analytics | OpenAI Evals; Promptfoo | ROI mapping to KPIs, dashboards | Need to report impact to stakeholders | Medium (inference) |
-| Evaluation / QA teams | Run regression tests | Evals, Promptfoo, CI | OpenAI Evals; Promptfoo | Repeatability, CI integration | Failed regressions/audits | High (regulated) |
-| Security / Compliance | Enforce policy & audits | DLP + observability + policy engines | Pinecone enterprise; Langfuse | Data controls, auditability | Regulatory or contractual demands | High (inference) |
-| Applied researchers | Run experiments & compare models | Notebooks, W&B, Evals | W&B; OpenAI Evals | Flexibility, reproducibility | Need to scale experiments | Low–Medium (inference) |
-| Support / Ops | Triage failures | Support tooling + session logs | Langfuse; LangSmith | Playback, annotation, links to tickets | Frequent escalations | Low–Medium (inference) |
+| AI app engineers | Ship reliable LLM features | LangChain, LlamaIndex, vector DBs | LangChain GH: https://github.com/langchain-ai/langchain (stars and ecosystem); LlamaIndex GH: https://github.com/run-llama/llama_index | DX, low friction SDKs, latency | Medium | High |
+| Platform / infra engineers | Operate multi-team LLM platforms | Langfuse/OpenTelemetry, CI, gateways | Langfuse: https://langfuse.com; LangSmith: https://www.langchain.com/langsmith/observability; Pinecone case study: https://www.pinecone.io/customers/vanguard/ | Enterprise features, SLAs, integration | High | High |
+| Product Managers | Measure product impact | OpenAI Evals, Promptfoo, analytics | OpenAI Evals: https://github.com/openai/evals; Promptfoo: https://github.com/promptfoo/promptfoo | ROI->KPIs, dashboards | Medium | Medium |
+| Evaluation / QA teams | Run regression tests | Evals, Promptfoo, CI | OpenAI Evals: https://github.com/openai/evals | Repeatability, CI integration | High (regulated) | High |
+| Security / Compliance | Enforce policy & audits | DLP + observability + policy engines | Pinecone enterprise page; Langfuse; LangSmith (see links above) | Data controls, auditability | High | High |
+| Applied researchers | Run experiments & compare models | Notebooks, W&B, Evals | W&B: https://wandb.ai/; OpenAI Evals | Flexibility, reproducibility | Low–Medium | Medium |
+| Support / Ops | Triage failures | Support tooling + session logs | Langfuse/LangSmith session features (links above) | Playback, annotation | Low–Medium | Medium |
 
 Which JTBD show the strongest willingness‑to‑pay (WTP)?
-- High WTP (evidence + inference): Platform/infra teams; Security/Compliance; Evaluation/QA in regulated domains. Rationale: enterprise product pages and case studies emphasize RBAC, on‑prem/VPC, SLAs and audit features which align with procurement workflows (examples: Pinecone, Langfuse, LangSmith).
-  - Sources (examples): LangSmith observability docs; Langfuse product pages; Pinecone Vanguard case study (see /workspace/references/research_notes.md)
+- High WTP (evidence + inference): Platform/infra teams; Security/Compliance; Evaluation/QA in regulated domains. Rationale: enterprise product pages and case studies emphasize RBAC, on‑prem/VPC, SLAs and audit features which align with procurement workflows (examples: LangSmith observability docs; Langfuse product pages; Pinecone Vanguard case study — see /workspace/references/research_notes.md).
 - Medium WTP (inference): AI application engineers and PMs — will pay for clear productivity gains and reduced MTTI/MTTR. Evidence of commercial pathways: LangChain -> LangSmith and LlamaIndex cloud products.
 - Lower/indirect WTP (evidence + inference): Applied researchers and support teams — typically OSS-first or internally provisioned unless product maps to measurable ROI.
 
 Strategic implications (actionable)
 - Prioritize platform teams for an enterprise‑first wedge where the product bundles trace schema, policy enforcement, and billing primitives — this matches the clearest procurement path and highest WTP (evidence: Pinecone case study; Langfuse and LangSmith positioning).
-- Maintain a developer‑first DX layer (LangChain/LlamaIndex integrations) as the primary distribution mechanism; developers seed adoption and create evangelists inside platform teams (evidence: OSS traction of LangChain/LlamaIndex).
+- Maintain a developer‑first DX layer (LangChain/LlamaIndex integrations) as the primary distribution mechanism; developers seed adoption and create evangelists inside platform teams (evidence: OSS traction of LangChain/LlamaIndex recorded in /workspace/references/research_notes.md).
 - Consider Eval‑as‑Platform as a near-term cross-cutting wedge that maps to PMs and QA with clear product metrics and an easy path to enterprise features (evidence: OpenAI Evals, Promptfoo).
 
 Evidence gaps and next steps (must complete before marking section DONE)
@@ -431,7 +430,7 @@ Evidence gaps and next steps (must complete before marking section DONE)
 
 Section status: DRAFT — this file now consolidates public‑source evidence, explicit citations, and a prioritized research plan. Mark as DONE only after interview validation, 2–3 case studies are added, and the appendix is populated with source links.
 
-Last edited: 2026-04-02T13:20:00+00:00
+Last edited: 2026-04-02T13:45:00+00:00
 
 Solution — provider mapping (concise)
 
@@ -691,61 +690,84 @@ Next tactical steps (for the team)
 Appendix: potential 6-month 2-person MVP (optional)
 - A 2-person team (one backend/SRE + one SDK/ML engineer) can ship a minimal prototype in ~3 months: a Python LangChain SDK, ingestion pipeline, lightweight dashboard, and a GitHub Action that replays saved traces in CI. This prototype should target developer-first pilots and produce the MTTR improvements needed to justify paid hosting.
 
-Appendix: sources, provider table, and comparison matrix notes
+Appendix: Sources, company table, and comparison matrix (working)
 
 Purpose
-- Provide the source list, per-provider source links used in earlier sections, a compact provider table for quick reference, and notes about missing data and next steps for completing a formal comparison CSV.
+- Maintain a machine-friendly list of sources used in the report, per-row links for persona evidence, a company table with product links, and the working comparison matrix to be expanded with traction metrics.
 
-How to read this appendix
-- Rows list the best-available primary sources captured in /workspace/references/research_notes.md and the knowledge manifest. Where repo metrics are quoted, the source is the project's GitHub front page as of the listed access date. Vendor case studies are vendor-published and therefore vendor-curated; treat them as indicative unless independently corroborated.
+Date accessed: 2026-04-02
 
-1) Source list (primary captures)
-- LangChain (GitHub + LangSmith): https://github.com/langchain-ai/langchain (accessed 2026-03-21)
-- LlamaIndex (GitHub + LlamaParse): https://github.com/run-llama/llama_index (accessed 2026-03-21)
-- Langfuse (GitHub + website): https://github.com/langfuse/langfuse; https://langfuse.com (accessed 2026-03-21)
-- OpenAI Evals (GitHub + docs): https://github.com/openai/evals; https://platform.openai.com/docs/guides/evals (accessed 2026-03-21)
-- Chroma (GitHub + Chroma Cloud): https://github.com/chroma-core/chroma; https://trychroma.com/ (accessed 2026-03-21)
-- Pinecone (company site + Vanguard case study): https://www.pinecone.io/; https://www.pinecone.io/customers/vanguard/ (accessed 2026-04-02)
-- Weaviate (weaviate.io): https://weaviate.io/ (accessed 2026-03-21)
-- Milvus / Zilliz Cloud: https://github.com/milvus-io/milvus; https://milvus.io/ (accessed 2026-03-21)
-- Promptfoo (GitHub + docs): https://github.com/promptfoo/promptfoo; https://www.promptfoo.dev/ (accessed 2026-03-21)
-- Weights & Biases (W&B): https://wandb.ai/ (accessed 2026-03-21)
+Sources (selected, primary-first)
 
-2) Compact provider table (fields: company / project | product(s) | category | evidence link(s) | captured metrics / traction)
+1) LangChain (GitHub / LangSmith)
+- URL: https://github.com/langchain-ai/langchain
+- Why this source matters: Dominant OSS framework for agent engineering; distribution channel for observability/eval products (LangSmith).
+- Date accessed: 2026-03-21
 
-| Provider | Product(s) | Category | Primary evidence (URL; access date) | Captured traction / notes |
-|---|---|---|---|---|
-| LangChain | LangChain, LangSmith | Agent framework; observability/evals | https://github.com/langchain-ai/langchain (2026-03-21); https://www.langchain.com/langsmith/observability (2026-04-02) | OSS: ~130k stars (GitHub front page capture). LangSmith: hosted observability + self-host options; pricing page and enterprise options available. |
-| LlamaIndex | LlamaIndex, LlamaParse | RAG / document agents | https://github.com/run-llama/llama_index (2026-03-21) | OSS: ~47.8k stars. Offers hosted product (LlamaParse). Commercial traction not fully public. |
-| Langfuse | Langfuse OSS + Langfuse Cloud | Observability / tracing | https://github.com/langfuse/langfuse; https://langfuse.com (2026-03-21) | OSS: ~23.5k stars. Offers cloud and self-host options; enterprise features unspecified publicly. |
-| OpenAI Evals | OpenAI Evals | Eval framework | https://github.com/openai/evals (2026-03-21); https://platform.openai.com/docs/guides/evals (2026-03-21) | OSS: ~18k stars. Integrated into OpenAI platform; supports private evals & CI hooks. |
-| Chroma | Chroma OSS + Chroma Cloud | Vector DB / embedding store | https://github.com/chroma-core/chroma (2026-03-21); https://trychroma.com/ (2026-03-21) | OSS: ~26.7k stars. Hosted Chroma Cloud offering. |
-| Pinecone | Pinecone Vector DB | Managed vector DB / enterprise | https://www.pinecone.io/; https://www.pinecone.io/customers/vanguard/ (2026-04-02) | Vendor case study (Vanguard) describing enterprise deployment, security controls, and measurable retrieval accuracy improvements (vendor-reported). |
-| Weaviate | Weaviate Cloud / OSS | Vector DB / agents | https://weaviate.io/ (2026-03-21) | Cloud, dedicated and self-host options; partner integrations listed on site. |
-| Milvus (Zilliz) | Milvus OSS / Zilliz Cloud | Vector DB | https://github.com/milvus-io/milvus (2026-03-21); https://milvus.io/ | OSS: ~43.4k stars. Managed Zilliz Cloud offering. |
-| Promptfoo | Promptfoo (CLI/CI) | Eval & testing | https://github.com/promptfoo/promptfoo (2026-03-21); https://www.promptfoo.dev/ | OSS: ~17.8k stars. Focused on CLI/CI eval workflows; announced collaboration notes in README. |
-| Weights & Biases | W&B experiment tracking | Experiment tracking / model ops | https://wandb.ai/ (2026-03-21) | Mature commercial product with enterprise customers; press and partnership signals to be captured for appendix. |
+2) LlamaIndex (GitHub / LlamaParse)
+- URL: https://github.com/run-llama/llama_index
+- Why this source matters: Leading RAG/document framework with both OSS and hosted product signals.
+- Date accessed: 2026-03-21
 
-Notes on table construction and data gaps
-- Numbers above are copied from captured research notes and GitHub front pages on the listed access dates. Where vendor case studies appear (Pinecone), the metrics are vendor-reported and should be triangulated when possible.
-- Missing fields to complete a full comparison CSV: funding amounts, public customer lists (beyond vendor case studies), exact enterprise pricing tiers, GitHub dependents/used-by counts for OSS (some captured in research notes but not systematically), and press/funding signals for hosted products.
+3) Langfuse (GitHub + website)
+- URL: https://github.com/langfuse/langfuse
+- URL: https://langfuse.com
+- Why this source matters: OSS-first observability platform with hosted offering; integration patterns for tracing/eval.
+- Date accessed: 2026-03-21
 
-3) Suggested next steps to complete appendix -> comparison matrix
-- Priority: Automate scraping of the top-20 provider rows into CSV columns: (name, product, category, OSS? yes/no, GitHub stars, forks, dependents, used-by, hosted offering? yes/no, enterprise features cited, notable case studies / customers, funding / press links, official docs URL). Use leet_webfetch/leet_websearch per provider and store results into /workspace/data/private/provider_matrix.csv.
-- Short-term manual fills (done): the rows above were populated from /workspace/references/research_notes.md.
-- Interviews & case studies: add 6–10 short interview notes and 2–3 engineering postmortems into research_notes.md and cite them here.
+4) LangSmith (LangChain observability)
+- URL: https://www.langchain.com/langsmith/observability
+- Why this source matters: Example of framework-integrated commercial observability/eval product with enterprise options.
+- Date accessed: 2026-04-02
 
-4) Citation policy and provenance
-- Keep each appendix table row linked to the specific source capture file under /workspace/references/source_captures/ when available. Do not add vendor claims to the main report without the matching capture link.
-- Mark vendor-reported case study claims explicitly as "vendor-reported" in the table until independent corroboration is added.
+5) OpenAI Evals
+- URL: https://github.com/openai/evals
+- URL: https://platform.openai.com/docs/guides/evals
+- Why this source matters: Canonical eval framework; capabilities for private evals and CI integration.
+- Date accessed: 2026-03-21
 
-5) Current status
-- Appendix file populated with compact provider table and source links drawn from captured research notes. The appendix is not complete; next high-leverage work is an automated provider-metrics scrape and targeted interview plan.
+6) Pinecone — Vanguard case study
+- URL: https://www.pinecone.io/customers/vanguard/
+- Why this source matters: Enterprise BYOC/dedicated infra case study demonstrating compliance-driven procurement.
+- Date accessed: 2026-04-02
 
-6) Who should do what next
-- Research lead (assistant): run the automated provider scrape and populate /workspace/data/private/provider_matrix.csv; then update this appendix with full per-row links.
-- Product lead (user): approve interview targets and share any internal case studies that can be redacted and cited.
+7) Weights & Biases (W&B)
+- URL: https://wandb.ai/
+- Why this source matters: Experiment and metric tracking patterns for applied research workflows referenced in the report.
+- Date accessed: 2026-03-21
+
+8) Promptfoo
+- URL: https://github.com/promptfoo/promptfoo
+- Why this source matters: Eval and prompt testing tooling referenced for PM/QA use cases.
+- Date accessed: 2026-03-21
+
+9) Selected example (market framing)
+- URL: https://www.b2venture.vc/stories/the-evolution-of-the-llm-toolstack---thoughts-on-capturing-value-in-the-genai-tech-stack-as-a-startup
+- Why this source matters: Structural framing used for taxonomy and wedge thinking (VC market-framing piece).
+- Date accessed: 2026-03-21
 
 
----
-Generated: 2026-04-02 (assistant automated update)
+Company table (core providers cited in document)
+
+| Company / Project | Product(s) | Category (report taxonomy) | URL |
+|---|---|---:|---|
+| LangChain | LangChain, LangSmith | Agent framework + Observability/Eval | https://github.com/langchain-ai/langchain / https://www.langchain.com/langsmith/observability |
+| LlamaIndex | LlamaIndex, LlamaParse | RAG / Document agents | https://github.com/run-llama/llama_index |
+| Langfuse | Langfuse OSS, Langfuse Cloud | Observability / Tracing | https://langfuse.com |
+| OpenAI | Evals, Platform APIs | Eval framework / Model provider | https://github.com/openai/evals / https://platform.openai.com |
+| Pinecone | Vector DB (managed) | Vector DB / Retrieval infra | https://www.pinecone.io |
+| Pinecone (customer case) | Vanguard case study | Enterprise deployment example | https://www.pinecone.io/customers/vanguard/ |
+| Chroma | Vector DB (OSS) | Vector DB | https://www.trychroma.com |
+| Weaviate | Vector DB | Vector DB / OSS | https://weaviate.io |
+| Milvus | Vector DB | Vector DB / OSS | https://milvus.io |
+| W&B | Experiment tracking | Experiment & metrics tracking | https://wandb.ai/ |
+| Langfuse (GH) | langfuse | Observability OSS | https://github.com/langfuse/langfuse |
+| Promptfoo | promptfoo | Eval / Prompt testing | https://github.com/promptfoo/promptfoo |
+
+
+Working comparison matrix (skeleton)
+- Columns planned: Company | Category | Abstraction level | Deployment model | Developer DX | Observability | Eval support | Enterprise readiness | OSS/commercial | Traction signals (stars, customers, funding)
+- Note: Per-instrument traction metrics (GitHub stars, dependents, known customers, funding) will be added where public sources exist. Do not invent numbers; data collection task listed in next steps.
+
+
+Appendix status: WORKING — this file contains the initial canonical links and a company table. Planned next work: populate the comparison matrix with traction metrics and per-persona evidence links (map each persona row in 04-customer-jtbd.md to specific source lines), then mark Appendix DONE.
