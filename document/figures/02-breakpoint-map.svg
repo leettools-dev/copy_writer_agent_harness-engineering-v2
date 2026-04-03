@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <style>
+    .axis { stroke:#888; stroke-width:2 }
+    .label { font: 14px sans-serif; fill:#222 }
+    .title { font: bold 18px sans-serif; fill:#111 }
+    .point { font: 13px sans-serif; fill:#000 }
+    .dot { stroke:#222; stroke-width:1 }
+    .obs { fill:#1f77b4 }
+    .eval { fill:#2ca02c }
+    .cost { fill:#ff7f0e }
+    .orch { fill:#9467bd }
+    .mem { fill:#d62728 }
+    .grid { stroke:#eee }
+    .caption { font: 12px sans-serif; fill:#444 }
+  </style>
+
+  <text x="30" y="32" class="title">Breakpoint map: buyer urgency vs technical feasibility</text>
+  <text x="30" y="54" class="caption">Wedges plotted by relative buyer urgency (Y) and technical feasibility for a small startup (X).</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="600" x2="920" y2="600" class="axis"/>
+  <line x1="80" y1="600" x2="80" y2="80" class="axis"/>
+  <text x="930" y="605" class="label">Feasibility →</text>
+  <text x="40" y="70" class="label" transform="rotate(-90 40,70)">↑ Buyer urgency</text>
+
+  <!-- Grid lines -->
+  <g stroke="#f2f2f2">
+    <line x1="80" y1="520" x2="920" y2="520" class="grid"/>
+    <line x1="80" y1="440" x2="920" y2="440" class="grid"/>
+    <line x1="80" y1="360" x2="920" y2="360" class="grid"/>
+    <line x1="80" y1="280" x2="920" y2="280" class="grid"/>
+    <line x1="80" y1="200" x2="920" y2="200" class="grid"/>
+  </g>
+
+  <!-- Axis labels (approx scale) -->
+  <text x="150" y="620" class="label">Low</text>
+  <text x="500" y="620" class="label">Medium</text>
+  <text x="820" y="620" class="label">High</text>
+
+  <text x="50" y="560" class="label">Low</text>
+  <text x="50" y="420" class="label">Medium</text>
+  <text x="50" y="240" class="label">High</text>
+
+  <!-- Points -->
+  <!-- Observability: High urgency, High feasibility -->
+  <circle cx="760" cy="240" r="12" class="dot obs"/>
+  <text x="780" y="240" class="point">Observability-first (Rank 1)</text>
+
+  <!-- Private eval: Medium-High urgency, Medium feasibility -->
+  <circle cx="560" cy="300" r="12" class="dot eval"/>
+  <text x="580" y="300" class="point">Private-eval (Rank 2)</text>
+
+  <!-- Cost & routing: Medium urgency, Medium feasibility (slightly lower feasibility) -->
+  <circle cx="520" cy="380" r="12" class="dot cost"/>
+  <text x="540" y="380" class="point">Cost & routing (Rank 3)</text>
+
+  <!-- Durable orchestration: Medium-High urgency, Lower feasibility -->
+  <circle cx="360" cy="300" r="12" class="dot orch"/>
+  <text x="380" y="300" class="point">Durable orchestration</text>
+
+  <!-- Managed memory: Medium urgency, Low feasibility -->
+  <circle cx="300" cy="420" r="12" class="dot mem"/>
+  <text x="320" y="420" class="point">Managed memory primitives</text>
+
+  <!-- Legend -->
+  <rect x="680" y="480" width="260" height="120" fill="#fff" stroke="#ddd" rx="6"/>
+  <text x="702" y="503" class="label" style="font-weight:bold;">Legend</text>
+  <circle cx="700" cy="528" r="8" class="dot obs"/><text x="720" y="532" class="caption">Observability-first (highest-ranked)</text>
+  <circle cx="700" cy="554" r="8" class="dot eval"/><text x="720" y="558" class="caption">Private-eval</text>
+  <circle cx="700" cy="580" r="8" class="dot cost"/><text x="720" y="584" class="caption">Cost & routing</text>
+  <circle cx="700" cy="606" r="8" class="dot orch"/><text x="720" y="610" class="caption">Durable orchestration</text>
+  <circle cx="700" cy="632" r="8" class="dot mem"/><text x="720" y="636" class="caption">Managed memory</text>
+
+  <!-- Footer -->
+  <text x="30" y="680" class="caption">Source: Report synthesis of traction and buyer urgency (Langfuse, LangSmith, OpenAI Evals, Pinecone, LangChain). Plot is illustrative and based on qualitative ranking from Section 07.</text>
+</svg>
