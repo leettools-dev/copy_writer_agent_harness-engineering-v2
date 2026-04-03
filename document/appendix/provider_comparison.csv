@@ -1,0 +1,16 @@
+provider,category,oss_or_commercial,gh_stars,gh_forks,used_by_or_dependents,funding_notes,hosting_model,evidence_url,date_accessed
+LangChain,Agent framework / orchestration,OSS + commercial,130000,21500,278000,"Series B $125M (Oct 20, 2025) — blog post","OSS libs + LangSmith hosted tools","https://blog.langchain.com/series-b/; https://github.com/langchain-ai/langchain","2026-03-21"
+LlamaIndex (run-llama),RAG / document-agent framework,OSS + commercial,47800,7100,23700,"Series A $19M (Mar 4, 2025) — company blog","OSS + LlamaParse hosted","https://www.llamaindex.ai/blog/announcing-our-series-a-and-llamacloud-general-availability; https://github.com/run-llama/llama_index","2026-03-21"
+Langfuse,Observability / tracing,OSS + commercial,23500,2400,,"Seed $4M (Nov 7, 2023) — company blog","Self-host (Helm/K8s) + Langfuse Cloud","https://langfuse.com/blog/announcing-our-seed-round; https://github.com/langfuse/langfuse","2026-03-21"
+OpenAI Evals,Evaluation harness / registry,OSS + platform,18000,2900,,"Platform-integrated (OpenAI) — OpenAI docs","OpenAI platform + OSS runner","https://github.com/openai/evals; https://platform.openai.com/docs/guides/evals","2026-03-21"
+Pinecone,Vector DB / retrieval infra,Commercial,n/a,n/a,,"Series B $100M (Apr 27, 2023) led by a16z","Managed SaaS + BYOC preview","https://a16z.com/announcement/investing-in-pinecone/; https://www.pinecone.io/customers/vanguard/","2026-03-21"
+Chroma,Vector DB / retrieval infra,OSS + commercial,26700,2100,,"OSS-first; hosted offering","Self-host + Chroma Cloud","https://github.com/chroma-core/chroma; https://trychroma.com","2026-03-21"
+Milvus (Zilliz),Vector DB / retrieval infra,OSS + commercial,43400,3900,,"OSS + Zilliz Cloud managed offering","Self-host + Zilliz Cloud","https://github.com/milvus-io/milvus; https://milvus.io/","2026-03-21"
+Weaviate,Vector DB / agent features,OSS + commercial,n/a,n/a,,"Cloud + Dedicated + self-host; partner integrations","Weaviate product pages","https://weaviate.io/","2026-03-21"
+Promptfoo,Eval & red‑teaming tooling,OSS,19100,,,"Acquired by OpenAI (Mar 9, 2026) — vendor blog and press","CLI/CI (local-first) + web viewer","https://www.promptfoo.dev/blog/promptfoo-joining-openai/; https://www.cnbc.com/2026/03/09/open-ai-cybersecurity-promptfoo-ai-agents.html","2026-04-02"
+LangSmith (LangChain),Observability / LangChain product,Commercial,n/a,n/a,,"Commercial product within LangChain ecosystem (LangSmith) — product pages","Hosted / enterprise self-host options","https://www.langchain.com/langsmith/observability","2026-04-02"
+
+# Notes:
+# - Updated funding/press links: LangChain Series B (Oct 20, 2025), LlamaIndex Series A (Mar 4, 2025), Pinecone Series B (Apr 27, 2023), Promptfoo acquisition by OpenAI (Mar 9, 2026).
+# - Sources are linked in the evidence_url column. Date_accessed entries reflect when captures were first recorded in research_notes or when websearch validated claims.
+# - Next: expand to ~20 providers and add per-cell direct citation for enterprise customer case studies and revenue/funding references.
