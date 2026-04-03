@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-02T23:59:00+00:00",
+  "last_updated": "2026-04-03T03:30:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -9,6 +9,22 @@
     "path": "references/selected_example.md",
     "notes": "Selected example is a VC market-framing piece (b2venture) useful for taxonomy and wedge thinking but must be supplemented with primary-source evidence and traction data."
   },
+  "figures": [
+    {
+      "id": "fig-01-llm-harness-stack",
+      "title": "LLM Harness Stack — Development → Runtime → Ops",
+      "file": "document/figures/01-llm-harness-stack.svg",
+      "purpose": "Conceptual layered view showing developer frameworks, runtime/orchestration, and ops/observability; supports the Market map section.",
+      "status": "done"
+    },
+    {
+      "id": "fig-02-market-positioning",
+      "title": "Market Map — Maturity vs Operational Complexity",
+      "file": "document/figures/02-market-positioning.svg",
+      "purpose": "Positioning map to identify categories that are operationally complex but immature (candidate wedges).",
+      "status": "done"
+    }
+  ],
   "sections": [
     {
       "section_id": "01-executive-summary",
@@ -22,7 +38,12 @@
       "title": "Market map and taxonomy",
       "file": "document/sections/02-market-map.md",
       "status": "done",
-      "summary": "Define LLM harness engineering and present a structured taxonomy with evidence and boundaries."
+      "summary": "Define LLM harness engineering and present a structured taxonomy with evidence and boundaries.",
+      "illustration_plan": {
+        "figure": "document/figures/01-llm-harness-stack.svg",
+        "purpose": "Conveys layered stack and candidate insertion points for startups",
+        "status": "done"
+      }
     },
     {
       "section_id": "03-provider-landscape",

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .axis { stroke:#ccd8e6; stroke-width:2 }
+    .label { font: bold 16px sans-serif; fill:#102a43 }
+    .point-label { font: 13px sans-serif; fill:#1f3a57 }
+    .dot { stroke:#1f6feb; stroke-width:1 }
+    .insight { font:14px sans-serif; fill:#0b2545 }
+  </style>
+
+  <text x="40" y="40" class="label">Market Map — Maturity vs Operational Complexity</text>
+  <text x="40" y="64" style="font:13px sans-serif; fill:#334e68">Horizontal: maturity (0=emerging, 1=commodity). Vertical: operational complexity (0=low, 1=high).</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="140" x2="1260" y2="140" class="axis"/>
+  <line x1="80" y1="140" x2="80" y2="740" class="axis"/>
+
+  <!-- Points -->
+  <g>
+    <!-- Agent Frameworks -->
+    <circle cx="1020" cy="360" r="12" fill="#1f6feb" class="dot"/>
+    <text x="1040" y="360" class="point-label">Agent Frameworks (LangChain, LlamaIndex)</text>
+
+    <!-- Vector DBs -->
+    <circle cx="1100" cy="320" r="12" fill="#1f6feb" class="dot"/>
+    <text x="1120" y="320" class="point-label">Vector DBs (Pinecone, Chroma, Milvus)</text>
+
+    <!-- Observability & Evals -->
+    <circle cx="760" cy="200" r="12" fill="#ff7a59" class="dot"/>
+    <text x="780" y="200" class="point-label">Observability & Evals (Langfuse, LangSmith, OpenAI Evals)</text>
+
+    <!-- Orchestration Runtimes -->
+    <circle cx="560" cy="220" r="12" fill="#ff7a59" class="dot"/>
+    <text x="580" y="220" class="point-label">Orchestration Runtimes</text>
+
+    <!-- Prompt & Config Management -->
+    <circle cx="620" cy="360" r="12" fill="#6bd3a8" class="dot"/>
+    <text x="640" y="360" class="point-label">Prompt & Config Management</text>
+
+    <!-- Governance & Security -->
+    <circle cx="440" cy="160" r="12" fill="#f2c94c" class="dot"/>
+    <text x="460" y="160" class="point-label">Governance & Security</text>
+
+    <!-- Eval/Red-team Tools -->
+    <circle cx="780" cy="320" r="12" fill="#6bd3a8" class="dot"/>
+    <text x="800" y="320" class="point-label">Eval/Red-team Tools (Promptfoo)</text>
+  </g>
+
+  <rect x="40" y="760" width="1320" height="80" rx="6" fill="#f0f7ff" stroke="#dbeafe"/>
+  <text x="60" y="796" class="insight">Insight: High operational complexity + low maturity categories (Observability, Orchestration, Governance) are where startups can target enterprise platform teams with integrated bundles and strong enterprise controls.</text>
+</svg>
