@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-04-08T06:40:00+00:00",
+  "figure_root": "document/figures/",
+  "required_section_figures": [
+    {
+      "section_id": "01-executive-summary",
+      "figure": "document/figures/01-harness-stack.svg",
+      "status": "exists",
+      "size_bytes": 2833
+    },
+    {
+      "section_id": "02-market-map",
+      "figure": "document/figures/01-llm-harness-stack.svg",
+      "status": "exists",
+      "size_bytes": 2778
+    },
+    {
+      "section_id": "03-provider-landscape",
+      "figure": "document/figures/03-provider-positioning.svg",
+      "status": "exists",
+      "size_bytes": 918
+    },
+    {
+      "section_id": "04-customer-jtbd",
+      "figure": "document/figures/03-provider-positioning.svg",
+      "status": "exists",
+      "size_bytes": 918
+    },
+    {
+      "section_id": "05-technical-bottlenecks",
+      "figure": "document/figures/04-technical-bottlenecks.svg",
+      "status": "exists",
+      "size_bytes": 936
+    },
+    {
+      "section_id": "06-commercial-moat",
+      "figure": "document/figures/02-market-positioning.svg",
+      "status": "exists",
+      "size_bytes": 2510
+    },
+    {
+      "section_id": "07-breakpoint-analysis",
+      "figure": "document/figures/02-breakpoint-map.svg",
+      "status": "exists",
+      "size_bytes": 3811
+    },
+    {
+      "section_id": "08-strategic-recommendation",
+      "figure": "document/figures/02-market-positioning.svg",
+      "status": "exists",
+      "size_bytes": 2510
+    }
+  ],
+  "appendix_skip_allowed": true,
+  "notes": "All required section figures referenced by document_manifest.json are present under document/figures/. Sizes taken from workspace listing. If cryptographic checksums are required for publication, run a checksum tool in the next iteration to compute md5/sha256 for each file."
+}
