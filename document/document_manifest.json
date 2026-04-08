@@ -1,7 +1,7 @@
 {
   "document_title": "LLM Harness Engineering: Market and Breakpoint Analysis",
   "document_type": "research_report",
-  "last_updated": "2026-04-03T03:30:00+00:00",
+  "last_updated": "2026-04-08T05:30:00+00:00",
   "reference": {
     "mode": "discovered",
     "source": "internet",
@@ -23,6 +23,34 @@
       "file": "document/figures/02-market-positioning.svg",
       "purpose": "Positioning map to identify categories that are operationally complex but immature (candidate wedges).",
       "status": "done"
+    },
+    {
+      "id": "fig-03-provider-positioning",
+      "title": "Provider Landscape — Category Comparison",
+      "file": "document/figures/03-provider-positioning.svg",
+      "purpose": "High-level comparison of core categories and exemplar providers; supports the Provider landscape section.",
+      "status": "done"
+    },
+    {
+      "id": "fig-04-technical-bottlenecks",
+      "title": "Technical Bottlenecks — Solved → Partially Solved → Hard",
+      "file": "document/figures/04-technical-bottlenecks.svg",
+      "purpose": "Visual classification of technical problems by maturity to support the Technical bottlenecks section.",
+      "status": "done"
+    },
+    {
+      "id": "fig-05-breakpoint-map",
+      "title": "Breakpoint / Wedge Positioning",
+      "file": "document/figures/02-breakpoint-map.svg",
+      "purpose": "Positioning of candidate newcomer wedges by feasibility and defensibility; supports Breakpoint analysis.",
+      "status": "done"
+    },
+    {
+      "id": "fig-06-exec-summary-visual",
+      "title": "Executive Summary — Top Wedges & Recommendation",
+      "file": "document/figures/01-harness-stack.svg",
+      "purpose": "Compact visual used in the Executive Summary to orient readers to the recommended wedge and market map.",
+      "status": "done"
     }
   ],
   "sections": [
@@ -31,7 +59,12 @@
       "title": "Executive summary",
       "file": "document/sections/01-executive-summary.md",
       "status": "done",
-      "summary": "Concise summary of definition, state, top providers, gaps, top 3 wedges, recommended wedge."
+      "summary": "Concise summary of definition, state, top providers, gaps, top 3 wedges, recommended wedge.",
+      "illustration_plan": {
+        "figure": "document/figures/01-harness-stack.svg",
+        "purpose": "Orient readers quickly to the market layers and recommended wedge",
+        "status": "done"
+      }
     },
     {
       "section_id": "02-market-map",
@@ -50,7 +83,12 @@
       "title": "Provider landscape",
       "file": "document/sections/03-provider-landscape.md",
       "status": "done",
-      "summary": "Detailed, evidence-backed provider analysis organized by category (commercial and open-source). Section includes per-provider citations and synthesis; remaining appendix population noted in section file."
+      "summary": "Detailed, evidence-backed provider analysis organized by category (commercial and open-source).",
+      "illustration_plan": {
+        "figure": "document/figures/03-provider-positioning.svg",
+        "purpose": "Category comparison visual to support provider analysis",
+        "status": "done"
+      }
     },
     {
       "section_id": "04-customer-jtbd",
@@ -58,35 +96,59 @@
       "file": "document/sections/04-customer-jtbd.md",
       "status": "done",
       "summary": "User personas, jobs-to-be-done, buying criteria, and frustrations.",
-      "evidence_plan": "Persona claims supported by vendor docs and engineering case studies (Langfuse, LangSmith, LangChain, LlamaIndex, Pinecone, Anthropic, Datadog, Zalando, Promptfoo). Next steps: run an integration spike (LangChain + Langfuse/LangSmith) to capture time-to-first-trace and friction points; conduct 6 targeted interviews (2 platform leads, 2 ML engineers, 1 PM, 1 security/compliance) to validate WTP and procurement triggers; populate appendix with spike artifacts and interview snippets."
+      "illustration_plan": {
+        "figure": "document/figures/03-provider-positioning.svg",
+        "purpose": "Support JTBD mapping with a simple category/persona overlay",
+        "status": "done"
+      }
     },
     {
       "section_id": "05-technical-bottlenecks",
       "title": "Technical bottlenecks",
       "file": "document/sections/05-technical-bottlenecks.md",
       "status": "done",
-      "summary": "Analyze solved, partially solved, and unsolved technical problems."
+      "summary": "Analyze solved, partially solved, and unsolved technical problems.",
+      "illustration_plan": {
+        "figure": "document/figures/04-technical-bottlenecks.svg",
+        "purpose": "Classify technical problems by maturity and visualize hardest gaps",
+        "status": "done"
+      }
     },
     {
       "section_id": "06-commercial-moat",
       "title": "Commercial landscape and moat analysis",
       "file": "document/sections/06-commercial-moat.md",
       "status": "done",
-      "summary": "Where value accrues, defensibility assessment, role of open source."
+      "summary": "Where value accrues, defensibility assessment, role of open source.",
+      "illustration_plan": {
+        "figure": "document/figures/02-market-positioning.svg",
+        "purpose": "Positioning map showing value accrual vs commoditization risk",
+        "status": "done"
+      }
     },
     {
       "section_id": "07-breakpoint-analysis",
       "title": "Breakpoint analysis and ranked wedges",
       "file": "document/sections/07-breakpoint-analysis.md",
       "status": "done",
-      "summary": "Ranked newcomer wedges with evidence and risk assessment."
+      "summary": "Ranked newcomer wedges with evidence and risk assessment.",
+      "illustration_plan": {
+        "figure": "document/figures/02-breakpoint-map.svg",
+        "purpose": "Visual ranking of candidate wedges by feasibility & defensibility",
+        "status": "done"
+      }
     },
     {
       "section_id": "08-strategic-recommendation",
       "title": "Strategic recommendations",
       "file": "document/sections/08-strategic-recommendation.md",
       "status": "done",
-      "summary": "Product recommendation, GTM, roadmap, metrics for PMF."
+      "summary": "Product recommendation, GTM, roadmap, metrics for PMF.",
+      "illustration_plan": {
+        "figure": "document/figures/02-market-positioning.svg",
+        "purpose": "Highlight recommended wedge and roadmap commentary",
+        "status": "done"
+      }
     },
     {
       "section_id": "09-appendix",

@@ -1,0 +1,14 @@
+provider,category,oss_or_commercial,gh_stars,gh_forks,hosting_model,sources,notes
+LangChain,Agent framework,"OSS + commercial",130000,21500,"OSS libs + LangSmith hosted tools","https://github.com/langchain-ai/langchain; https://www.langchain.com/langsmith","Used-by ~278k dependents; de-facto integration hub"
+LlamaIndex,RAG/document framework,"OSS + hosted",47800,7100,"OSS + LlamaParse cloud","https://github.com/run-llama/llama_index; https://cloud.llamaindex.ai","Strong document-agent primitives; cloud traction evidence limited"
+Langfuse,Observability,"OSS + cloud",23500,2400,"Self-host (Helm/Docker) + Langfuse Cloud","https://github.com/langfuse/langfuse; https://langfuse.com","Purpose-built LLM trace schema and integrations (LangChain, LlamaIndex)"
+OpenAI Evals,Eval framework,"OSS + platform",18000,2900,"OpenAI hosted + OSS runner","https://github.com/openai/evals; https://platform.openai.com/docs/guides/evals","Canonical eval framework with private evals support"
+Promptfoo,Eval & red-teaming,OSS,19100,1500,"CLI/CI local-first","https://github.com/promptfoo/promptfoo; https://www.promptfoo.dev","CLI-first evals and red-teaming; announced joining OpenAI (README)"
+Chroma,Vector DB,"OSS + cloud",26700,2100,"Self-host + Chroma Cloud","https://github.com/chroma-core/chroma; https://trychroma.com","Developer ergonomics and local prototyping; cloud adoption signals limited"
+Milvus,Vector DB,"OSS + managed",43400,3900,"Self-host + Zilliz Cloud","https://github.com/milvus-io/milvus; https://milvus.io","High-performance, K8s-native; enterprise deployment options"
+Pinecone,Vector DB,Commercial,,,,"Managed SaaS + BYOC","https://www.pinecone.io/","Enterprise case studies (Vanguard); SLA and compliance features"
+Weaviate,Vector DB,"OSS + cloud",,,"Shared cloud, Dedicated cloud, self-host","https://weaviate.io/","Agent features, partner integrations (AWS/GCP/Snowflake)"
+
+# Notes:
+# - GH stars/forks taken from research notes (access dates 2026-03-21/2026-04-02). Blank cells indicate data not captured in research_notes or vendor pages.
+# - Source URLs point to primary vendor/GitHub pages for provenance. Do not invent additional traction numbers; update CSV when further evidence is collected.

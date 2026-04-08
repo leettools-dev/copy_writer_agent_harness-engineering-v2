@@ -1,0 +1,10 @@
+{
+  "app_id": "final-md-tiptap",
+  "name": "Final MD (Tiptap)",
+  "version": "0.1.0",
+  "mount_path": "/apps/final-md-tiptap",
+  "entry": "entry.js",
+  "icon": "mdi-file-document-outline",
+  "order": 999,
+  "enabled": true
+}
